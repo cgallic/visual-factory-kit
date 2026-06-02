@@ -1,0 +1,635 @@
+{
+  "request_id": "visual-factory-example-001",
+  "content_id": "after-hours-service-brief",
+  "rendered_at": "2026-06-02T21:27:18+00:00",
+  "renderer": "visual_factory_renderer@0.1.0",
+  "assets": [
+    {
+      "template": "linkedin_article_hero",
+      "png": "examples/outputs/example-after-hours-linkedin_article_hero.png",
+      "provenance": "examples/outputs/example-after-hours-linkedin_article_hero.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "instagram_reel",
+      "png": "examples/outputs/example-after-hours-instagram_reel.png",
+      "provenance": "examples/outputs/example-after-hours-instagram_reel.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "facebook_feed_square",
+      "png": "examples/outputs/example-after-hours-facebook_feed_square.png",
+      "provenance": "examples/outputs/example-after-hours-facebook_feed_square.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "x_post_landscape",
+      "png": "examples/outputs/example-after-hours-x_post_landscape.png",
+      "provenance": "examples/outputs/example-after-hours-x_post_landscape.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "pinterest_pin",
+      "png": "examples/outputs/example-after-hours-pinterest_pin.png",
+      "provenance": "examples/outputs/example-after-hours-pinterest_pin.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "google_business_post",
+      "png": "examples/outputs/example-after-hours-google_business_post.png",
+      "provenance": "examples/outputs/example-after-hours-google_business_post.provenance.json",
+      "passed_qa": true
+    }
+  ],
+  "qa": [
+    {
+      "template": "linkedin_article_hero",
+      "output_path": "examples/outputs/example-after-hours-linkedin_article_hero.png",
+      "expected_dimensions": {
+        "width": 1200,
+        "height": 627
+      },
+      "actual_dimensions": {
+        "width": 1200,
+        "height": 627
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "headline",
+          "text": "Customers still call after closing time.",
+          "fontSize": 67,
+          "finalFontSize": 67,
+          "width": 650,
+          "height": 123.25
+        },
+        {
+          "label": "subhead",
+          "text": "Route, remember, and brief every important call without rebuilding your workflow.",
+          "fontSize": 26,
+          "finalFontSize": 26,
+          "width": 520,
+          "height": 66.53125
+        },
+        {
+          "label": "proof",
+          "text": "41% of inquiries arrived after hours",
+          "fontSize": 24.01707530647986,
+          "finalFontSize": 24.01707530647986,
+          "width": 571.40625,
+          "height": 48.390625
+        },
+        {
+          "label": "phone",
+          "text": "Call ExampleCo(555) 010-2040",
+          "fontSize": 28.02146226415094,
+          "finalFontSize": 28.02146226415094,
+          "width": 265.203125,
+          "height": 70
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3,
+        "readability": [
+          {
+            "label": "headline",
+            "font_size": 67,
+            "mobile_preview_font_size": 20.1,
+            "minimum_mobile_font_size": 16,
+            "passed": true
+          },
+          {
+            "label": "subhead",
+            "font_size": 26,
+            "mobile_preview_font_size": 7.8,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "proof",
+            "font_size": 24.02,
+            "mobile_preview_font_size": 7.21,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "phone",
+            "font_size": 28.02,
+            "mobile_preview_font_size": 8.41,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "instagram_reel",
+      "output_path": "examples/outputs/example-after-hours-instagram_reel.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "headline",
+          "text": "Customers still call after closing time.",
+          "fontSize": 92,
+          "finalFontSize": 92,
+          "width": 886,
+          "height": 169.25
+        },
+        {
+          "label": "subhead",
+          "text": "Route, remember, and brief every important call without rebuilding your workflow.",
+          "fontSize": 36,
+          "finalFontSize": 36,
+          "width": 821,
+          "height": 92.15625
+        },
+        {
+          "label": "proof",
+          "text": "41% of inquiries arrived after hours",
+          "fontSize": 25,
+          "finalFontSize": 25,
+          "width": 593,
+          "height": 49.5
+        },
+        {
+          "label": "phone",
+          "text": "Call ExampleCo(555) 010-2040",
+          "fontSize": 28.02146226415094,
+          "finalFontSize": 28.02146226415094,
+          "width": 265.203125,
+          "height": 70
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "headline",
+            "font_size": 92,
+            "mobile_preview_font_size": 30.67,
+            "minimum_mobile_font_size": 16,
+            "passed": true
+          },
+          {
+            "label": "subhead",
+            "font_size": 36,
+            "mobile_preview_font_size": 12.0,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "proof",
+            "font_size": 25,
+            "mobile_preview_font_size": 8.33,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "phone",
+            "font_size": 28.02,
+            "mobile_preview_font_size": 9.34,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "facebook_feed_square",
+      "output_path": "examples/outputs/example-after-hours-facebook_feed_square.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "headline",
+          "text": "Customers still call after closing time.",
+          "fontSize": 76,
+          "finalFontSize": 76,
+          "width": 756,
+          "height": 139.8125
+        },
+        {
+          "label": "subhead",
+          "text": "Route, remember, and brief every important call without rebuilding your workflow.",
+          "fontSize": 28,
+          "finalFontSize": 28,
+          "width": 626,
+          "height": 71.65625
+        },
+        {
+          "label": "proof",
+          "text": "41% of inquiries arrived after hours",
+          "fontSize": 24.01707530647986,
+          "finalFontSize": 24.01707530647986,
+          "width": 571.40625,
+          "height": 48.390625
+        },
+        {
+          "label": "phone",
+          "text": "Call ExampleCo(555) 010-2040",
+          "fontSize": 28.02146226415094,
+          "finalFontSize": 28.02146226415094,
+          "width": 265.203125,
+          "height": 70
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "headline",
+            "font_size": 76,
+            "mobile_preview_font_size": 25.33,
+            "minimum_mobile_font_size": 16,
+            "passed": true
+          },
+          {
+            "label": "subhead",
+            "font_size": 28,
+            "mobile_preview_font_size": 9.33,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "proof",
+            "font_size": 24.02,
+            "mobile_preview_font_size": 8.01,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "phone",
+            "font_size": 28.02,
+            "mobile_preview_font_size": 9.34,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "x_post_landscape",
+      "output_path": "examples/outputs/example-after-hours-x_post_landscape.png",
+      "expected_dimensions": {
+        "width": 1600,
+        "height": 900
+      },
+      "actual_dimensions": {
+        "width": 1600,
+        "height": 900
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "headline",
+          "text": "Customers still call after closing time.",
+          "fontSize": 99,
+          "finalFontSize": 99,
+          "width": 896,
+          "height": 273.234375
+        },
+        {
+          "label": "subhead",
+          "text": "Route, remember, and brief every important call without rebuilding your workflow.",
+          "fontSize": 37,
+          "finalFontSize": 37,
+          "width": 736,
+          "height": 94.71875
+        },
+        {
+          "label": "proof",
+          "text": "41% of inquiries arrived after hours",
+          "fontSize": 32.99192232375979,
+          "finalFontSize": 32.99192232375979,
+          "width": 765.8125,
+          "height": 58.296875
+        },
+        {
+          "label": "phone",
+          "text": "Call ExampleCo(555) 010-2040",
+          "fontSize": 40,
+          "finalFontSize": 40,
+          "width": 366,
+          "height": 86
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.225,
+        "readability": [
+          {
+            "label": "headline",
+            "font_size": 99,
+            "mobile_preview_font_size": 22.28,
+            "minimum_mobile_font_size": 16,
+            "passed": true
+          },
+          {
+            "label": "subhead",
+            "font_size": 37,
+            "mobile_preview_font_size": 8.33,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "proof",
+            "font_size": 32.99,
+            "mobile_preview_font_size": 7.42,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "phone",
+            "font_size": 40,
+            "mobile_preview_font_size": 9.0,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "pinterest_pin",
+      "output_path": "examples/outputs/example-after-hours-pinterest_pin.png",
+      "expected_dimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "actual_dimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "headline",
+          "text": "Customers still call after closing time.",
+          "fontSize": 92,
+          "finalFontSize": 92,
+          "width": 780,
+          "height": 253.875
+        },
+        {
+          "label": "subhead",
+          "text": "Route, remember, and brief every important call without rebuilding your workflow.",
+          "fontSize": 34,
+          "finalFontSize": 34,
+          "width": 720,
+          "height": 87.03125
+        },
+        {
+          "label": "proof",
+          "text": "41% of inquiries arrived after hours",
+          "fontSize": 24.01707530647986,
+          "finalFontSize": 24.01707530647986,
+          "width": 571.40625,
+          "height": 48.390625
+        },
+        {
+          "label": "pin-tag",
+          "text": "Phone service playbook",
+          "fontSize": 16.015402843601894,
+          "finalFontSize": 16.015402843601894,
+          "width": 211.203125,
+          "height": 20
+        },
+        {
+          "label": "phone",
+          "text": "Call ExampleCo(555) 010-2040",
+          "fontSize": 23.959590517241377,
+          "finalFontSize": 23.959590517241377,
+          "width": 231.609375,
+          "height": 66
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.36,
+        "readability": [
+          {
+            "label": "headline",
+            "font_size": 92,
+            "mobile_preview_font_size": 33.12,
+            "minimum_mobile_font_size": 16,
+            "passed": true
+          },
+          {
+            "label": "subhead",
+            "font_size": 34,
+            "mobile_preview_font_size": 12.24,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "proof",
+            "font_size": 24.02,
+            "mobile_preview_font_size": 8.65,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "pin-tag",
+            "font_size": 16.02,
+            "mobile_preview_font_size": 5.77,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "phone",
+            "font_size": 23.96,
+            "mobile_preview_font_size": 8.63,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "google_business_post",
+      "output_path": "examples/outputs/example-after-hours-google_business_post.png",
+      "expected_dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "actual_dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "headline",
+          "text": "Customers still call after closing time.",
+          "fontSize": 45,
+          "finalFontSize": 45,
+          "width": 410,
+          "height": 124.171875
+        },
+        {
+          "label": "subhead",
+          "text": "Route, remember, and brief every important call without rebuilding your workflow.",
+          "fontSize": 20,
+          "finalFontSize": 20,
+          "width": 390,
+          "height": 51.1875
+        },
+        {
+          "label": "proof",
+          "text": "41% of inquiries arrived after hours",
+          "fontSize": 15.98409669211196,
+          "finalFontSize": 15.98409669211196,
+          "width": 392.609375,
+          "height": 38
+        },
+        {
+          "label": "local-note",
+          "text": "Phone-first service for local operators",
+          "fontSize": 11.017388132295721,
+          "finalFontSize": 11.017388132295721,
+          "width": 257.40625,
+          "height": 14
+        },
+        {
+          "label": "phone",
+          "text": "Call ExampleCo(555) 010-2040",
+          "fontSize": 18.020656779661017,
+          "finalFontSize": 18.020656779661017,
+          "width": 177.203125,
+          "height": 56
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.5,
+        "readability": [
+          {
+            "label": "headline",
+            "font_size": 45,
+            "mobile_preview_font_size": 22.5,
+            "minimum_mobile_font_size": 16,
+            "passed": true
+          },
+          {
+            "label": "subhead",
+            "font_size": 20,
+            "mobile_preview_font_size": 10.0,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "proof",
+            "font_size": 15.98,
+            "mobile_preview_font_size": 7.99,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "local-note",
+            "font_size": 11.02,
+            "mobile_preview_font_size": 5.51,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "phone",
+            "font_size": 18.02,
+            "mobile_preview_font_size": 9.01,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

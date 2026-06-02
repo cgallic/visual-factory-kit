@@ -1,0 +1,55 @@
+{
+  "asset_id": "example-after-hours-facebook_feed_square",
+  "request_id": "visual-factory-example-001",
+  "content_id": "after-hours-service-brief",
+  "rendered_at": "2026-06-02T21:27:10+00:00",
+  "renderer": "visual_factory_renderer@0.1.0",
+  "template": "facebook_feed_square@1.0.0",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "alt_text": "ExampleCo social graphic about customers calling after closing time.",
+  "ingredients": [
+    {
+      "kind": "platform_size_matrix",
+      "path": "visual_factory/platform-size-matrix.json",
+      "source": "Platform export matrix"
+    },
+    {
+      "kind": "brand_visual_asset",
+      "path": "brand-packs/example/assets/mascot.png",
+      "source": "approved transparent brand asset"
+    },
+    {
+      "kind": "brand_tokens",
+      "path": "brand-packs/example/tokens.css",
+      "source": "brand design tokens"
+    },
+    {
+      "kind": "typography",
+      "path": "visual_factory/fonts",
+      "source": "Bundled open-source visual font stack",
+      "families": [
+        "Libre Franklin",
+        "Atkinson Hyperlegible",
+        "IBM Plex Mono"
+      ]
+    },
+    {
+      "kind": "proof",
+      "claim": "41% of inquiries arrived after hours",
+      "source_path": "examples/proof/after-hours-inquiries.md",
+      "source": "manual"
+    }
+  ],
+  "ai_assistance": {
+    "copy_assisted": true,
+    "image_generated_new_for_this_asset": false,
+    "notes": "Final image assembled from approved brand layers, deterministic HTML/CSS templates, and request proof fields."
+  },
+  "approvals": {
+    "brand": "pending",
+    "claims": "verified"
+  }
+}
