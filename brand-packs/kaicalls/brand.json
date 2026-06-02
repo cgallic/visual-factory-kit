@@ -1,0 +1,8 @@
+{
+  "name": "KaiCalls",
+  "tokens_css": "tokens.css",
+  "icon": "assets/26-icon-v2.png",
+  "asset_dir": "assets",
+  "phone_number": "(417) 386-2898",
+  "phone_label": "Call Kai"
+}

@@ -10,21 +10,23 @@ No generic AI imagery. No mystery Canva resizing. No "it looked fine on my scree
 
 ## Example Outputs
 
-These are generated from the included sample request and example brand pack.
+These are generated from the included KaiCalls brand pack and showcase request.
 
 | Instagram Reel | Facebook Feed | Pinterest Pin |
 |---|---|---|
-| ![Example Instagram Reel](examples/outputs/example-after-hours-instagram_reel.png) | ![Example Facebook Feed Square](examples/outputs/example-after-hours-facebook_feed_square.png) | ![Example Pinterest Pin](examples/outputs/example-after-hours-pinterest_pin.png) |
+| ![KaiCalls Instagram Reel](examples/kaicalls-outputs/kaicalls-after-hours-instagram_reel.png) | ![KaiCalls Facebook Feed Square](examples/kaicalls-outputs/kaicalls-after-hours-facebook_feed_square.png) | ![KaiCalls Pinterest Pin](examples/kaicalls-outputs/kaicalls-after-hours-pinterest_pin.png) |
 
 | LinkedIn Article Hero | X Landscape Post | Google Business Profile |
 |---|---|---|
-| ![Example LinkedIn Article Hero](examples/outputs/example-after-hours-linkedin_article_hero.png) | ![Example X Landscape Post](examples/outputs/example-after-hours-x_post_landscape.png) | ![Example Google Business Profile Post](examples/outputs/example-after-hours-google_business_post.png) |
+| ![KaiCalls LinkedIn Article Hero](examples/kaicalls-outputs/kaicalls-after-hours-linkedin_article_hero.png) | ![KaiCalls X Landscape Post](examples/kaicalls-outputs/kaicalls-after-hours-x_post_landscape.png) | ![KaiCalls Google Business Profile Post](examples/kaicalls-outputs/kaicalls-after-hours-google_business_post.png) |
 
 The sample QA report is here:
 
 ```text
-examples/outputs/example-after-hours-qa-report.json
+examples/kaicalls-outputs/kaicalls-after-hours-qa-report.json
 ```
+
+This repo uses KaiCalls as the live showcase because it is exactly the kind of brand this system was built for: a phone-first service that needs proof-backed images across every channel.
 
 ## Why Marketers Use This
 
@@ -96,7 +98,13 @@ This contains the campaign message:
 - output folder
 - format list
 
-Start with:
+Start with the KaiCalls showcase:
+
+```text
+examples/kaicalls-request.json
+```
+
+Or start from the neutral example:
 
 ```text
 examples/sample-request.json
@@ -107,15 +115,21 @@ examples/sample-request.json
 This contains the brand system:
 
 ```text
-brand-packs/example/
+brand-packs/kaicalls/
 ├── brand.json
 ├── tokens.css
 └── assets/
-    ├── icon.png
-    └── mascot.png
+    ├── 26-icon-v2.png
+    ├── 22-after-hours.png
+    └── ...
 ```
 
-Create your own brand pack by copying `brand-packs/example`, replacing the transparent PNG assets, and editing `brand.json` and `tokens.css`.
+The repo includes:
+
+- `brand-packs/kaicalls` as the real showcase brand pack.
+- `brand-packs/example` as a tiny neutral starter pack.
+
+Create your own brand pack by copying either pack, replacing the transparent PNG assets, and editing `brand.json` and `tokens.css`.
 
 3. Deterministic templates
 
@@ -136,15 +150,22 @@ pip install -r requirements.txt
 python -m playwright install chromium
 ```
 
-Render the included example:
+Render the KaiCalls showcase:
+
+```powershell
+python visual_factory\render.py render --request examples\kaicalls-request.json --brand brand-packs\kaicalls
+```
+
+Render the neutral example:
 
 ```powershell
 python visual_factory\render.py render --request examples\sample-request.json --brand brand-packs\example
 ```
 
-Open the output folder:
+Open the output folders:
 
 ```text
+examples/kaicalls-outputs/
 examples/outputs/
 ```
 
@@ -158,7 +179,7 @@ Use the images only when the QA report says:
 
 ```json
 {
-  "client": "ExampleCo",
+  "client": "KaiCalls",
   "formats": [
     "linkedin_article_hero",
     "instagram_reel",
@@ -167,16 +188,16 @@ Use the images only when the QA report says:
     "google_business_post"
   ],
   "message": {
-    "headline": "Customers still call after closing time.",
-    "subhead": "Route, remember, and brief every important call without rebuilding your workflow.",
-    "proof_label": "41% of inquiries arrived after hours",
-    "cta": "Call ExampleCo",
-    "phone_number": "(555) 010-2040"
+    "headline": "Missed calls do not wait for office hours.",
+    "subhead": "Kai answers, remembers, acts, and briefs after the phone rings.",
+    "proof_label": "64% of calls came after hours",
+    "cta": "Call Kai",
+    "phone_number": "(417) 386-2898"
   },
   "output": {
-    "alt_text": "ExampleCo social graphic about customers calling after closing time.",
-    "destination_dir": "examples/outputs",
-    "filename_prefix": "example-after-hours"
+    "alt_text": "KaiCalls social graphic with Kai holding a retro phone beside a proof label about after-hours calls.",
+    "destination_dir": "examples/kaicalls-outputs",
+    "filename_prefix": "kaicalls-after-hours"
   }
 }
 ```
@@ -276,8 +297,8 @@ Add a template:
 
 Add a brand:
 
-1. Copy `brand-packs/example`.
-2. Replace `assets/icon.png` and `assets/mascot.png`.
+1. Copy `brand-packs/example` or `brand-packs/kaicalls`.
+2. Replace the transparent PNGs in `assets`.
 3. Edit `brand.json`.
 4. Edit `tokens.css`.
 5. Render with `--brand brand-packs/your-brand`.
@@ -290,7 +311,7 @@ It is a production system for turning approved message, proof, brand assets, and
 
 ## License
 
-MIT for the code in this repository. Bundled fonts are third-party assets under their own licenses. See:
+MIT for the code in this repository. The KaiCalls brand pack and example images are included as a public showcase and marketing example. Bundled fonts are third-party assets under their own licenses. See:
 
 ```text
 visual_factory/fonts/NOTICE.md

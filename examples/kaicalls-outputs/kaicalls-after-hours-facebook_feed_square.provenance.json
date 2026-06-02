@@ -1,0 +1,55 @@
+{
+  "asset_id": "kaicalls-after-hours-facebook_feed_square",
+  "request_id": "kaicalls-showcase-001",
+  "content_id": "after-hours-call-briefing",
+  "rendered_at": "2026-06-02T21:35:19+00:00",
+  "renderer": "visual_factory_renderer@0.1.0",
+  "template": "facebook_feed_square@1.0.0",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "alt_text": "KaiCalls social graphic with Kai holding a retro phone beside a proof label about after-hours calls.",
+  "ingredients": [
+    {
+      "kind": "platform_size_matrix",
+      "path": "visual_factory/platform-size-matrix.json",
+      "source": "Platform export matrix"
+    },
+    {
+      "kind": "brand_visual_asset",
+      "path": "brand-packs/kaicalls/assets/22-after-hours.png",
+      "source": "approved transparent brand asset"
+    },
+    {
+      "kind": "brand_tokens",
+      "path": "brand-packs/kaicalls/tokens.css",
+      "source": "brand design tokens"
+    },
+    {
+      "kind": "typography",
+      "path": "visual_factory/fonts",
+      "source": "Bundled open-source visual font stack",
+      "families": [
+        "Libre Franklin",
+        "Atkinson Hyperlegible",
+        "IBM Plex Mono"
+      ]
+    },
+    {
+      "kind": "proof",
+      "claim": "64% of calls came after hours",
+      "source_path": "examples/proof/kaicalls-after-hours.md",
+      "source": "sample_analytics"
+    }
+  ],
+  "ai_assistance": {
+    "copy_assisted": true,
+    "image_generated_new_for_this_asset": false,
+    "notes": "Final image assembled from approved brand layers, deterministic HTML/CSS templates, and request proof fields."
+  },
+  "approvals": {
+    "brand": "pending",
+    "claims": "verified"
+  }
+}

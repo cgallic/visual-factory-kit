@@ -1,0 +1,221 @@
+/* ============================================================================
+   KaiCalls Design System — tokens.css
+   ----------------------------------------------------------------------------
+   Single source of truth for any agent (Open Design / frontend-design /
+   Claude Code) generating KaiCalls UI, landing pages, or marketing surfaces.
+
+   Ground every generation in these tokens. Do not invent colors, fonts, or
+   off-brand styling. If a value you need isn't here, derive it from the
+   neutral/brand ramps below — don't reach for a new hue.
+
+   Canonical sources (do not contradict):
+     - colors:     remotion-promo/src/styles/colors.ts (ported from adminpanelnew/globals.css)
+     - gradients:  remotion-promo/src/styles/gradients.ts
+     - typography: remotion-promo/src/styles/typography.ts
+     - voice:      outputs/video-scripts/kaicalls_brand_bible.md
+
+   ----------------------------------------------------------------------------
+   BRAND GUARDRAILS (non-negotiable — bake into copy + visuals)
+   ----------------------------------------------------------------------------
+   IDENTITY   Kai is a "secretary" / "personal secretary". NEVER "AI", "voice
+              bot", "agent", or "assistant" in customer-facing copy.
+   PALETTE    Dark theme. Blue (#5C8CFF) -> Purple (#C68BF8) gradient is THE
+              brand mark. Green (#34D399) = success/positive. NO warm orange,
+              NO neon, NO red as a brand color (red is error-only). The v1.0
+              brand bible's "warm orange" suggestion is SUPERSEDED — ignore it.
+   FOUR VERBS What Kai does, in order: Answer -> Remember -> Act -> Brief.
+   VOICE      Say what you mean. Cut fluff. Be specific (numbers beat
+              adjectives). Talk like a human. Have an opinion. Frame as PHONE
+              SERVICE / infrastructure, never "software".
+   PROOF      Use concrete numbers ("handled 47 calls", "$69/month",
+              "64% after-hours"), never vague claims.
+   ============================================================================ */
+
+:root {
+  /* ---- Surface (backgrounds) ---------------------------------------------- */
+  --kai-surface-bg:         #12121A;  /* page background (darkest) */
+  --kai-surface-card:       #181B23;  /* default card */
+  --kai-surface-secondary:  #23263B;  /* raised panel */
+  --kai-surface-elevated:   #2A2D3E;  /* modal / popover / hover surface */
+
+  /* ---- Text hierarchy ----------------------------------------------------- */
+  --kai-text-primary:    #F7F7FA;  /* headings, primary copy */
+  --kai-text-secondary:  #A7A9BE;  /* body, supporting copy */
+  --kai-text-muted:      #6B6D76;  /* captions, placeholders, disabled */
+  --kai-text-inverse:    #12121A;  /* text on light/brand fills */
+
+  /* ---- Brand -------------------------------------------------------------- */
+  --kai-brand-blue:    #5C8CFF;  /* primary brand (kaiBlue) */
+  --kai-brand-purple:  #C68BF8;  /* secondary brand (kaiPurple) */
+  --kai-brand-accent:  #3575F6;  /* primary button fill (kaiBtnPrimary) */
+
+  /* ---- Status / feedback -------------------------------------------------- */
+  --kai-success:  #34D399;  /* green — wins, "you missed zero" */
+  --kai-error:    #FF4B4B;  /* red — errors ONLY, never decorative */
+  --kai-warning:  #FFC04B;  /* amber — caution states only */
+  --kai-info:     #5C8CFF;  /* info = brand blue */
+
+  /* ---- Neutral ramp ------------------------------------------------------- */
+  --kai-neutral-100: #F7F7FA;
+  --kai-neutral-200: #E5E5EA;
+  --kai-neutral-300: #C7C7CC;
+  --kai-neutral-400: #A7A9BE;
+  --kai-neutral-500: #6B6D76;
+  --kai-neutral-600: #3A3D4E;
+  --kai-neutral-700: #2A2D3E;
+  --kai-neutral-800: #23263B;
+  --kai-neutral-900: #181B23;
+
+  /* ---- Lead-temperature badges (dashboard) -------------------------------- */
+  --kai-badge-hot-bg:    #FF4B4B33;
+  --kai-badge-hot-text:  #FF6B6B;
+  --kai-badge-warm-bg:   #FFC04B33;
+  --kai-badge-warm-text: #FFD76B;
+  --kai-badge-cold-bg:   #4B7BFF33;
+  --kai-badge-cold-text: #6B93FF;
+
+  /* ---- Borders ------------------------------------------------------------ */
+  --kai-border:        #2A2D3E;  /* default hairline */
+  --kai-border-hover:  #3A3D4E;  /* hover / focus ring base */
+
+  /* ---- Gradients (blue -> purple is the brand mark) ----------------------- */
+  --kai-gradient:             linear-gradient(135deg, #5C8CFF 0%, #C68BF8 100%);
+  --kai-gradient-horizontal:  linear-gradient(90deg,  #5C8CFF 0%, #C68BF8 100%);
+  --kai-gradient-vertical:    linear-gradient(180deg, #5C8CFF 0%, #C68BF8 100%);
+  --kai-gradient-bg-radial:   radial-gradient(ellipse at center, #23263B 0%, #12121A 70%);
+  --kai-gradient-bg-dark:     linear-gradient(180deg, #181B23 0%, #12121A 100%);
+  --kai-gradient-card-overlay: linear-gradient(180deg, rgba(24,27,35,0) 0%, rgba(24,27,35,0.8) 100%);
+
+  /* ---- Glows (for hero/ambient backgrounds) ------------------------------- */
+  --kai-glow-blue:    radial-gradient(circle, rgba(92,140,255,0.30) 0%, transparent 70%);
+  --kai-glow-purple:  radial-gradient(circle, rgba(198,139,248,0.30) 0%, transparent 70%);
+  --kai-glow-success: radial-gradient(circle, rgba(52,211,153,0.30) 0%, transparent 70%);
+
+  /* ---- Typography --------------------------------------------------------- */
+  --kai-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --kai-font-mono: 'JetBrains Mono', Menlo, monospace;
+
+  /* Web type ramp (rem). The brand's video ramp is px-tuned for 1080p; this is
+     the web-scaled equivalent at the same proportions. 1rem = 16px. */
+  --kai-text-hero-xl:    5.0rem;   /* 80px */
+  --kai-text-hero-lg:    4.0rem;   /* 64px */
+  --kai-text-hero-md:    3.5rem;   /* 56px */
+  --kai-text-heading-xl: 3.0rem;   /* 48px */
+  --kai-text-heading-lg: 2.5rem;   /* 40px */
+  --kai-text-heading-md: 2.0rem;   /* 32px */
+  --kai-text-heading-sm: 1.5rem;   /* 24px */
+  --kai-text-body-lg:    1.25rem;  /* 20px */
+  --kai-text-body:       1.125rem; /* 18px */
+  --kai-text-body-sm:    1.0rem;   /* 16px */
+  --kai-text-caption:    0.875rem; /* 14px */
+  --kai-text-small:      0.75rem;  /* 12px */
+
+  --kai-weight-bold:     700;
+  --kai-weight-semibold: 600;
+  --kai-weight-medium:   500;
+  --kai-weight-normal:   400;
+
+  --kai-leading-tight:   1.1;   /* hero headlines */
+  --kai-leading-snug:    1.25;  /* headings */
+  --kai-leading-normal:  1.5;   /* body */
+  --kai-leading-relaxed: 1.75;  /* long-form reading */
+
+  /* ---- Spacing (4px base scale) ------------------------------------------- */
+  --kai-space-1:  0.25rem;  /* 4px  */
+  --kai-space-2:  0.5rem;   /* 8px  */
+  --kai-space-3:  0.75rem;  /* 12px */
+  --kai-space-4:  1rem;     /* 16px */
+  --kai-space-5:  1.5rem;   /* 24px */
+  --kai-space-6:  2rem;     /* 32px */
+  --kai-space-8:  3rem;     /* 48px */
+  --kai-space-10: 4rem;     /* 64px */
+  --kai-space-12: 6rem;     /* 96px */
+  --kai-space-16: 8rem;     /* 128px — section rhythm */
+
+  /* ---- Radius ------------------------------------------------------------- */
+  --kai-radius-sm:   8px;
+  --kai-radius-md:   12px;  /* default card/button */
+  --kai-radius-lg:   20px;  /* hero cards, large surfaces */
+  --kai-radius-full: 9999px;
+
+  /* ---- Elevation ---------------------------------------------------------- */
+  --kai-shadow-sm: 0 1px 2px rgba(0,0,0,0.40);
+  --kai-shadow-md: 0 4px 16px rgba(0,0,0,0.45);
+  --kai-shadow-lg: 0 12px 40px rgba(0,0,0,0.55);
+  --kai-shadow-brand: 0 8px 32px rgba(92,140,255,0.25); /* blue brand glow on CTAs */
+
+  /* ---- Motion (subtle, infrastructure-calm — never flashy) ---------------- */
+  --kai-ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --kai-duration-fast:   150ms;
+  --kai-duration-normal: 250ms;
+  --kai-duration-slow:   400ms;
+}
+
+/* ============================================================================
+   Base primitives — opt-in helpers an agent can compose. Not a full framework;
+   just the on-brand defaults so generated UI starts correct.
+   ============================================================================ */
+
+body {
+  background: var(--kai-surface-bg);
+  color: var(--kai-text-secondary);
+  font-family: var(--kai-font-sans);
+  font-size: var(--kai-text-body);
+  line-height: var(--kai-leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  color: var(--kai-text-primary);
+  font-weight: var(--kai-weight-bold);
+  line-height: var(--kai-leading-tight);
+}
+
+/* The brand gradient as text — for hero headlines / the "Kai" wordmark moment. */
+.kai-gradient-text {
+  background: var(--kai-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Primary CTA — action-oriented label only ("Get Your Secretary", never "Sign Up"). */
+.kai-btn-primary {
+  background: var(--kai-brand-accent);
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-sans);
+  font-weight: var(--kai-weight-semibold);
+  font-size: var(--kai-text-body-sm);
+  padding: var(--kai-space-3) var(--kai-space-5);
+  border: none;
+  border-radius: var(--kai-radius-md);
+  box-shadow: var(--kai-shadow-brand);
+  cursor: pointer;
+  transition: transform var(--kai-duration-fast) var(--kai-ease),
+              box-shadow var(--kai-duration-fast) var(--kai-ease);
+}
+.kai-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--kai-shadow-lg);
+}
+
+/* Secondary CTA — outline on dark. */
+.kai-btn-secondary {
+  background: transparent;
+  color: var(--kai-text-primary);
+  font-weight: var(--kai-weight-medium);
+  padding: var(--kai-space-3) var(--kai-space-5);
+  border: 1px solid var(--kai-border-hover);
+  border-radius: var(--kai-radius-md);
+  cursor: pointer;
+  transition: border-color var(--kai-duration-fast) var(--kai-ease);
+}
+.kai-btn-secondary:hover { border-color: var(--kai-brand-blue); }
+
+/* Card surface. */
+.kai-card {
+  background: var(--kai-surface-card);
+  border: 1px solid var(--kai-border);
+  border-radius: var(--kai-radius-lg);
+  padding: var(--kai-space-6);
+}

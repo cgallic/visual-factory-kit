@@ -1,0 +1,493 @@
+{
+  "brand": "KaiCalls",
+  "asset_root": "brand-packs/kaicalls/assets",
+  "generated_by": "kai_asset_index.py",
+  "assets": [
+    {
+      "asset_id": "kai-pose-the_answer",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/01-the-answer.png",
+      "pose": "the_answer",
+      "emotion": "calm_confidence",
+      "use_cases": [
+        "blog_header",
+        "blog_hero",
+        "linkedin_article_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-the_briefing",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/02-the-briefing.png",
+      "pose": "the_briefing",
+      "emotion": "calm_confidence",
+      "use_cases": [
+        "blog_header",
+        "blog_hero",
+        "linkedin_article_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-the_catch",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/03-the-catch.png",
+      "pose": "the_catch",
+      "emotion": "prepared_response",
+      "use_cases": [
+        "blog_hero",
+        "carousel",
+        "og_card",
+        "social",
+        "youtube_thumbnail"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-the_lean",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/04-the-lean.png",
+      "pose": "the_lean",
+      "emotion": "calm_confidence",
+      "use_cases": [
+        "blog_hero",
+        "explainer",
+        "linkedin_square",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-the_handoff",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/05-the-handoff.png",
+      "pose": "the_handoff",
+      "emotion": "direct_invitation",
+      "use_cases": [
+        "blog_hero",
+        "carousel",
+        "og_card",
+        "social",
+        "youtube_thumbnail"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-the_wave",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/06-the-wave.png",
+      "pose": "the_wave",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-celebration",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/07-celebration.png",
+      "pose": "celebration",
+      "emotion": "quiet_win",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-thinking",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/08-thinking.png",
+      "pose": "thinking",
+      "emotion": "analysis",
+      "use_cases": [
+        "blog_hero",
+        "explainer",
+        "linkedin_square",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-error_oops",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/09-error-oops-v2.png",
+      "pose": "error_oops",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-goodbye",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/10-goodbye.png",
+      "pose": "goodbye",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-hero_confident",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/11-hero-confident.png",
+      "pose": "hero_confident",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-phone_ringing",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/12-phone-ringing-v2.png",
+      "pose": "phone_ringing",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-onboarding_welcome",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/13-onboarding-welcome.png",
+      "pose": "onboarding_welcome",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-onboarding_setup",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/14-onboarding-setup-v2.png",
+      "pose": "onboarding_setup",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-waiting",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/15-waiting-v2.png",
+      "pose": "waiting",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-no_leads_notepad",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/16-no-leads-notepad.png",
+      "pose": "no_leads_notepad",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-first_call_fistpump",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/17-first-call-fistpump.png",
+      "pose": "first_call_fistpump",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-lead_captured_writing",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/18-lead-captured-writing.png",
+      "pose": "lead_captured_writing",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-portrait_headshot",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/19-portrait-headshot.png",
+      "pose": "portrait_headshot",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-at_desk_working",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/20-at-desk-working.png",
+      "pose": "at_desk_working",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-thumbs_up",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/21-thumbs-up-v2.png",
+      "pose": "thumbs_up",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-after_hours",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/22-after-hours.png",
+      "pose": "after_hours",
+      "emotion": "prepared_response",
+      "use_cases": [
+        "blog_header",
+        "blog_hero",
+        "linkedin_article_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-listening",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/23-listening-v2.png",
+      "pose": "listening",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-pointing",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/24-pointing.png",
+      "pose": "pointing",
+      "emotion": "direct_invitation",
+      "use_cases": [
+        "blog_hero",
+        "carousel",
+        "og_card",
+        "social",
+        "youtube_thumbnail"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-og_wide",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/25-og-wide.png",
+      "pose": "og_wide",
+      "emotion": "calm_confidence",
+      "use_cases": [
+        "blog_header",
+        "blog_hero",
+        "linkedin_article_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-icon",
+      "type": "mascot_pose",
+      "path": "brand-packs/kaicalls/assets/26-icon-v2.png",
+      "pose": "icon",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    }
+  ]
+}

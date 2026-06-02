@@ -1,0 +1,58 @@
+{
+  "request_id": "kaicalls-showcase-001",
+  "client": "KaiCalls",
+  "content_id": "after-hours-call-briefing",
+  "content_type": "article",
+  "distribution": ["linkedin", "instagram", "facebook", "x", "pinterest", "google_business_profile"],
+  "formats": [
+    "linkedin_article_hero",
+    "instagram_reel",
+    "facebook_feed_square",
+    "x_post_landscape",
+    "pinterest_pin",
+    "google_business_post"
+  ],
+  "topic": "after-hours calls and owner briefing",
+  "audience": {
+    "persona": "maxed_out_owner",
+    "industry": "local services",
+    "funnel_stage": "problem_aware"
+  },
+  "message": {
+    "headline": "Missed calls do not wait for office hours.",
+    "subhead": "Kai answers, remembers, acts, and briefs after the phone rings.",
+    "proof_label": "64% of calls came after hours",
+    "cta": "Call Kai",
+    "phone_label": "Call Kai",
+    "phone_number": "(417) 386-2898"
+  },
+  "proof": [
+    {
+      "proof_id": "kaicalls-after-hours-showcase",
+      "claim": "64% of calls came after hours",
+      "source_type": "sample_analytics",
+      "source_path": "examples/proof/kaicalls-after-hours.md",
+      "display_as": "stat",
+      "verified_by": "visual-factory-showcase",
+      "verified_at": "2026-06-02",
+      "risk": "low"
+    }
+  ],
+  "visual_direction": {
+    "template_family": "showcase",
+    "mascot_role": "supporting_character",
+    "preferred_pose": "after_hours",
+    "mood": "dark, premium, handled, editorial",
+    "avoid": ["robot", "generic AI imagery", "futuristic stock photo"]
+  },
+  "compliance": {
+    "pii_allowed": false,
+    "ai_disclosure_needed": "none",
+    "claims_verified": true
+  },
+  "output": {
+    "alt_text": "KaiCalls social graphic with Kai holding a retro phone beside a proof label about after-hours calls.",
+    "destination_dir": "examples/kaicalls-outputs",
+    "filename_prefix": "kaicalls-after-hours"
+  }
+}
