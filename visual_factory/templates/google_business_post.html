@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: 48px; --safe-top: 42px; }
+    .canvas::after { inset: 14px; border-radius: 22px; }
+    .brand-mark { font-size: 17px; gap: 9px; }
+    .brand-icon { width: 30px; height: 30px; }
+    .copy { left: 48px; top: 112px; width: 410px; }
+    .headline { max-height: 210px; font-size: 45px; }
+    .subhead { margin-top: 18px; width: 390px; max-height: 76px; font-size: 20px; }
+    .proof-pill { margin-top: 20px; max-width: 410px; min-height: 38px; padding: 8px 13px; font-size: 16px; }
+    .mascot-wrap { right: 36px; bottom: 84px; width: 220px; height: 294px; }
+    .glass-panel { right: 52px; top: 142px; width: 180px; height: 234px; border-radius: 18px; }
+    .phone-cta { right: 46px; bottom: 42px; }
+    .phone-cta .number { font-size: 18px; padding: 8px 12px; }
+    .local-note {
+      position: absolute;
+      left: 48px;
+      bottom: 50px;
+      z-index: 4;
+      color: var(--kai-text-secondary);
+      font-family: var(--kai-font-proof);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <section class="safe-content copy">
+      <div class="kicker">Google Business update</div>
+      <h1 class="headline" data-fit="headline" data-min-font-size="30">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="14">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="13">{{ proof_label }}</div>
+    </section>
+    <div class="local-note" data-fit="local-note" data-min-font-size="11">Phone-first service for local operators</div>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone" data-min-font-size="12"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

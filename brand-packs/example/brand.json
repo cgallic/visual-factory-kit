@@ -1,0 +1,8 @@
+{
+  "name": "ExampleCo",
+  "tokens_css": "tokens.css",
+  "icon": "assets/icon.png",
+  "asset_dir": "assets",
+  "phone_number": "(555) 010-2040",
+  "phone_label": "Call ExampleCo"
+}

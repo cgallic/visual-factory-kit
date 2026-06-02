@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    {% set s = scale_landscape %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: {{ (width * 0.06)|round|int }}px; --safe-top: {{ (height * 0.08)|round|int }}px; }
+    .canvas::after { inset: {{ (18*s)|round|int }}px; border-radius: {{ (26*s)|round|int }}px; }
+    .brand-mark { font-size: {{ (19*s)|round|int }}px; gap: {{ (10*s)|round|int }}px; }
+    .brand-icon { width: {{ (34*s)|round|int }}px; height: {{ (34*s)|round|int }}px; }
+    .copy { left: {{ (width * 0.065)|round|int }}px; top: {{ (height * 0.22)|round|int }}px; width: {{ (width * 0.56)|round|int }}px; }
+    .headline { max-height: {{ (height * 0.40)|round|int }}px; font-size: {{ (74*s)|round|int }}px; }
+    .subhead { margin-top: {{ (22*s)|round|int }}px; width: {{ (width * 0.46)|round|int }}px; max-height: {{ (height * 0.13)|round|int }}px; font-size: {{ (28*s)|round|int }}px; }
+    .proof-pill { margin-top: {{ (24*s)|round|int }}px; max-width: {{ (width * 0.52)|round|int }}px; font-size: {{ (25*s)|round|int }}px; }
+    .mascot-wrap { right: {{ (width * 0.045)|round|int }}px; bottom: {{ (height * 0.05)|round|int }}px; width: {{ (height * 0.62)|round|int }}px; height: {{ (height * 0.78)|round|int }}px; }
+    .glass-panel { right: {{ (width * 0.09)|round|int }}px; top: {{ (height * 0.17)|round|int }}px; width: {{ (height * 0.46)|round|int }}px; height: {{ (height * 0.58)|round|int }}px; }
+    .phone-cta { right: {{ (width * 0.055)|round|int }}px; bottom: {{ (height * 0.08)|round|int }}px; }
+    .phone-cta .label { font-size: {{ (14*s)|round|int }}px; }
+    .phone-cta .number { font-size: {{ (30*s)|round|int }}px; }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <section class="safe-content copy">
+      <div class="kicker">Phone service proof</div>
+      <h1 class="headline" data-fit="headline" data-min-font-size="{{ (42*s)|round|int }}">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="{{ (17*s)|round|int }}">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label }}</div>
+    </section>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone" data-min-font-size="{{ (12*s)|round|int }}"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

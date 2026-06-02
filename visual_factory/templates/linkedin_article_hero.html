@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: 76px; --safe-top: 58px; }
+    .stripe { left: 76px; top: 144px; height: 314px; }
+    .copy { left: 112px; top: 138px; width: 650px; }
+    .headline { max-height: 248px; font-size: 67px; }
+    .subhead { margin-top: 22px; width: 520px; max-height: 72px; font-size: 26px; }
+    .proof-pill { margin-top: 26px; max-width: 610px; font-size: 24px; }
+    .mascot-wrap { right: 34px; bottom: 8px; width: 400px; height: 528px; }
+    .glass-panel { right: 102px; top: 108px; width: 300px; height: 378px; }
+    .phone-cta { right: 70px; bottom: 50px; }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <div class="stripe"></div>
+    <section class="safe-content copy">
+      <div class="kicker">Field note</div>
+      <h1 class="headline" data-fit="headline" data-min-font-size="44">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="18">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="13">{{ proof_label }}</div>
+    </section>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

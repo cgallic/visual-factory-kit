@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: 72px; --safe-top: 74px; }
+    .brand-mark { font-size: 21px; }
+    .slide-num { position: absolute; right: 76px; top: 74px; color: var(--kai-text-muted); font-family: var(--kai-font-mono); font-size: 16px; font-weight: 700; z-index: 4; }
+    .copy { left: 78px; top: 190px; width: 840px; }
+    .headline { max-height: 390px; font-size: 88px; }
+    .subhead { margin-top: 32px; width: 720px; max-height: 118px; font-size: 34px; }
+    .proof-pill { margin-top: 38px; max-width: 760px; font-size: 24px; }
+    .mascot-wrap { right: 46px; bottom: 78px; width: 360px; height: 480px; }
+    .glass-panel { right: 98px; bottom: 176px; width: 280px; height: 360px; }
+    .phone-cta { left: 78px; bottom: 78px; align-items: flex-start; }
+    .phone-cta .number { font-size: 24px; }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <div class="slide-num">01 / 06</div>
+    <section class="safe-content copy">
+      <div class="kicker">One thing to fix</div>
+      <h1 class="headline" data-fit="headline" data-min-font-size="48">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="20">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="13">{{ proof_label }}</div>
+    </section>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

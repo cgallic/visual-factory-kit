@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--kai-surface-bg);
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-sans);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+:root {
+  --kai-font-display: "Kai Display", "Libre Franklin", Arial, sans-serif;
+  --kai-font-body: "Kai Body", "Atkinson Hyperlegible", Arial, sans-serif;
+  --kai-font-proof: "Kai Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --kai-font-sans: var(--kai-font-body);
+  --kai-font-mono: var(--kai-font-proof);
+}
+
+body {
+  font-family: var(--kai-font-body);
+}
+
+.canvas {
+  position: relative;
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(92, 140, 255, 0.13), transparent 34%),
+    radial-gradient(circle at 88% 20%, rgba(198, 139, 248, 0.20), transparent 30%),
+    radial-gradient(circle at 22% 88%, rgba(52, 211, 153, 0.09), transparent 26%),
+    var(--kai-gradient-bg-dark);
+  isolation: isolate;
+}
+
+.canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  background-image:
+    linear-gradient(rgba(247, 247, 250, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 247, 250, 0.03) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, black 0%, transparent 80%);
+  z-index: 0;
+}
+
+.canvas::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(167, 169, 190, 0.14);
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.brand-mark {
+  position: absolute;
+  left: var(--safe-left);
+  top: var(--safe-top);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-body);
+  font-size: 18px;
+  font-weight: var(--kai-weight-semibold);
+  letter-spacing: 0;
+  z-index: 4;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.42));
+}
+
+.stripe {
+  position: absolute;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--kai-gradient-vertical);
+  z-index: 3;
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(92, 140, 255, 0.8), rgba(198, 139, 248, 0.2), transparent);
+}
+
+.headline {
+  margin: 0;
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-display);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.subhead {
+  margin: 0;
+  color: var(--kai-text-secondary);
+  font-family: var(--kai-font-body);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: 0;
+}
+
+.proof-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 10px 16px;
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-proof);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  background: rgba(24, 27, 35, 0.84);
+  border: 1px solid rgba(92, 140, 255, 0.38);
+  border-radius: 999px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
+}
+
+.proof-pill::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--kai-success);
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.55);
+}
+
+.source-label {
+  color: var(--kai-text-muted);
+  font-family: var(--kai-font-proof);
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-body);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cta::after {
+  content: "";
+  width: 44px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--kai-gradient-horizontal);
+}
+
+.phone-cta {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-body);
+  line-height: 1;
+}
+
+.phone-cta .label {
+  color: var(--kai-text-secondary);
+  font-family: var(--kai-font-proof);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.phone-cta .number {
+  color: var(--kai-text-primary);
+  font-family: var(--kai-font-proof);
+  font-size: 28px;
+  font-weight: 700;
+  padding: 10px 14px;
+  border: 1px solid rgba(92, 140, 255, 0.40);
+  border-radius: 999px;
+  background: rgba(18, 18, 26, 0.72);
+}
+
+.mascot-wrap {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mascot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 45px rgba(0, 0, 0, 0.46));
+}
+
+.glass-panel {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(35, 38, 59, 0.90), rgba(18, 18, 26, 0.72));
+  border: 1px solid rgba(167, 169, 190, 0.14);
+  border-radius: 24px;
+  box-shadow: var(--kai-shadow-lg);
+  backdrop-filter: blur(16px);
+  z-index: 1;
+}
+
+.mini-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mini-step {
+  padding: 13px 12px;
+  color: var(--kai-text-secondary);
+  font-family: var(--kai-font-body);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid rgba(92, 140, 255, 0.22);
+  border-radius: 14px;
+  background: rgba(18, 18, 26, 0.72);
+}
+
+.mini-step strong {
+  display: block;
+  color: var(--kai-text-primary);
+  font-size: 15px;
+}
+
+.kicker {
+  color: var(--kai-brand-blue);
+  font-family: var(--kai-font-proof);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.safe-content {
+  position: absolute;
+  z-index: 4;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: 70px; --safe-top: 56px; }
+    .brand-mark { top: 54px; }
+    .copy { left: 76px; top: 142px; width: 700px; }
+    .headline { max-height: 284px; font-size: 82px; }
+    .subhead { margin-top: 24px; width: 560px; max-height: 72px; font-size: 28px; }
+    .proof-pill { margin-top: 30px; max-width: 650px; font-size: 26px; }
+    .mascot-wrap { right: 34px; bottom: -2px; width: 450px; height: 594px; }
+    .glass-panel { right: 122px; top: 104px; width: 320px; height: 432px; }
+    .hook-tag { position: absolute; right: 72px; top: 56px; color: var(--kai-success); font-family: var(--kai-font-mono); font-size: 16px; font-weight: 700; z-index: 4; }
+    .phone-cta { right: 62px; bottom: 52px; }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <div class="hook-tag">NO MISSED CONTEXT</div>
+    <section class="safe-content copy">
+      <h1 class="headline" data-fit="headline" data-min-font-size="48">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="18">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="13">{{ proof_label }}</div>
+    </section>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: 72px; --safe-top: 58px; }
+    .brand-mark { font-size: 20px; }
+    .copy { left: 78px; top: 146px; width: 690px; }
+    .headline { max-height: 286px; font-size: 76px; }
+    .subhead { margin-top: 24px; width: 600px; max-height: 96px; font-size: 29px; }
+    .proof-pill { margin-top: 28px; max-width: 690px; font-size: 24px; }
+    .mascot-wrap { right: 62px; bottom: 84px; width: 364px; height: 486px; }
+    .glass-panel { right: 118px; top: 138px; width: 292px; height: 414px; }
+    .phone-cta { right: 76px; bottom: 72px; }
+    .phone-cta .number { font-size: 28px; }
+    .local-note {
+      position: absolute;
+      left: 78px;
+      bottom: 76px;
+      z-index: 4;
+      color: var(--kai-text-secondary);
+      font-family: var(--kai-font-proof);
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <section class="safe-content copy">
+      <div class="kicker">Google Business update</div>
+      <h1 class="headline" data-fit="headline" data-min-font-size="42">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="18">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="13">{{ proof_label }}</div>
+    </section>
+    <div class="local-note" data-fit="local-note" data-min-font-size="11">Phone-first service for local operators</div>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone" data-min-font-size="12"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

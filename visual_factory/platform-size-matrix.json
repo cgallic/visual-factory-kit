@@ -1,0 +1,398 @@
+{
+  "linkedin_article_hero": {
+    "network": "LinkedIn",
+    "use": "Article hero / landscape share image",
+    "width": 1200,
+    "height": 627,
+    "aspect_ratio": "1.91:1",
+    "template_file": "linkedin_article_hero",
+    "notes": "Landscape LinkedIn article and single-image creative baseline."
+  },
+  "linkedin_ad_landscape": {
+    "network": "LinkedIn",
+    "use": "Single image ad landscape",
+    "width": 1200,
+    "height": 628,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "LinkedIn single image ad landscape recommendation."
+  },
+  "linkedin_feed_square": {
+    "network": "LinkedIn",
+    "use": "Feed image / square creative",
+    "width": 1200,
+    "height": 1200,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Mobile-safe LinkedIn feed image."
+  },
+  "linkedin_square": {
+    "network": "LinkedIn",
+    "use": "Legacy alias: feed image / square creative",
+    "width": 1200,
+    "height": 1200,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Backward-compatible alias for older visual requests."
+  },
+  "linkedin_carousel_slide": {
+    "network": "LinkedIn",
+    "use": "Portrait carousel slide",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "Primary LinkedIn carousel slide."
+  },
+  "carousel_slide": {
+    "network": "LinkedIn / Instagram",
+    "use": "Legacy alias: portrait carousel slide",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "Backward-compatible alias for older visual requests."
+  },
+  "facebook_feed_square": {
+    "network": "Facebook",
+    "use": "Feed post square",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Square feed creative for Facebook."
+  },
+  "facebook_feed_landscape": {
+    "network": "Facebook",
+    "use": "Feed post landscape",
+    "width": 1200,
+    "height": 630,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "Landscape Facebook feed/share image."
+  },
+  "facebook_ad_landscape": {
+    "network": "Facebook / Meta Ads",
+    "use": "Ad landscape",
+    "width": 1200,
+    "height": 628,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "Meta landscape ad creative family."
+  },
+  "facebook_story": {
+    "network": "Facebook",
+    "use": "Story",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "Story-safe vertical creative."
+  },
+  "facebook_reel": {
+    "network": "Facebook",
+    "use": "Reel cover / vertical creative",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "Facebook Reels vertical creative."
+  },
+  "facebook_cover": {
+    "network": "Facebook",
+    "use": "Page cover source",
+    "width": 1640,
+    "height": 924,
+    "aspect_ratio": "16:9",
+    "template_file": "cover_banner",
+    "notes": "High-resolution Facebook cover source with centered safe content."
+  },
+  "instagram_feed_square": {
+    "network": "Instagram",
+    "use": "Feed square",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Instagram square feed image."
+  },
+  "instagram_feed_portrait": {
+    "network": "Instagram",
+    "use": "Feed portrait",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "Instagram portrait feed image."
+  },
+  "instagram_feed_landscape": {
+    "network": "Instagram",
+    "use": "Feed landscape",
+    "width": 1080,
+    "height": 566,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "Instagram landscape feed image."
+  },
+  "instagram_story": {
+    "network": "Instagram",
+    "use": "Story",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "Instagram story creative."
+  },
+  "instagram_reel": {
+    "network": "Instagram",
+    "use": "Reel cover / vertical creative",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "Instagram Reels vertical creative."
+  },
+  "instagram_carousel_square": {
+    "network": "Instagram",
+    "use": "Carousel square slide",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Instagram square carousel slide."
+  },
+  "instagram_carousel_portrait": {
+    "network": "Instagram",
+    "use": "Carousel portrait slide",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "Instagram portrait carousel slide."
+  },
+  "meta_ad_square": {
+    "network": "Meta Ads",
+    "use": "Square ad",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Reusable Meta square ad creative."
+  },
+  "meta_ad_portrait": {
+    "network": "Meta Ads",
+    "use": "Portrait ad",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "Reusable Meta portrait ad creative."
+  },
+  "meta_ad_story_reel": {
+    "network": "Meta Ads",
+    "use": "Story/Reel ad",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "Meta Stories/Reels ad creative with safe zones."
+  },
+  "meta_ad_landscape": {
+    "network": "Meta Ads",
+    "use": "Landscape ad",
+    "width": 1200,
+    "height": 628,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "Reusable Meta landscape ad creative."
+  },
+  "x_post_landscape": {
+    "network": "X",
+    "use": "Post image landscape",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "social_landscape",
+    "notes": "X post image landscape source."
+  },
+  "x_post_square": {
+    "network": "X",
+    "use": "Post image square",
+    "width": 1200,
+    "height": 1200,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "X square post image."
+  },
+  "x_ad_landscape": {
+    "network": "X Ads",
+    "use": "Ad image landscape",
+    "width": 1200,
+    "height": 628,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "X landscape ad/source card creative."
+  },
+  "x_ad_square": {
+    "network": "X Ads",
+    "use": "Ad image square",
+    "width": 1200,
+    "height": 1200,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "X square ad/source creative."
+  },
+  "x_ad_portrait": {
+    "network": "X Ads",
+    "use": "Ad image portrait",
+    "width": 1440,
+    "height": 1800,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "X portrait ad/source creative."
+  },
+  "x_header": {
+    "network": "X",
+    "use": "Profile header",
+    "width": 1500,
+    "height": 500,
+    "aspect_ratio": "3:1",
+    "template_file": "profile_header",
+    "notes": "X profile header source."
+  },
+  "threads_square": {
+    "network": "Threads",
+    "use": "Feed square",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Threads square feed image."
+  },
+  "threads_portrait": {
+    "network": "Threads",
+    "use": "Feed portrait",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "portrait_social",
+    "notes": "Threads portrait feed image."
+  },
+  "tiktok_feed": {
+    "network": "TikTok",
+    "use": "Vertical post/ad creative",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "TikTok vertical creative."
+  },
+  "youtube_thumbnail": {
+    "network": "YouTube",
+    "use": "Video thumbnail",
+    "width": 1280,
+    "height": 720,
+    "aspect_ratio": "16:9",
+    "template_file": "youtube_thumbnail",
+    "notes": "Compact 16:9 thumbnail export."
+  },
+  "youtube_thumbnail_master": {
+    "network": "YouTube",
+    "use": "Video thumbnail master",
+    "width": 3840,
+    "height": 2160,
+    "aspect_ratio": "16:9",
+    "template_file": "youtube_thumbnail_master",
+    "notes": "Current YouTube Help guidance recommends thumbnails as large as possible, with 3840x2160 listed and minimum width 640."
+  },
+  "youtube_shorts_cover": {
+    "network": "YouTube Shorts",
+    "use": "Shorts cover / vertical creative",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "template_file": "vertical_story",
+    "notes": "YouTube Shorts vertical cover/source creative."
+  },
+  "pinterest_pin": {
+    "network": "Pinterest",
+    "use": "Standard pin",
+    "width": 1000,
+    "height": 1500,
+    "aspect_ratio": "2:3",
+    "template_file": "pinterest_pin",
+    "notes": "Pinterest Business recommends 2:3 or 1000x1500 for standard image pins."
+  },
+  "pinterest_square_pin": {
+    "network": "Pinterest",
+    "use": "Square pin",
+    "width": 1000,
+    "height": 1000,
+    "aspect_ratio": "1:1",
+    "template_file": "pinterest_board_cover",
+    "notes": "Square pin/board source."
+  },
+  "pinterest_board_cover": {
+    "network": "Pinterest",
+    "use": "Board cover",
+    "width": 1000,
+    "height": 1000,
+    "aspect_ratio": "1:1",
+    "template_file": "pinterest_board_cover",
+    "notes": "Square board-cover source for clean center cropping across board displays."
+  },
+  "google_business_post": {
+    "network": "Google Business Profile",
+    "use": "Square update image",
+    "width": 720,
+    "height": 720,
+    "aspect_ratio": "1:1",
+    "template_file": "google_business_post",
+    "notes": "Google Business Profile photo guidance recommends 720x720. Use this as the safe default for GBP posts."
+  },
+  "google_business_post_wide": {
+    "network": "Google Business Profile",
+    "use": "Wide update image",
+    "width": 1200,
+    "height": 900,
+    "aspect_ratio": "4:3",
+    "template_file": "google_business_post_wide",
+    "notes": "Optional 4:3 variant for post tools that preview GBP updates wider."
+  },
+  "google_display_ad_landscape": {
+    "network": "Google Ads",
+    "use": "Responsive display landscape asset",
+    "width": 1200,
+    "height": 628,
+    "aspect_ratio": "1.91:1",
+    "template_file": "social_landscape",
+    "notes": "Landscape asset for responsive display/ad workflows."
+  },
+  "google_display_ad_square": {
+    "network": "Google Ads",
+    "use": "Responsive display square asset",
+    "width": 1200,
+    "height": 1200,
+    "aspect_ratio": "1:1",
+    "template_file": "social_square",
+    "notes": "Square asset for responsive display/ad workflows."
+  },
+  "blog_header": {
+    "network": "Website",
+    "use": "Blog header",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "blog_header",
+    "notes": "Wide editorial blog header."
+  },
+  "og_card": {
+    "network": "Open Graph",
+    "use": "Universal share card",
+    "width": 1200,
+    "height": 630,
+    "aspect_ratio": "1.91:1",
+    "template_file": "og_card",
+    "notes": "Website, Slack, Discord, X, and social unfurls."
+  }
+}

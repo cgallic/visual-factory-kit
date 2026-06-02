@@ -1,0 +1,43 @@
+{
+  "brand": "ExampleCo",
+  "asset_root": "brand-packs/example/assets",
+  "generated_by": "kai_asset_index.py",
+  "assets": [
+    {
+      "asset_id": "kai-pose-icon",
+      "type": "mascot_pose",
+      "path": "brand-packs/example/assets/icon.png",
+      "pose": "icon",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    },
+    {
+      "asset_id": "kai-pose-mascot",
+      "type": "mascot_pose",
+      "path": "brand-packs/example/assets/mascot.png",
+      "pose": "mascot",
+      "emotion": "steady",
+      "use_cases": [
+        "blog_hero",
+        "og_card",
+        "social"
+      ],
+      "dimensions": {
+        "width": 900,
+        "height": 1200
+      },
+      "approved": true,
+      "source_notes": "Approved transparent brand visual asset"
+    }
+  ]
+}

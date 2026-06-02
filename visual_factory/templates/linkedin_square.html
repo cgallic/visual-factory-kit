@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; --safe-left: 78px; --safe-top: 74px; }
+    .brand-mark { font-size: 22px; }
+    .copy { left: 82px; top: 164px; width: 790px; }
+    .headline { max-height: 330px; font-size: 82px; }
+    .subhead { margin-top: 28px; width: 650px; max-height: 94px; font-size: 31px; }
+    .proof-pill { margin-top: 34px; max-width: 710px; font-size: 24px; }
+    .mascot-wrap { right: 42px; bottom: 42px; width: 360px; height: 480px; }
+    .glass-panel { right: 94px; bottom: 120px; width: 280px; height: 360px; }
+    .flow-wrap { position: absolute; left: 82px; bottom: 150px; width: 600px; z-index: 4; }
+    .phone-cta { right: 62px; bottom: 66px; }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand-mark"><img class="brand-icon" src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <section class="safe-content copy">
+      <div class="kicker">Operator note</div>
+      <h1 class="headline" data-fit="headline" data-min-font-size="48">{{ headline }}</h1>
+      <p class="subhead" data-fit="subhead" data-min-font-size="19">{{ subhead }}</p>
+      <div class="proof-pill" data-fit="proof" data-min-font-size="13">{{ proof_label }}</div>
+    </section>
+    <div class="flow-wrap mini-flow" aria-hidden="true">
+      <div class="mini-step"><strong>Answer</strong></div>
+      <div class="mini-step"><strong>Remember</strong></div>
+      <div class="mini-step"><strong>Act</strong></div>
+      <div class="mini-step"><strong>Brief</strong></div>
+    </div>
+    <div class="glass-panel"></div>
+    <div class="mascot-wrap"><img class="mascot" src="{{ mascot_uri }}" alt=""></div>
+    <div class="phone-cta" data-fit="phone"><span class="label">{{ cta }}</span><span class="number">{{ phone_number }}</span></div>
+  </main>
+</body>
+</html>
+

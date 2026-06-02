@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://visual-factory.local/schemas/provenance.schema.json",
+  "title": "Visual Factory Provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "asset_id",
+    "request_id",
+    "rendered_at",
+    "renderer",
+    "template",
+    "dimensions",
+    "ingredients",
+    "ai_assistance",
+    "approvals"
+  ],
+  "properties": {
+    "asset_id": { "type": "string" },
+    "request_id": { "type": "string" },
+    "content_id": { "type": "string" },
+    "rendered_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "renderer": { "type": "string" },
+    "template": { "type": "string" },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "alt_text": { "type": "string" },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["kind"],
+        "properties": {
+          "kind": { "type": "string" },
+          "path": { "type": "string" },
+          "source": { "type": "string" },
+          "claim": { "type": "string" },
+          "source_path": { "type": "string" }
+        }
+      }
+    },
+    "ai_assistance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["copy_assisted", "image_generated_new_for_this_asset", "notes"],
+      "properties": {
+        "copy_assisted": { "type": "boolean" },
+        "image_generated_new_for_this_asset": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brand", "claims"],
+      "properties": {
+        "brand": { "type": "string" },
+        "claims": { "type": "string" }
+      }
+    }
+  }
+}

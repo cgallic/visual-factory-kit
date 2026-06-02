@@ -1,0 +1,49 @@
+{
+  "request_id": "visual-factory-example-001",
+  "client": "ExampleCo",
+  "content_id": "after-hours-service-brief",
+  "content_type": "article",
+  "distribution": ["linkedin", "instagram", "facebook", "x", "pinterest", "google_business_profile"],
+  "formats": [
+    "linkedin_article_hero",
+    "instagram_reel",
+    "facebook_feed_square",
+    "x_post_landscape",
+    "pinterest_pin",
+    "google_business_post"
+  ],
+  "topic": "after-hours customer calls",
+  "message": {
+    "headline": "Customers still call after closing time.",
+    "subhead": "Route, remember, and brief every important call without rebuilding your workflow.",
+    "proof_label": "41% of inquiries arrived after hours",
+    "cta": "Call ExampleCo",
+    "phone_number": "(555) 010-2040",
+    "phone_label": "Call ExampleCo"
+  },
+  "proof": [
+    {
+      "proof_id": "after-hours-inquiries",
+      "claim": "41% of inquiries arrived after hours",
+      "source_type": "manual",
+      "source_path": "examples/proof/after-hours-inquiries.md",
+      "display_as": "stat",
+      "verified_by": "example",
+      "risk": "low"
+    }
+  ],
+  "visual_direction": {
+    "preferred_pose": "mascot",
+    "mood": "dark editorial premium",
+    "avoid": ["generic AI imagery"]
+  },
+  "compliance": {
+    "pii_allowed": false,
+    "claims_verified": true
+  },
+  "output": {
+    "alt_text": "ExampleCo social graphic about customers calling after closing time.",
+    "destination_dir": "examples/outputs",
+    "filename_prefix": "example-after-hours"
+  }
+}

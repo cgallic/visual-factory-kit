@@ -1,0 +1,13 @@
+:root {
+  --kai-surface-bg: #090b12;
+  --kai-text-primary: #f7f7fb;
+  --kai-text-secondary: #b9bed1;
+  --kai-text-muted: #7e879f;
+  --kai-blue: #5c8cff;
+  --kai-violet: #c68bf8;
+  --kai-green: #34d399;
+  --kai-border-soft: rgba(167, 169, 190, 0.18);
+  --kai-gradient-bg-dark: linear-gradient(145deg, #0a0d16 0%, #111827 48%, #1e182f 100%);
+  --kai-gradient-vertical: linear-gradient(180deg, #5c8cff, #34d399);
+  --kai-weight-semibold: 700;
+}
