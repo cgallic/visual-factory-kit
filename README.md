@@ -128,6 +128,7 @@ The repo includes:
 
 - `brand-packs/kaicalls` as the real showcase brand pack.
 - `brand-packs/example` as a tiny neutral starter pack.
+- `brand-packs/fictional-lightcard` and `brand-packs/fictional-darkcard` as fully fictional two-brand examples, showing the same token family (`--firm-*`) producing a light-card and a dark-card layout from one template.
 
 Create your own brand pack by copying either pack, replacing the transparent PNG assets, and editing `brand.json` and `tokens.css`.
 

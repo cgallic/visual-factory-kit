@@ -1,0 +1,21 @@
+{
+  "name": "Merrow & Pike (fictional)",
+  "tokens_css": "tokens.css",
+  "icon": "assets/icon.png",
+  "asset_dir": "assets",
+  "podcast_name": "The Merrow & Pike Podcast (fictional)",
+  "listen_cta": "Listen on Spotify & Apple Podcasts",
+  "website": "https://example-lawfirm-darkcard.invalid",
+  "roster": [
+    {
+      "slug": "iris-merrow",
+      "name": "Iris Merrow (fictional)",
+      "role": "Founding Partner"
+    },
+    {
+      "slug": "cole-pike",
+      "name": "Cole Pike (fictional)",
+      "role": "Attorney"
+    }
+  ]
+}

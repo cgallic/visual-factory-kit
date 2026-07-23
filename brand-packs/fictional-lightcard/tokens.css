@@ -1,0 +1,42 @@
+/* ============================================================================
+   Hartwell & Voss (fictional) — Visual Factory brand tokens
+   ----------------------------------------------------------------------------
+   Fictional light-card example for the --firm-* law-firm template family.
+   Palette: Primary #17325c (deep blue) · Secondary #c98a1e (gold) · white bg.
+   ============================================================================ */
+
+:root {
+  /* ---- Law-firm template ramp (--firm-*) --------------------------------- */
+  --firm-surface:          #ffffff;  /* light card */
+  --firm-surface-2:        #f1f2f4;  /* gradient end / raised */
+  --firm-on-surface:       #17325c;  /* deep blue text on white */
+  --firm-on-surface-muted: rgba(23,50,92,0.62);
+  --firm-on-surface-faint: rgba(23,50,92,0.34);
+  --firm-accent:           #c98a1e;  /* fictional brand gold */
+  --firm-accent-2:         #a06e14;
+  --firm-accent-on:        #17325c;  /* deep blue text on gold fill */
+  --firm-hairline:         rgba(23,50,92,0.12);
+  --firm-glow:             rgba(201,138,30,0.22);
+  --firm-logo-filter:      none;
+  --firm-font-display:     "Libre Franklin", Arial, sans-serif;
+  --firm-font-body:        "Atkinson Hyperlegible", Arial, sans-serif;
+  --firm-radius:           28px;
+
+  /* ---- Generic token remap (matches the shared template family) --------- */
+  --kai-surface-bg:        #ffffff;
+  --kai-surface-card:      #f1f2f4;
+  --kai-text-primary:      #17325c;
+  --kai-text-secondary:    rgba(23,50,92,0.62);
+  --kai-text-muted:        rgba(23,50,92,0.34);
+  --kai-brand-blue:        #c98a1e;
+  --kai-brand-purple:      #a06e14;
+  --kai-brand-accent:      #c98a1e;
+  --kai-success:           #c98a1e;
+  --kai-gradient:            linear-gradient(135deg, #c98a1e 0%, #a06e14 100%);
+  --kai-gradient-horizontal: linear-gradient(90deg,  #c98a1e 0%, #a06e14 100%);
+  --kai-gradient-vertical:   linear-gradient(180deg, #c98a1e 0%, #a06e14 100%);
+  --kai-gradient-bg-dark:    linear-gradient(180deg, #f1f2f4 0%, #ffffff 100%);
+  --kai-font-sans:         var(--firm-font-body);
+  --kai-weight-bold:       700;
+  --kai-weight-semibold:   600;
+}

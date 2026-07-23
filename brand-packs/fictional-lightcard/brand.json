@@ -1,0 +1,21 @@
+{
+  "name": "Hartwell & Voss (fictional)",
+  "tokens_css": "tokens.css",
+  "icon": "assets/icon.png",
+  "asset_dir": "assets",
+  "podcast_name": "The Hartwell & Voss Podcast (fictional)",
+  "listen_cta": "Listen on Spotify & Apple Podcasts",
+  "website": "https://example-lawfirm-lightcard.invalid",
+  "roster": [
+    {
+      "slug": "dana-hartwell",
+      "name": "Dana Hartwell (fictional)",
+      "role": "Founding Attorney"
+    },
+    {
+      "slug": "sam-voss",
+      "name": "Sam Voss (fictional)",
+      "role": "Attorney"
+    }
+  ]
+}

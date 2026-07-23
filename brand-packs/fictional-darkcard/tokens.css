@@ -1,0 +1,42 @@
+/* ============================================================================
+   Merrow & Pike (fictional) — Visual Factory brand tokens
+   ----------------------------------------------------------------------------
+   Fictional dark-card example for the --firm-* law-firm template family.
+   Palette: Primary #0f0f0f (near-black) · Secondary #2f7a5c (green) · white text.
+   ============================================================================ */
+
+:root {
+  /* ---- Law-firm template ramp (--firm-*) --------------------------------- */
+  --firm-surface:          #0f0f0f;  /* card background */
+  --firm-surface-2:        #1c1c1c;  /* gradient end / raised */
+  --firm-on-surface:       #ffffff;  /* primary text on surface */
+  --firm-on-surface-muted: rgba(255,255,255,0.66);
+  --firm-on-surface-faint: rgba(255,255,255,0.40);
+  --firm-accent:           #2f7a5c;  /* fictional brand green */
+  --firm-accent-2:         #23604a;
+  --firm-accent-on:        #ffffff;  /* text on accent fill */
+  --firm-hairline:         rgba(255,255,255,0.14);
+  --firm-glow:             rgba(47,122,92,0.30);
+  --firm-logo-filter:      none;
+  --firm-font-display:     "Libre Franklin", Arial, sans-serif;
+  --firm-font-body:        "Atkinson Hyperlegible", Arial, sans-serif;
+  --firm-radius:           28px;
+
+  /* ---- Generic token remap (matches the shared template family) --------- */
+  --kai-surface-bg:        #0f0f0f;
+  --kai-surface-card:      #1c1c1c;
+  --kai-text-primary:      #ffffff;
+  --kai-text-secondary:    rgba(255,255,255,0.66);
+  --kai-text-muted:        rgba(255,255,255,0.40);
+  --kai-brand-blue:        #2f7a5c;
+  --kai-brand-purple:      #23604a;
+  --kai-brand-accent:      #2f7a5c;
+  --kai-success:           #2f7a5c;
+  --kai-gradient:            linear-gradient(135deg, #2f7a5c 0%, #1a4636 100%);
+  --kai-gradient-horizontal: linear-gradient(90deg,  #2f7a5c 0%, #1a4636 100%);
+  --kai-gradient-vertical:   linear-gradient(180deg, #2f7a5c 0%, #1a4636 100%);
+  --kai-gradient-bg-dark:    linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
+  --kai-font-sans:         var(--firm-font-body);
+  --kai-weight-bold:       700;
+  --kai-weight-semibold:   600;
+}
