@@ -193,7 +193,7 @@ Use the images only when the QA report says:
     "subhead": "Kai answers, remembers, acts, and briefs after the phone rings.",
     "proof_label": "64% of calls came after hours",
     "cta": "Call Kai",
-    "phone_number": "(555) 014-8825"
+    "phone_number": "(417) 386-2898"
   },
   "output": {
     "alt_text": "KaiCalls social graphic with Kai holding a retro phone beside a proof label about after-hours calls.",

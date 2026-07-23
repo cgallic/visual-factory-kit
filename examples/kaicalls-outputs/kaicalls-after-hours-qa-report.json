@@ -1,7 +1,7 @@
 {
   "request_id": "kaicalls-showcase-001",
   "content_id": "after-hours-call-briefing",
-  "rendered_at": "2026-07-23T13:09:53+00:00",
+  "rendered_at": "2026-06-02T21:35:26+00:00",
   "renderer": "visual_factory_renderer@0.1.0",
   "assets": [
     {
@@ -90,7 +90,7 @@
         },
         {
           "label": "phone",
-          "text": "Call Kai(555) 014-8825",
+          "text": "Call Kai(417) 386-2898",
           "fontSize": 28.02146226415094,
           "finalFontSize": 28.02146226415094,
           "width": 265.203125,
@@ -183,7 +183,7 @@
         },
         {
           "label": "phone",
-          "text": "Call Kai(555) 014-8825",
+          "text": "Call Kai(417) 386-2898",
           "fontSize": 28.02146226415094,
           "finalFontSize": 28.02146226415094,
           "width": 265.203125,
@@ -276,7 +276,7 @@
         },
         {
           "label": "phone",
-          "text": "Call Kai(555) 014-8825",
+          "text": "Call Kai(417) 386-2898",
           "fontSize": 28.02146226415094,
           "finalFontSize": 28.02146226415094,
           "width": 265.203125,
@@ -369,7 +369,7 @@
         },
         {
           "label": "phone",
-          "text": "Call Kai(555) 014-8825",
+          "text": "Call Kai(417) 386-2898",
           "fontSize": 40,
           "finalFontSize": 40,
           "width": 366,
@@ -470,7 +470,7 @@
         },
         {
           "label": "phone",
-          "text": "Call Kai(555) 014-8825",
+          "text": "Call Kai(417) 386-2898",
           "fontSize": 23.959590517241377,
           "finalFontSize": 23.959590517241377,
           "width": 231.609375,
@@ -578,7 +578,7 @@
         },
         {
           "label": "phone",
-          "text": "Call Kai(555) 014-8825",
+          "text": "Call Kai(417) 386-2898",
           "fontSize": 18.020656779661017,
           "finalFontSize": 18.020656779661017,
           "width": 177.203125,
