@@ -316,3 +316,8 @@ MIT for the code in this repository. The KaiCalls brand pack and example images 
 ```text
 visual_factory/fonts/NOTICE.md
 ```
+
+
+---
+
+*Built and maintained by [Connor Gallic](https://pr.linkedin.com/in/cgallic) — connect on LinkedIn.*
