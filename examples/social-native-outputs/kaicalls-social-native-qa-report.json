@@ -1,0 +1,884 @@
+{
+  "request_id": "social-native-template-demo-001",
+  "content_id": "social-native-demo",
+  "rendered_at": "2026-08-19T21:36:39+00:00",
+  "renderer": "visual_factory_renderer@0.1.0",
+  "assets": [
+    {
+      "template": "apple_notes_portrait",
+      "png": "examples/social-native-outputs/kaicalls-social-native-apple_notes_portrait.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-apple_notes_portrait.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "message_thread_square",
+      "png": "examples/social-native-outputs/kaicalls-social-native-message_thread_square.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-message_thread_square.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "tweet_card_square",
+      "png": "examples/social-native-outputs/kaicalls-social-native-tweet_card_square.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-tweet_card_square.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "search_autocomplete_portrait",
+      "png": "examples/social-native-outputs/kaicalls-social-native-search_autocomplete_portrait.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-search_autocomplete_portrait.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "receipt_audit_portrait",
+      "png": "examples/social-native-outputs/kaicalls-social-native-receipt_audit_portrait.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-receipt_audit_portrait.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "notion_checklist_portrait",
+      "png": "examples/social-native-outputs/kaicalls-social-native-notion_checklist_portrait.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-notion_checklist_portrait.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "whiteboard_diagram_landscape",
+      "png": "examples/social-native-outputs/kaicalls-social-native-whiteboard_diagram_landscape.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-whiteboard_diagram_landscape.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "metrics_scorecard_square",
+      "png": "examples/social-native-outputs/kaicalls-social-native-metrics_scorecard_square.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-metrics_scorecard_square.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "launch_calendar_portrait",
+      "png": "examples/social-native-outputs/kaicalls-social-native-launch_calendar_portrait.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-launch_calendar_portrait.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "testimonial_quote_square",
+      "png": "examples/social-native-outputs/kaicalls-social-native-testimonial_quote_square.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-testimonial_quote_square.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "inbox_alert_portrait",
+      "png": "examples/social-native-outputs/kaicalls-social-native-inbox_alert_portrait.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-inbox_alert_portrait.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "workflow_timeline_landscape",
+      "png": "examples/social-native-outputs/kaicalls-social-native-workflow_timeline_landscape.png",
+      "provenance": "examples/social-native-outputs/kaicalls-social-native-workflow_timeline_landscape.provenance.json",
+      "passed_qa": true
+    }
+  ],
+  "qa": [
+    {
+      "template": "apple_notes_portrait",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-apple_notes_portrait.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 59,
+          "finalFontSize": 59,
+          "width": 848,
+          "height": 115.625
+        },
+        {
+          "label": "interface-body",
+          "text": "Turn a good customer signal into a clear, timely action.",
+          "fontSize": 27,
+          "finalFontSize": 27,
+          "width": 848,
+          "height": 38.328125
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 22,
+          "finalFontSize": 22,
+          "width": 848,
+          "height": 27.5
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 59,
+            "mobile_preview_font_size": 19.67,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-body",
+            "font_size": 27,
+            "mobile_preview_font_size": 9.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 22,
+            "mobile_preview_font_size": 7.33,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "message_thread_square",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-message_thread_square.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "What happens after someone calls?",
+          "fontSize": 24.01078539823009,
+          "finalFontSize": 24.01078539823009,
+          "width": 452.203125,
+          "height": 65.265625
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 916,
+          "height": 57.59375
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 24.01,
+            "mobile_preview_font_size": 8.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "tweet_card_square",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-tweet_card_square.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 854,
+          "height": 27
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 854,
+          "height": 63
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "search_autocomplete_portrait",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-search_autocomplete_portrait.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "\u2315Why are good leads going quiet?",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 874,
+          "height": 46.5
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 936,
+          "height": 83
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "receipt_audit_portrait",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-receipt_audit_portrait.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Response friction audit",
+          "fontSize": 51,
+          "finalFontSize": 51,
+          "width": 690,
+          "height": 96.875
+        },
+        {
+          "label": "interface-proof",
+          "text": "Turn a good customer signal into a clear, timely action.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 690,
+          "height": 27
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 51,
+            "mobile_preview_font_size": 17.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "notion_checklist_portrait",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-notion_checklist_portrait.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 866,
+          "height": 27
+        },
+        {
+          "label": "interface-body",
+          "text": "Turn a good customer signal into a clear, timely action.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 866,
+          "height": 63
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 866,
+          "height": 51
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-body",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "whiteboard_diagram_landscape",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-whiteboard_diagram_landscape.png",
+      "expected_dimensions": {
+        "width": 1600,
+        "height": 900
+      },
+      "actual_dimensions": {
+        "width": 1600,
+        "height": 900
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "diagram-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 109,
+          "finalFontSize": 109,
+          "width": 1312,
+          "height": 213.625
+        },
+        {
+          "label": "diagram-label",
+          "text": "Signal",
+          "fontSize": 18.33665062222085,
+          "finalFontSize": 18.33665062222085,
+          "width": 257.7318115234375,
+          "height": 148.7442626953125
+        },
+        {
+          "label": "diagram-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18.10006869041314,
+          "finalFontSize": 18.10006869041314,
+          "width": 415.2960205078125,
+          "height": 87.3690185546875
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.225,
+        "readability": [
+          {
+            "label": "diagram-headline",
+            "font_size": 109,
+            "mobile_preview_font_size": 24.53,
+            "minimum_mobile_font_size": 8,
+            "passed": true
+          },
+          {
+            "label": "diagram-label",
+            "font_size": 18.34,
+            "mobile_preview_font_size": 4.13,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          },
+          {
+            "label": "diagram-proof",
+            "font_size": 18.1,
+            "mobile_preview_font_size": 4.07,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "metrics_scorecard_square",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-metrics_scorecard_square.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 862,
+          "height": 27
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 862,
+          "height": 27
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "launch_calendar_portrait",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-launch_calendar_portrait.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 884,
+          "height": 27
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 884,
+          "height": 67
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "testimonial_quote_square",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-testimonial_quote_square.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "We finally had a clean next step after every conversation.",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 838,
+          "height": 27
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 17,
+          "finalFontSize": 17,
+          "width": 838,
+          "height": 22
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 17,
+            "mobile_preview_font_size": 5.67,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "inbox_alert_portrait",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-inbox_alert_portrait.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Needs a response before tomorrow",
+          "fontSize": 17.997976618705035,
+          "finalFontSize": 17.997976618705035,
+          "width": 277.96875,
+          "height": 27
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 18,
+          "finalFontSize": 18,
+          "width": 892,
+          "height": 69
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 18.0,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 18,
+            "mobile_preview_font_size": 6.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "workflow_timeline_landscape",
+      "output_path": "examples/social-native-outputs/kaicalls-social-native-workflow_timeline_landscape.png",
+      "expected_dimensions": {
+        "width": 1600,
+        "height": 900
+      },
+      "actual_dimensions": {
+        "width": 1600,
+        "height": 900
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "timeline-headline",
+          "text": "Make the next step easy to see.",
+          "fontSize": 93,
+          "finalFontSize": 93,
+          "width": 973,
+          "height": 182.25
+        },
+        {
+          "label": "timeline-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 35,
+          "finalFontSize": 35,
+          "width": 1364,
+          "height": 46
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.225,
+        "readability": [
+          {
+            "label": "timeline-headline",
+            "font_size": 93,
+            "mobile_preview_font_size": 20.93,
+            "minimum_mobile_font_size": 7,
+            "passed": true
+          },
+          {
+            "label": "timeline-proof",
+            "font_size": 35,
+            "mobile_preview_font_size": 7.88,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

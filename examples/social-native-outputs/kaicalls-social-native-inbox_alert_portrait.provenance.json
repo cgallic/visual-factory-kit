@@ -1,0 +1,55 @@
+{
+  "asset_id": "kaicalls-social-native-inbox_alert_portrait",
+  "request_id": "social-native-template-demo-001",
+  "content_id": "social-native-demo",
+  "rendered_at": "2026-08-19T21:36:38+00:00",
+  "renderer": "visual_factory_renderer@0.1.0",
+  "template": "inbox_alert_portrait@1.0.0",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "alt_text": "KaiCalls example social-native templates showing notes, messages, search, checklists, proof, and workflow formats.",
+  "ingredients": [
+    {
+      "kind": "platform_size_matrix",
+      "path": "visual_factory/platform-size-matrix.json",
+      "source": "Platform export matrix"
+    },
+    {
+      "kind": "brand_visual_asset",
+      "path": "brand-packs/kaicalls/assets/01-the-answer.png",
+      "source": "approved transparent brand asset"
+    },
+    {
+      "kind": "brand_tokens",
+      "path": "brand-packs/kaicalls/tokens.css",
+      "source": "brand design tokens"
+    },
+    {
+      "kind": "typography",
+      "path": "visual_factory/fonts",
+      "source": "Bundled open-source visual font stack",
+      "families": [
+        "Libre Franklin",
+        "Atkinson Hyperlegible",
+        "IBM Plex Mono"
+      ]
+    },
+    {
+      "kind": "proof",
+      "claim": "64% of calls came after hours",
+      "source_path": "examples/proof/kaicalls-after-hours.md",
+      "source": "internal analysis"
+    }
+  ],
+  "ai_assistance": {
+    "copy_assisted": true,
+    "image_generated_new_for_this_asset": false,
+    "notes": "Final image assembled from approved brand layers, deterministic HTML/CSS templates, and request proof fields."
+  },
+  "approvals": {
+    "brand": "pending",
+    "claims": "verified"
+  }
+}
