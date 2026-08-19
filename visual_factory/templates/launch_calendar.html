@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_portrait %}{% set d = template_data %}{% set events = d.get('events',[{'time':'09:00','name':'Kickoff'},{'time':'12:00','name':'Live walkthrough'},{'time':'16:00','name':'Last call'}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }.canvas { padding:{{ (60*s)|round|int }}px; background:#efe9ff; color:#25203b; }.canvas::before,.canvas::after { display:none; }.calendar { height:100%; overflow:hidden; border-radius:{{ (30*s)|round|int }}px; background:white; box-shadow:0 {{ (19*s)|round|int }}px {{ (44*s)|round|int }}px rgba(64,46,118,.18); }.date { display:flex; align-items:center; justify-content:space-between; padding:{{ (35*s)|round|int }}px; color:white; background:#5946b2; }.month { font:800 {{ (20*s)|round|int }}px var(--kai-font-body); text-transform:uppercase; }.day { font:900 {{ (61*s)|round|int }}/.9 var(--kai-font-display); }.main { padding:{{ (38*s)|round|int }}px; }.event-title { margin:0 0 {{ (28*s)|round|int }}px; font:900 {{ (45*s)|round|int }}/1 var(--kai-font-display); max-height:{{ (240*s)|round|int }}px; }.event { display:flex; gap:{{ (17*s)|round|int }}px; align-items:flex-start; padding:{{ (19*s)|round|int }}px 0; border-top:1px solid #ebe9f0; }.time { color:#6e61a9; font:800 {{ (17*s)|round|int }}px var(--kai-font-mono); }.event-name { color:#363042; font:700 {{ (22*s)|round|int }}px/1.2 var(--kai-font-body); }.invite { margin-top:{{ (27*s)|round|int }}px; padding:{{ (20*s)|round|int }}px; border-radius:{{ (16*s)|round|int }}px; color:#3d3470; background:#f2efff; font:800 {{ (19*s)|round|int }}/1.2 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+<main class="canvas" role="img" aria-label="{{ alt_text }}"><section class="calendar"><div class="date"><span class="month">{{ d.get('month','MAY') }}</span><span class="day">{{ d.get('day','21') }}</span><img src="{{ brand_icon_uri }}" alt="" style="width:{{ (36*s)|round|int }}px;height:{{ (36*s)|round|int }}px;object-fit:contain"></div><div class="main"><h1 class="event-title" data-fit="interface-headline" data-min-font-size="{{ (25*s)|round|int }}">{{ headline }}</h1>{% for event in events %}<div class="event"><span class="time">{{ event.get('time','09:00') }}</span><span class="event-name">{{ event.get('name','Event') }}</span></div>{% endfor %}<div class="invite" data-fit="interface-proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label or cta }}</div></div></section></main>
+</body>
+</html>

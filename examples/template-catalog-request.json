@@ -1,0 +1,165 @@
+{
+  "request_id": "template-catalog-demo-001",
+  "client": "KaiCalls",
+  "content_id": "template-catalog-demo",
+  "formats": [
+    "browser_tab_card_square",
+    "crm_pipeline_landscape",
+    "calendar_agenda_portrait",
+    "slack_update_square",
+    "highlighted_excerpt_portrait",
+    "redline_document_portrait",
+    "feedback_form_square",
+    "rating_review_square",
+    "map_pin_portrait",
+    "terminal_log_landscape",
+    "browser_window_landscape",
+    "kanban_board_landscape",
+    "polaroid_quote_square",
+    "newspaper_cover_portrait",
+    "pricing_menu_square",
+    "data_bar_chart_square",
+    "funnel_map_landscape",
+    "product_release_square",
+    "case_study_chapter_portrait",
+    "before_after_portrait",
+    "offer_stack_square",
+    "countdown_portrait",
+    "do_dont_square",
+    "carousel_cover_portrait"
+  ],
+  "message": {
+    "headline": "Make the next step easy to see.",
+    "subhead": "Turn a good signal into a clear, timely action.",
+    "proof_label": "64% of calls came after hours",
+    "cta": "See the operating brief",
+    "phone_number": "(417) 555-0198"
+  },
+  "proof": [
+    {
+      "proof_id": "after-hours-demo",
+      "claim": "64% of calls came after hours",
+      "source_type": "internal analysis",
+      "source_path": "examples/proof/kaicalls-after-hours.md",
+      "display_as": "stat",
+      "risk": "low"
+    }
+  ],
+  "visual_direction": {
+    "template_family": "expanded_catalog",
+    "preferred_pose": "at desk",
+    "mood": "clear, human, and proof-aware"
+  },
+  "compliance": {
+    "pii_allowed": false,
+    "claims_verified": true
+  },
+  "template_data": {
+    "eyebrow": "Operator brief",
+    "tab_label": "KaiCalls field guide",
+    "url": "kaicalls.com/clear-next-step",
+    "steps": [
+      "Signal arrives",
+      "Context captured",
+      "Next step chosen",
+      "Owner briefed"
+    ],
+    "events": [
+      {
+        "time": "09:00",
+        "name": "Open the new response flow"
+      },
+      {
+        "time": "12:00",
+        "name": "Share the useful brief"
+      },
+      {
+        "time": "16:00",
+        "name": "Review live signal"
+      }
+    ],
+    "source_label": "A highlighted field note",
+    "excerpt": "Make the useful action unmistakably clear.",
+    "before_copy": "A vague promise that leaves the customer waiting.",
+    "after_copy": "A simple response that reveals the right next step.",
+    "response": "The best systems make the useful action easy to spot.",
+    "review": "The right follow-up finally felt clear and timely.",
+    "reviewer": "Approved customer review \u00b7 Example Co.",
+    "location": "Where the response gets easier",
+    "command": "inspect --clear-next-step",
+    "bars": [
+      35,
+      54,
+      71,
+      92
+    ],
+    "funnel_steps": [
+      "Attention",
+      "Context",
+      "Decision",
+      "Action"
+    ],
+    "badge": "NEW RELEASE",
+    "module_title": "A clearer response flow",
+    "result_value": "64%",
+    "result_label": "of activity came after hours",
+    "detail": "From scattered attention to a useful shared brief.",
+    "before": "The next step is hidden.",
+    "after": "The next action is clear.",
+    "offer_items": [
+      "Capture the signal",
+      "Choose the next action",
+      "Share the useful brief"
+    ],
+    "days": "07",
+    "unit": "days to go",
+    "dont": "Make the reader guess what happens next.",
+    "do": "Make the useful action obvious.",
+    "slide_count": "01 / 06",
+    "hint": "Swipe for the useful steps \u2192",
+    "masthead": "THE OPERATOR DAILY",
+    "edition": "SPECIAL EDITION",
+    "lanes": [
+      {
+        "name": "Capture",
+        "cards": [
+          "New signal",
+          "Useful context"
+        ]
+      },
+      {
+        "name": "Clarify",
+        "cards": [
+          "Next action",
+          "Right owner"
+        ]
+      },
+      {
+        "name": "Complete",
+        "cards": [
+          "Share brief",
+          "Close loop"
+        ]
+      }
+    ],
+    "tiers": [
+      {
+        "name": "Start",
+        "detail": "See the signal"
+      },
+      {
+        "name": "Build",
+        "detail": "Create the brief"
+      },
+      {
+        "name": "Scale",
+        "detail": "Share the system"
+      }
+    ]
+  },
+  "output": {
+    "alt_text": "KaiCalls expanded social-media template catalog showing editorial, interface, proof, data, system, and campaign visual formats.",
+    "destination_dir": "examples/template-catalog-outputs",
+    "filename_prefix": "kaicalls-template-catalog"
+  }
+}

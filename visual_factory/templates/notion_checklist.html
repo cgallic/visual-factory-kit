@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_portrait %}{% set d = template_data %}{% set tasks = d.get('tasks',[{'text':'Name the actual customer problem','done':true},{'text':'Show the useful next action','done':true},{'text':'Back the claim with proof','done':false},{'text':'Make the CTA obvious','done':false}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { padding:{{ (58*s)|round|int }}px; background:#f4f5f7; color:#272727; }.canvas::before,.canvas::after { display:none; }
+    .doc { height:100%; padding:{{ (48*s)|round|int }}px; border:1px solid #e0e2e7; border-radius:{{ (20*s)|round|int }}px; background:#fff; box-shadow:0 {{ (18*s)|round|int }}px {{ (46*s)|round|int }}px rgba(0,0,0,.10); }
+    .crumb { color:#8c8f96; font:700 {{ (16*s)|round|int }}px var(--kai-font-body); }.crumb b { color:#4b5563; }.icon { display:flex; align-items:center; justify-content:center; width:{{ (58*s)|round|int }}px; height:{{ (58*s)|round|int }}px; margin-top:{{ (38*s)|round|int }}px; border-radius:{{ (14*s)|round|int }}px; background:#ede9fe; color:#6d4ee8; font:900 {{ (29*s)|round|int }}px var(--kai-font-mono); }
+    .doc-title { margin:{{ (18*s)|round|int }}px 0 {{ (24*s)|round|int }}px; font:900 {{ (51*s)|round|int }}/1 var(--kai-font-display); max-height:{{ (250*s)|round|int }}px; }.callout { margin-bottom:{{ (28*s)|round|int }}px; padding:{{ (18*s)|round|int }}px; border-radius:{{ (12*s)|round|int }}px; background:#f0f4ff; color:#30405d; font:600 {{ (20*s)|round|int }}/1.25 var(--kai-font-body); }
+    .section { margin:{{ (28*s)|round|int }}px 0 {{ (15*s)|round|int }}px; font:800 {{ (19*s)|round|int }}px var(--kai-font-body); }.task { display:flex; gap:{{ (15*s)|round|int }}px; margin:{{ (19*s)|round|int }}px 0; color:#35383d; font:600 {{ (21*s)|round|int }}/1.2 var(--kai-font-body); }.box { flex:0 0 auto; width:{{ (24*s)|round|int }}px; height:{{ (24*s)|round|int }}px; border:{{ (2*s)|round|int }}px solid #b6bac3; border-radius:{{ (5*s)|round|int }}px; }.done .box { display:grid; place-items:center; color:white; border-color:#39876b; background:#39876b; }.done .box:after { content:'✓'; font-weight:900; }.done { color:#7c8088; text-decoration:line-through; }.proof-callout { margin-top:{{ (35*s)|round|int }}px; padding-top:{{ (23*s)|round|int }}px; border-top:1px solid #e8e8ea; color:#5d45bd; font:800 {{ (19*s)|round|int }}/1.22 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}"><article class="doc"><div class="crumb"><b>{{ brand_name }}</b> / {{ d.get('breadcrumb','Operating system') }}</div><div class="icon">✓</div><h1 class="doc-title" data-fit="interface-headline" data-min-font-size="{{ (28*s)|round|int }}">{{ headline }}</h1><div class="callout" data-fit="interface-body" data-min-font-size="{{ (14*s)|round|int }}">{{ subhead or 'A simple operating checklist for the next useful move.' }}</div><div class="section">{{ d.get('section_title','Standard checklist') }}</div>{% for task in tasks %}<div class="task {% if task.get('done') %}done{% endif %}"><span class="box"></span><span>{{ task.get('text','Checklist item') }}</span></div>{% endfor %}<div class="proof-callout" data-fit="interface-proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label }}</div></article></main>
+
+</body>
+</html>

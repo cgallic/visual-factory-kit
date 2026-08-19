@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_landscape %}{% set d = template_data %}{% set steps = d.get('steps',[{'number':'01','label':'Capture'},{'number':'02','label':'Clarify'},{'number':'03','label':'Act'},{'number':'04','label':'Brief'}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }.canvas { padding:{{ (48*s)|round|int }}px; background:linear-gradient(125deg,#0c1728,#173e62); }.canvas::before,.canvas::after { display:none; }.wrap { height:100%; padding:{{ (40*s)|round|int }}px; color:#eff7ff; border:1px solid rgba(192,229,255,.19); border-radius:{{ (28*s)|round|int }}px; background:rgba(7,17,32,.52); }.top { display:flex; justify-content:space-between; align-items:center; }.top img { width:{{ (38*s)|round|int }}px; height:{{ (38*s)|round|int }}px; object-fit:contain; }.brand-name { color:#bcdcf9; font:800 {{ (18*s)|round|int }}px var(--kai-font-body); }.timeline-title { max-width:{{ (730*s)|round|int }}px; margin:{{ (36*s)|round|int }}px 0 {{ (48*s)|round|int }}px; font-family:var(--kai-font-display); font-size:{{ (70*s)|round|int }}px !important; font-weight:900; line-height:.98; max-height:{{ (175*s)|round|int }}px; }.rail { display:grid; grid-template-columns:repeat(4,1fr); gap:{{ (18*s)|round|int }}px; }.step { position:relative; min-height:{{ (165*s)|round|int }}px; padding:{{ (25*s)|round|int }}px; border-radius:{{ (18*s)|round|int }}px; background:rgba(255,255,255,.08); }.number { color:#7ee2c1; font:900 {{ (22*s)|round|int }}px var(--kai-font-mono); }.label { margin-top:{{ (20*s)|round|int }}px; font:800 {{ (28*s)|round|int }}/1.05 var(--kai-font-body); }.step:not(:last-child):after { content:'→'; position:absolute; right:-{{ (20*s)|round|int }}px; top:42%; color:#7ee2c1; font:900 {{ (29*s)|round|int }}px var(--kai-font-body); }.workflow-proof { margin-top:{{ (36*s)|round|int }}px; color:#c8e8ff; font:800 {{ (26*s)|round|int }}px var(--kai-font-mono); }
+
+  </style>
+</head>
+<body>
+<main class="canvas" role="img" aria-label="{{ alt_text }}"><section class="wrap"><div class="top"><span class="brand-name">{{ brand_name }}</span><img src="{{ brand_icon_uri }}" alt=""></div><h1 class="timeline-title" data-fit="timeline-headline" data-min-font-size="{{ (25*s)|round|int }}">{{ headline }}</h1><div class="rail">{% for step in steps %}<div class="step"><div class="number">{{ step.get('number','01') }}</div><div class="label">{{ step.get('label','Step') }}</div></div>{% endfor %}</div><div class="workflow-proof" data-fit="timeline-proof" data-min-font-size="{{ (12*s)|round|int }}">{{ proof_label or subhead }}</div></section></main>
+</body>
+</html>

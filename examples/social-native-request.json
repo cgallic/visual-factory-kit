@@ -1,0 +1,201 @@
+{
+  "request_id": "social-native-template-demo-001",
+  "client": "KaiCalls",
+  "content_id": "social-native-demo",
+  "formats": [
+    "apple_notes_portrait",
+    "message_thread_square",
+    "tweet_card_square",
+    "search_autocomplete_portrait",
+    "receipt_audit_portrait",
+    "notion_checklist_portrait",
+    "whiteboard_diagram_landscape",
+    "metrics_scorecard_square",
+    "launch_calendar_portrait",
+    "testimonial_quote_square",
+    "inbox_alert_portrait",
+    "workflow_timeline_landscape"
+  ],
+  "message": {
+    "headline": "Make the next step easy to see.",
+    "subhead": "Turn a good customer signal into a clear, timely action.",
+    "proof_label": "64% of calls came after hours",
+    "cta": "See the operating brief",
+    "phone_number": "(417) 555-0198"
+  },
+  "proof": [
+    {
+      "proof_id": "after-hours-demo",
+      "claim": "64% of calls came after hours",
+      "source_type": "internal analysis",
+      "source_path": "examples/proof/kaicalls-after-hours.md",
+      "display_as": "stat",
+      "risk": "low"
+    }
+  ],
+  "visual_direction": {
+    "template_family": "social_native",
+    "preferred_pose": "at desk",
+    "mood": "clear, human, and proof-aware"
+  },
+  "compliance": {
+    "pii_allowed": false,
+    "claims_verified": true
+  },
+  "template_data": {
+    "note_title": "KaiCalls field notes",
+    "note_date": "Today \u00b7 response design",
+    "highlight": "The best follow-up feels obvious.",
+    "contact_name": "KaiCalls",
+    "messages": [
+      {
+        "from": "Customer",
+        "text": "What happens after someone calls?"
+      },
+      {
+        "from": "KaiCalls",
+        "text": "Capture the context, show the next step, and brief the right person."
+      }
+    ],
+    "author_name": "KaiCalls",
+    "handle": "@kaicalls",
+    "replies": "24",
+    "reposts": "71",
+    "likes": "418",
+    "prompt": "Search intent snapshot",
+    "query": "Why are good leads going quiet?",
+    "suggestions": [
+      "why do leads go quiet?",
+      "how fast should I follow up?",
+      "how do I keep the context?"
+    ],
+    "receipt_title": "Response friction audit",
+    "receipt_items": [
+      {
+        "label": "Missed opportunity",
+        "value": "$240"
+      },
+      {
+        "label": "Manual follow-up",
+        "value": "$180"
+      },
+      {
+        "label": "Delayed response",
+        "value": "$125"
+      }
+    ],
+    "total": "$545",
+    "stamp": "AUDITED",
+    "breadcrumb": "Operating system",
+    "section_title": "Standard checklist",
+    "tasks": [
+      {
+        "text": "Name the customer signal",
+        "done": true
+      },
+      {
+        "text": "Capture useful context",
+        "done": true
+      },
+      {
+        "text": "Show a clear next action",
+        "done": false
+      },
+      {
+        "text": "Brief the right person",
+        "done": false
+      }
+    ],
+    "nodes": [
+      {
+        "label": "Signal",
+        "x": "13",
+        "y": "48"
+      },
+      {
+        "label": "Decision",
+        "x": "42",
+        "y": "30"
+      },
+      {
+        "label": "Action",
+        "x": "73",
+        "y": "48"
+      }
+    ],
+    "metrics": [
+      {
+        "value": "64%",
+        "label": "of calls came after hours"
+      },
+      {
+        "value": "3 min",
+        "label": "to a useful next step"
+      },
+      {
+        "value": "1 brief",
+        "label": "for the right person"
+      }
+    ],
+    "month": "MAY",
+    "day": "21",
+    "events": [
+      {
+        "time": "09:00",
+        "name": "Launch the new response flow"
+      },
+      {
+        "time": "12:00",
+        "name": "Share the walkthrough"
+      },
+      {
+        "time": "16:00",
+        "name": "Review live signal"
+      }
+    ],
+    "quote": "We finally had a clean next step after every conversation.",
+    "attribution": "Approved customer quote \u00b7 Example Co.",
+    "rating": "\u2605\u2605\u2605\u2605\u2605",
+    "inbox_name": "Priority inbox",
+    "emails": [
+      {
+        "from": "New opportunity",
+        "subject": "Needs a response before tomorrow",
+        "unread": true
+      },
+      {
+        "from": "KaiCalls",
+        "subject": "Context captured and ready",
+        "unread": false
+      },
+      {
+        "from": "Workspace",
+        "subject": "A brief is waiting",
+        "unread": false
+      }
+    ],
+    "steps": [
+      {
+        "number": "01",
+        "label": "Capture"
+      },
+      {
+        "number": "02",
+        "label": "Clarify"
+      },
+      {
+        "number": "03",
+        "label": "Act"
+      },
+      {
+        "number": "04",
+        "label": "Brief"
+      }
+    ]
+  },
+  "output": {
+    "alt_text": "KaiCalls example social-native templates showing notes, messages, search, checklists, proof, and workflow formats.",
+    "destination_dir": "examples/social-native-outputs",
+    "filename_prefix": "kaicalls-social-native"
+  }
+}

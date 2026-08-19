@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_square %}{% set d = template_data %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }.canvas { padding:{{ (68*s)|round|int }}px; background:linear-gradient(135deg,#10283b,#174f61); }.canvas::before,.canvas::after { display:none; }.quote { height:100%; padding:{{ (52*s)|round|int }}px; color:#ecfffb; border-radius:{{ (34*s)|round|int }}px; background:rgba(255,255,255,.07); border:1px solid rgba(221,255,247,.26); }.qmark { color:#83e6c4; font:900 {{ (120*s)|round|int }}/.5 var(--kai-font-display); }.quote-text { margin:{{ (28*s)|round|int }}px 0; font:900 {{ (47*s)|round|int }}/1.02 var(--kai-font-display); max-height:{{ (400*s)|round|int }}px; }.attribution { display:flex; align-items:center; gap:{{ (15*s)|round|int }}px; margin-top:{{ (43*s)|round|int }}px; color:#b8d5d1; font:700 {{ (19*s)|round|int }}/1.2 var(--kai-font-body); }.attribution img { width:{{ (42*s)|round|int }}px; height:{{ (42*s)|round|int }}px; object-fit:contain; }.stars { margin-top:{{ (32*s)|round|int }}px; color:#ffdf7c; font:900 {{ (24*s)|round|int }}px var(--kai-font-mono); }.quote-proof { margin-top:{{ (14*s)|round|int }}px; color:#dffaf4; font:700 {{ (17*s)|round|int }}px var(--kai-font-mono); }
+
+  </style>
+</head>
+<body>
+<main class="canvas" role="img" aria-label="{{ alt_text }}"><article class="quote"><div class="qmark">“</div><div class="quote-text" data-fit="interface-headline" data-min-font-size="{{ (27*s)|round|int }}">{{ d.get('quote',headline) }}</div><div class="attribution"><img src="{{ brand_icon_uri }}" alt=""><span>{{ d.get('attribution','Verified customer · Approved quote') }}</span></div><div class="stars">{{ d.get('rating','★★★★★') }}</div><div class="quote-proof" data-fit="interface-proof" data-min-font-size="{{ (12*s)|round|int }}">{{ proof_label or subhead }}</div></article></main>
+</body>
+</html>

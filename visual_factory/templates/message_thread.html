@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_square %}{% set d = template_data %}{% set messages = d.get('messages', [{'from':'Customer','text':headline},{'from':brand_name,'text':subhead or 'Here is the clearer next step.'}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { padding:{{ (46*s)|round|int }}px; background:linear-gradient(160deg,#edf2f7,#cbd5e1); color:#172033; }
+    .canvas::before,.canvas::after { display:none; }
+    .phone { height:100%; overflow:hidden; border:{{ (12*s)|round|int }}px solid #171d2c; border-radius:{{ (54*s)|round|int }}px; background:#f7f9fc; box-shadow:0 {{ (24*s)|round|int }}px {{ (60*s)|round|int }}px rgba(15,23,42,.25); }
+    .thread-top { display:flex; align-items:center; justify-content:space-between; padding:{{ (30*s)|round|int }}px {{ (34*s)|round|int }}px {{ (24*s)|round|int }}px; background:white; border-bottom:1px solid #e7ebf0; }
+    .contact { display:flex; align-items:center; gap:{{ (13*s)|round|int }}px; font:800 {{ (23*s)|round|int }}px var(--kai-font-body); }
+    .avatar { width:{{ (44*s)|round|int }}px; height:{{ (44*s)|round|int }}px; padding:{{ (6*s)|round|int }}px; border-radius:50%; background:var(--kai-brand-blue); object-fit:contain; }
+    .status { color:#667085; font:700 {{ (14*s)|round|int }}px var(--kai-font-mono); }
+    .thread { display:flex; flex-direction:column; gap:{{ (18*s)|round|int }}px; padding:{{ (36*s)|round|int }}px {{ (30*s)|round|int }}px; }
+    .bubble { max-width:82%; padding:{{ (18*s)|round|int }}px {{ (22*s)|round|int }}px; border-radius:{{ (26*s)|round|int }}px; font:600 {{ (24*s)|round|int }}px/1.22 var(--kai-font-body); box-shadow:0 {{ (5*s)|round|int }}px {{ (12*s)|round|int }}px rgba(15,23,42,.07); }
+    .incoming { align-self:flex-start; color:#172033; background:#e8ecf2; border-bottom-left-radius:{{ (7*s)|round|int }}px; }
+    .outgoing { align-self:flex-end; color:white; background:#1976e9; border-bottom-right-radius:{{ (7*s)|round|int }}px; }
+    .meta { align-self:center; color:#8691a2; font:700 {{ (13*s)|round|int }}px var(--kai-font-mono); }
+    .takeaway { position:absolute; right:{{ (82*s)|round|int }}px; bottom:{{ (75*s)|round|int }}px; left:{{ (82*s)|round|int }}px; padding:{{ (18*s)|round|int }}px; color:#183b63; background:#dceeff; border-radius:{{ (18*s)|round|int }}px; font:800 {{ (18*s)|round|int }}px/1.2 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <section class="phone">
+      <header class="thread-top"><div class="contact"><img class="avatar" src="{{ brand_icon_uri }}" alt=""><span>{{ d.get('contact_name', brand_name) }}</span></div><span class="status">{{ d.get('status','Active now') }}</span></header>
+      <div class="thread">
+        <div class="meta">{{ d.get('timestamp','Today · 7:43 PM') }}</div>
+        {% for item in messages %}<div class="bubble {{ 'outgoing' if item.get('from') == brand_name else 'incoming' }}" {% if loop.index == 1 %}data-fit="interface-headline" data-min-font-size="{{ (15*s)|round|int }}"{% endif %}>{{ item.get('text','') }}</div>{% endfor %}
+        <div class="meta">{{ d.get('read_state','Read') }}</div>
+      </div>
+      <div class="takeaway" data-fit="interface-proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label or d.get('takeaway','A clear next step beats a long explanation.') }}</div>
+    </section>
+  </main>
+
+</body>
+</html>

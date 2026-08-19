@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_portrait %}{% set d = template_data %}{% set emails = d.get('emails',[{'subject':headline,'from':'New opportunity','unread':true},{'subject':'Follow-up ready','from':brand_name,'unread':false},{'subject':'Context captured','from':'Workspace','unread':false}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }.canvas { padding:{{ (64*s)|round|int }}px; background:#d8e3ee; color:#1e293b; }.canvas::before,.canvas::after { display:none; }.inbox { height:100%; overflow:hidden; border-radius:{{ (28*s)|round|int }}px; background:#fff; box-shadow:0 {{ (20*s)|round|int }}px {{ (45*s)|round|int }}px rgba(30,41,59,.2); }.bar { display:flex; align-items:center; justify-content:space-between; padding:{{ (28*s)|round|int }}px {{ (31*s)|round|int }}px; color:white; background:#175d83; font:800 {{ (24*s)|round|int }}px var(--kai-font-body); }.bar img { width:{{ (34*s)|round|int }}px; height:{{ (34*s)|round|int }}px; object-fit:contain; }.inbox-title { padding:{{ (31*s)|round|int }}px; color:#607085; font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; }.mail { display:flex; gap:{{ (15*s)|round|int }}px; padding:{{ (23*s)|round|int }}px {{ (30*s)|round|int }}px; border-top:1px solid #e9edf1; }.dot { flex:0 0 auto; width:{{ (11*s)|round|int }}px; height:{{ (11*s)|round|int }}px; margin-top:{{ (7*s)|round|int }}px; border-radius:50%; background:transparent; }.unread .dot { background:#22a06b; }.sender { color:#506174; font:700 {{ (17*s)|round|int }}px var(--kai-font-body); }.subject { margin-top:{{ (4*s)|round|int }}px; color:#202c3b; font:800 {{ (22*s)|round|int }}/1.2 var(--kai-font-body); }.unread .subject { color:#112134; }.alert { margin:{{ (30*s)|round|int }}px; padding:{{ (21*s)|round|int }}px; border-radius:{{ (17*s)|round|int }}px; color:#124566; background:#e0f2ff; font:800 {{ (19*s)|round|int }}/1.2 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+<main class="canvas" role="img" aria-label="{{ alt_text }}"><section class="inbox"><header class="bar"><span>{{ d.get('inbox_name','Priority inbox') }}</span><img src="{{ brand_icon_uri }}" alt=""></header><div class="inbox-title">{{ d.get('inbox_label','Today') }}</div>{% for email in emails %}<div class="mail {% if email.get('unread') %}unread{% endif %}"><span class="dot"></span><div><div class="sender">{{ email.get('from','Inbox') }}</div><div class="subject" {% if loop.first %}data-fit="interface-headline" data-min-font-size="{{ (15*s)|round|int }}"{% endif %}>{{ email.get('subject','Message subject') }}</div></div></div>{% endfor %}<div class="alert" data-fit="interface-proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label or subhead }}</div></section></main>
+</body>
+</html>

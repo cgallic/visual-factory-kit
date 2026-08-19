@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_portrait %}{% set d = template_data %}{% set suggestions = d.get('suggestions',[headline,subhead or 'How to improve the next step','What should I check first?']) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { padding:{{ (84*s)|round|int }}px {{ (72*s)|round|int }}px; background:linear-gradient(145deg,#f4f5f7,#dde8fd); color:#202124; }
+    .canvas::before,.canvas::after { display:none; }
+    .brand { display:flex; justify-content:center; align-items:center; gap:{{ (12*s)|round|int }}px; margin:{{ (48*s)|round|int }}px 0 {{ (68*s)|round|int }}px; font:800 {{ (24*s)|round|int }}px var(--kai-font-body); }.brand img { width:{{ (38*s)|round|int }}px; height:{{ (38*s)|round|int }}px; object-fit:contain; }
+    .prompt { text-align:center; color:#4b5563; font:700 {{ (19*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.07em; }
+    .search { padding:{{ (28*s)|round|int }}px {{ (30*s)|round|int }}px; background:white; border:1px solid #d9dee5; border-radius:{{ (30*s)|round|int }}px; box-shadow:0 {{ (12*s)|round|int }}px {{ (28*s)|round|int }}px rgba(31,41,55,.10); }
+    .query { display:flex; gap:{{ (16*s)|round|int }}px; align-items:flex-start; color:#202124; font:700 {{ (33*s)|round|int }}/1.15 var(--kai-font-body); max-height:{{ (270*s)|round|int }}px; }.magnify { flex:0 0 auto; color:#5f6368; font-size:{{ (31*s)|round|int }}px; }
+    .suggestions { overflow:hidden; margin:{{ (24*s)|round|int }}px -{{ (30*s)|round|int }}px -{{ (28*s)|round|int }}px; border-top:1px solid #edf0f2; }.suggestion { padding:{{ (20*s)|round|int }}px {{ (30*s)|round|int }}px; color:#374151; border-bottom:1px solid #f0f2f4; font:600 {{ (22*s)|round|int }}/1.2 var(--kai-font-body); }.suggestion b { color:#1a73e8; }
+    .answer { margin-top:{{ (55*s)|round|int }}px; padding:{{ (28*s)|round|int }}px; border-left:{{ (6*s)|round|int }}px solid var(--kai-brand-blue); background:white; box-shadow:0 {{ (10*s)|round|int }}px {{ (24*s)|round|int }}px rgba(31,41,55,.08); color:#243047; font:700 {{ (26*s)|round|int }}/1.22 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <div class="brand"><img src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div>
+    <div class="prompt">{{ d.get('prompt','Search intent snapshot') }}</div>
+    <section class="search"><div class="query" data-fit="interface-headline" data-min-font-size="{{ (19*s)|round|int }}"><span class="magnify">⌕</span><span>{{ d.get('query',headline) }}</span></div><div class="suggestions">{% for suggestion in suggestions %}<div class="suggestion">⌕ {{ suggestion }}</div>{% endfor %}</div></section>
+    <div class="answer" data-fit="interface-proof" data-min-font-size="{{ (15*s)|round|int }}">{{ proof_label or subhead or 'The clearest answer earns the next click.' }}</div>
+  </main>
+
+</body>
+</html>

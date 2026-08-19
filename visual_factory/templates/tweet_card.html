@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_square %}{% set d = template_data %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { padding:{{ (64*s)|round|int }}px; background:#eef2f7; color:#111827; }
+    .canvas::before,.canvas::after { display:none; }
+    .post { height:100%; padding:{{ (48*s)|round|int }}px; border:1px solid #d7dee8; border-radius:{{ (34*s)|round|int }}px; background:white; box-shadow:0 {{ (18*s)|round|int }}px {{ (42*s)|round|int }}px rgba(15,23,42,.10); }
+    .author { display:flex; align-items:center; gap:{{ (15*s)|round|int }}px; }
+    .author img { width:{{ (58*s)|round|int }}px; height:{{ (58*s)|round|int }}px; border-radius:50%; background:var(--kai-brand-blue); object-fit:contain; }
+    .name { font:800 {{ (24*s)|round|int }}px var(--kai-font-body); }.handle { color:#6b7280; font:500 {{ (19*s)|round|int }}px var(--kai-font-body); }
+    .verified { display:inline-block; margin-left:{{ (5*s)|round|int }}px; color:#1d9bf0; font-size:{{ (18*s)|round|int }}px; }
+    .post-copy { margin:{{ (40*s)|round|int }}px 0 {{ (28*s)|round|int }}px; color:#111827; font:700 {{ (43*s)|round|int }}/1.08 var(--kai-font-display); max-height:{{ (390*s)|round|int }}px; }
+    .post-copy strong { color:var(--kai-brand-blue); }
+    .stamp { padding-bottom:{{ (28*s)|round|int }}px; color:#65758b; border-bottom:1px solid #e6ebf0; font:500 {{ (16*s)|round|int }}px var(--kai-font-body); }
+    .stats { display:flex; gap:{{ (28*s)|round|int }}px; padding-top:{{ (24*s)|round|int }}px; color:#65758b; font:600 {{ (18*s)|round|int }}px var(--kai-font-body); }.stats b { color:#111827; }
+    .proof-line { margin-top:{{ (38*s)|round|int }}px; padding:{{ (18*s)|round|int }}px; border-radius:{{ (18*s)|round|int }}px; color:#15416d; background:#e8f4ff; font:800 {{ (18*s)|round|int }}/1.2 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <article class="post">
+      <div class="author"><img src="{{ brand_icon_uri }}" alt=""><div><div class="name">{{ d.get('author_name',brand_name) }}<span class="verified">●</span></div><div class="handle">{{ d.get('handle','@yourbrand') }}</div></div></div>
+      <div class="post-copy" data-fit="interface-headline" data-min-font-size="{{ (26*s)|round|int }}">{{ headline }}</div>
+      <div class="stamp">{{ d.get('post_time','9:41 AM · Today') }}</div>
+      <div class="stats"><span><b>{{ d.get('replies','24') }}</b> replies</span><span><b>{{ d.get('reposts','71') }}</b> reposts</span><span><b>{{ d.get('likes','418') }}</b> likes</span></div>
+      <div class="proof-line" data-fit="interface-proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label or subhead }}</div>
+    </article>
+  </main>
+
+</body>
+</html>

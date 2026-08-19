@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_portrait %}{% set d = template_data %}{% set items = d.get('receipt_items',[{'label':'Missed opportunity','value':'$240'},{'label':'Manual follow-up','value':'$180'},{'label':'Delayed response','value':'$125'}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { display:flex; justify-content:center; padding-top:{{ (48*s)|round|int }}px; background:#343434; color:#252525; }
+    .canvas::before,.canvas::after { display:none; }
+    .receipt { position:relative; width:{{ (800*s)|round|int }}px; min-height:{{ (1180*s)|round|int }}px; padding:{{ (55*s)|round|int }}px {{ (55*s)|round|int }}px {{ (78*s)|round|int }}px; background:#faf7ee; box-shadow:0 {{ (26*s)|round|int }}px {{ (55*s)|round|int }}px rgba(0,0,0,.38); background-image:linear-gradient(transparent 98%,rgba(0,0,0,.03) 98%); background-size:100% {{ (8*s)|round|int }}px; }
+    .receipt:after { content:""; position:absolute; bottom:-{{ (17*s)|round|int }}px; left:0; right:0; height:{{ (20*s)|round|int }}px; background:linear-gradient(135deg,#faf7ee {{ (9*s)|round|int }}px,transparent 0) 0 0/{{ (18*s)|round|int }}px {{ (20*s)|round|int }}px repeat-x; }
+    .r-brand { display:flex; align-items:center; gap:{{ (12*s)|round|int }}px; font:800 {{ (21*s)|round|int }}px var(--kai-font-mono); }.r-brand img { width:{{ (33*s)|round|int }}px; height:{{ (33*s)|round|int }}px; object-fit:contain; }
+    .r-title { margin:{{ (35*s)|round|int }}px 0 {{ (12*s)|round|int }}px; text-align:center; font:900 {{ (51*s)|round|int }}px/.95 var(--kai-font-mono); text-transform:uppercase; max-height:{{ (210*s)|round|int }}px; }.r-meta { text-align:center; color:#665f52; font:600 {{ (16*s)|round|int }}px/1.4 var(--kai-font-mono); }
+    .dash { margin:{{ (32*s)|round|int }}px 0; border:0; border-top:{{ (3*s)|round|int }}px dashed #867d6a; }.row { display:flex; justify-content:space-between; gap:{{ (20*s)|round|int }}px; margin:{{ (17*s)|round|int }}px 0; font:700 {{ (21*s)|round|int }}px/1.15 var(--kai-font-mono); }.row span:last-child { white-space:nowrap; }
+    .total { display:flex; justify-content:space-between; margin-top:{{ (25*s)|round|int }}px; font:900 {{ (33*s)|round|int }}px var(--kai-font-mono); }.audit { display:inline-block; margin-top:{{ (48*s)|round|int }}px; padding:{{ (12*s)|round|int }}px {{ (18*s)|round|int }}px; color:#a91d1d; border:{{ (5*s)|round|int }}px solid #b42318; transform:rotate(-7deg); font:900 {{ (38*s)|round|int }}px var(--kai-font-mono); }
+    .fine { margin-top:{{ (38*s)|round|int }}px; color:#696152; font:600 {{ (15*s)|round|int }}/1.35 var(--kai-font-mono); }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}"><article class="receipt"><div class="r-brand"><img src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div><h1 class="r-title" data-fit="interface-headline" data-min-font-size="{{ (25*s)|round|int }}">{{ d.get('receipt_title',headline) }}</h1><div class="r-meta">{{ d.get('receipt_date','INTERNAL REVIEW · THIS WEEK') }}</div><hr class="dash">{% for item in items %}<div class="row"><span>{{ item.get('label','Line item') }}</span><span>{{ item.get('value','—') }}</span></div>{% endfor %}<hr class="dash"><div class="total"><span>{{ d.get('total_label','TOTAL FRICTION') }}</span><span>{{ d.get('total',proof_label or '$545') }}</span></div><div class="audit">{{ d.get('stamp','AUDITED') }}</div><div class="fine" data-fit="interface-proof" data-min-font-size="{{ (12*s)|round|int }}">{{ subhead or 'Use approved figures and a source-backed proof point.' }}</div></article></main>
+
+</body>
+</html>

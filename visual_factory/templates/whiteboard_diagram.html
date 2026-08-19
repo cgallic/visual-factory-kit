@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_landscape %}{% set d = template_data %}{% set nodes = d.get('nodes',[{'label':'Signal','x':'15','y':'47'},{'label':'Decision','x':'45','y':'28'},{'label':'Action','x':'76','y':'47'}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { padding:{{ (34*s)|round|int }}px; background:#2c3531; }.canvas::before,.canvas::after { display:none; }
+    .board { position:relative; height:100%; overflow:hidden; border:{{ (9*s)|round|int }}px solid #ba9a6c; border-radius:{{ (18*s)|round|int }}px; background:#f8f5e9; box-shadow:inset 0 0 0 {{ (3*s)|round|int }}px rgba(101,79,49,.12), 0 {{ (18*s)|round|int }}px {{ (42*s)|round|int }}px rgba(0,0,0,.25); }
+    .board:before { content:""; position:absolute; inset:0; opacity:.17; background-image:linear-gradient(90deg,transparent 97%,#b5c9dd 97%),linear-gradient(#f6f0db 97%,#c5d4df 97%); background-size:{{ (50*s)|round|int }}px {{ (50*s)|round|int }}px; }.brand-chip { position:absolute; top:{{ (29*s)|round|int }}px; left:{{ (34*s)|round|int }}px; display:flex; align-items:center; gap:{{ (9*s)|round|int }}px; color:#2f3c39; font:800 {{ (17*s)|round|int }}px var(--kai-font-body); }.brand-chip img { width:{{ (29*s)|round|int }}px; height:{{ (29*s)|round|int }}px; object-fit:contain; }
+    .board-title { position:absolute; top:{{ (78*s)|round|int }}px; left:{{ (65*s)|round|int }}px; right:{{ (65*s)|round|int }}px; color:#263330; font-family:var(--kai-font-display); font-size:{{ (82*s)|round|int }}px; font-weight:900; line-height:.98; margin:0; text-align:center; max-height:{{ (170*s)|round|int }}px; }.arrow { position:absolute; top:51%; height:{{ (4*s)|round|int }}px; background:#df563c; transform-origin:left; }.a1 { left:28%; width:20%; transform:rotate(-22deg); }.a2 { left:54%; width:20%; transform:rotate(22deg); }.arrow:after { content:""; position:absolute; right:-{{ (5*s)|round|int }}px; top:-{{ (6*s)|round|int }}px; border-left:{{ (15*s)|round|int }}px solid #df563c; border-top:{{ (8*s)|round|int }}px solid transparent; border-bottom:{{ (8*s)|round|int }}px solid transparent; }
+    .node { position:absolute; display:grid; place-items:center; width:{{ (190*s)|round|int }}px; min-height:{{ (105*s)|round|int }}px; padding:{{ (15*s)|round|int }}px; color:#24322e; border:{{ (4*s)|round|int }}px solid #3b6d7e; border-radius:50%; background:#fffdf6; transform:rotate(-2deg); box-shadow:{{ (5*s)|round|int }}px {{ (6*s)|round|int }}px 0 rgba(59,109,126,.24); text-align:center; font:800 {{ (23*s)|round|int }}/1.1 var(--kai-font-body); }.node:nth-of-type(2) { border-color:#df563c; transform:rotate(3deg); }.node:nth-of-type(3) { border-color:#4e927c; transform:rotate(-4deg); }
+    .proof-note { position:absolute; right:{{ (50*s)|round|int }}px; bottom:{{ (45*s)|round|int }}px; width:{{ (310*s)|round|int }}px; padding:{{ (17*s)|round|int }}px; background:#fff27b; box-shadow:{{ (4*s)|round|int }}px {{ (5*s)|round|int }}px 0 rgba(132,111,33,.28); transform:rotate(2deg); color:#403a19; font:800 {{ (29*s)|round|int }}/1.18 var(--kai-font-body); }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}"><section class="board"><div class="brand-chip"><img src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div><h1 class="board-title" data-fit="diagram-headline" data-min-font-size="{{ (28*s)|round|int }}">{{ headline }}</h1><div class="arrow a1"></div><div class="arrow a2"></div>{% for node in nodes[:3] %}<div class="node" style="left:{{ node.get('x','45') }}%; top:{{ node.get('y','45') }}%;" {% if loop.first %}data-fit="diagram-label" data-min-font-size="{{ (14*s)|round|int }}"{% endif %}>{{ node.get('label','Step') }}</div>{% endfor %}<div class="proof-note" data-fit="diagram-proof" data-min-font-size="{{ (12*s)|round|int }}">{{ proof_label or subhead }}</div></section></main>
+
+</body>
+</html>

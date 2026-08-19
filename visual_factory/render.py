@@ -48,6 +48,14 @@ MOBILE_READABILITY_MINIMUMS = {
     "cta": 8,
     "local-note": 5,
     "pin-tag": 5,
+    "interface-headline": 5,
+    "interface-body": 4,
+    "interface-proof": 4,
+    "diagram-headline": 8,
+    "diagram-label": 4,
+    "diagram-proof": 4,
+    "timeline-headline": 7,
+    "timeline-proof": 4,
 }
 
 FONT_FILES = {
@@ -216,6 +224,7 @@ def template_context(
         "tokens_css": tokens_path.read_text(encoding="utf-8"),
         "font_css": load_font_css(),
         "shared_css": (TEMPLATE_DIR / "shared.css").read_text(encoding="utf-8"),
+        "template_data": request.get("template_data", {}),
     }
 
 

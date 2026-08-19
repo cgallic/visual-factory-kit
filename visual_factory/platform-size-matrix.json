@@ -394,5 +394,329 @@
     "aspect_ratio": "1.91:1",
     "template_file": "og_card",
     "notes": "Website, Slack, Discord, X, and social unfurls."
+  },
+  "apple_notes_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Social-native notes insight",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "apple_notes",
+    "notes": "Editorial notes-sheet treatment for concise insights."
+  },
+  "message_thread_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Social-native message thread",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "message_thread",
+    "notes": "Fictional conversation treatment for objection handling and education."
+  },
+  "tweet_card_square": {
+    "network": "X / LinkedIn",
+    "use": "Social-native post card",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "tweet_card",
+    "notes": "Abstracted public-post card for a strong point of view."
+  },
+  "search_autocomplete_portrait": {
+    "network": "Instagram / Pinterest",
+    "use": "Search and autocomplete insight",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "search_autocomplete",
+    "notes": "Search-led pain-point and answer treatment."
+  },
+  "receipt_audit_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Receipt-style audit",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "receipt_audit",
+    "notes": "Itemized cost-of-inaction or audit treatment."
+  },
+  "notion_checklist_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Operating checklist",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "notion_checklist",
+    "notes": "Abstracted checklist treatment for process proof."
+  },
+  "whiteboard_diagram_landscape": {
+    "network": "LinkedIn / X",
+    "use": "Whiteboard model",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "whiteboard_diagram",
+    "notes": "Hand-drawn-board treatment for a simple operating model."
+  },
+  "metrics_scorecard_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Metrics scorecard",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "metrics_scorecard",
+    "notes": "Three-metric proof treatment for benchmarks and case studies."
+  },
+  "launch_calendar_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Launch calendar",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "launch_calendar",
+    "notes": "Date-led event, milestone, and deadline treatment."
+  },
+  "testimonial_quote_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Testimonial pull quote",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "testimonial_quote",
+    "notes": "Approved customer-voice treatment with proof line."
+  },
+  "inbox_alert_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Inbox alert",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "inbox_alert",
+    "notes": "Fictional inbox treatment for urgency and response stories."
+  },
+  "workflow_timeline_landscape": {
+    "network": "LinkedIn / X",
+    "use": "Workflow timeline",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "workflow_timeline",
+    "notes": "Four-step operating-model treatment for explainer content."
+  },
+  "browser_tab_card_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Browser-tab card",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "browser_tab_card",
+    "notes": "Search-led education and product positioning"
+  },
+  "crm_pipeline_landscape": {
+    "network": "LinkedIn / X",
+    "use": "CRM pipeline",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "crm_pipeline",
+    "notes": "Lead progress, handoff, and response stories"
+  },
+  "calendar_agenda_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Calendar agenda",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "calendar_agenda",
+    "notes": "Events, launches, and implementation schedules"
+  },
+  "slack_update_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Team update",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "slack_update",
+    "notes": "Community announcements and internal-win narratives"
+  },
+  "highlighted_excerpt_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Highlighted excerpt",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "highlighted_excerpt",
+    "notes": "Insights, source-backed pull-outs, and founder notes"
+  },
+  "redline_document_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Redline document",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "redline_document",
+    "notes": "Before/after copy, revisions, and audit observations"
+  },
+  "feedback_form_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Feedback form",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "feedback_form",
+    "notes": "Research takeaways, product feedback, and listening posts"
+  },
+  "rating_review_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Rating review",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "rating_review",
+    "notes": "Approved social proof and review highlights"
+  },
+  "map_pin_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Map pin",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "map_pin",
+    "notes": "Local presence, service areas, and location-led posts"
+  },
+  "terminal_log_landscape": {
+    "network": "LinkedIn / X",
+    "use": "Terminal log",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "terminal_log",
+    "notes": "Technical proof, build updates, and operations content"
+  },
+  "browser_window_landscape": {
+    "network": "LinkedIn / X",
+    "use": "Browser window",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "browser_window",
+    "notes": "Website, workflow, and product-launch messages"
+  },
+  "kanban_board_landscape": {
+    "network": "LinkedIn / X",
+    "use": "Kanban board",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "kanban_board",
+    "notes": "Work-in-progress, planning, and operating-system content"
+  },
+  "polaroid_quote_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Polaroid quote",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "polaroid_quote",
+    "notes": "Warm founder-led stories and approved customer moments"
+  },
+  "newspaper_cover_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Newspaper cover",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "newspaper_cover",
+    "notes": "Big announcements, trend takes, and bold hooks"
+  },
+  "pricing_menu_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Pricing menu",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "pricing_menu",
+    "notes": "Offer framing, package comparisons, and value clarity"
+  },
+  "data_bar_chart_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Data bar chart",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "data_bar_chart",
+    "notes": "Benchmark and proof posts with clean visual comparison"
+  },
+  "funnel_map_landscape": {
+    "network": "LinkedIn / X",
+    "use": "Funnel map",
+    "width": 1600,
+    "height": 900,
+    "aspect_ratio": "16:9",
+    "template_file": "funnel_map",
+    "notes": "Demand generation, customer journey, and system models"
+  },
+  "product_release_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Product release",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "product_release",
+    "notes": "Feature drops, new capabilities, and release notes"
+  },
+  "case_study_chapter_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Case-study chapter",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "case_study_chapter",
+    "notes": "Outcome-led proof and transformation narratives"
+  },
+  "before_after_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Before / after",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "before_after",
+    "notes": "Contrast-led transformations and point-of-view posts"
+  },
+  "offer_stack_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Offer stack",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "offer_stack",
+    "notes": "Value stack, bundle composition, and campaign offers"
+  },
+  "countdown_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Countdown",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "countdown",
+    "notes": "Deadlines, events, and time-sensitive launches"
+  },
+  "do_dont_square": {
+    "network": "Instagram / LinkedIn",
+    "use": "Do / don't",
+    "width": 1080,
+    "height": 1080,
+    "aspect_ratio": "1:1",
+    "template_file": "do_dont",
+    "notes": "Educational contrast, best practices, and myth correction"
+  },
+  "carousel_cover_portrait": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel cover",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_cover",
+    "notes": "Swipeable teaching series and long-form social narratives"
   }
 }

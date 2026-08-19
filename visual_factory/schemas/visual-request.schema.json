@@ -4,7 +4,15 @@
   "title": "Visual Factory Request",
   "type": "object",
   "additionalProperties": false,
-  "required": ["request_id", "client", "content_id", "formats", "message", "proof", "output"],
+  "required": [
+    "request_id",
+    "client",
+    "content_id",
+    "formats",
+    "message",
+    "proof",
+    "output"
+  ],
   "properties": {
     "request_id": {
       "type": "string",
@@ -23,7 +31,9 @@
     },
     "distribution": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "uniqueItems": true,
       "default": []
     },
@@ -43,15 +53,23 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "persona": { "type": "string" },
-        "industry": { "type": "string" },
-        "funnel_stage": { "type": "string" }
+        "persona": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "funnel_stage": {
+          "type": "string"
+        }
       }
     },
     "message": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["headline"],
+      "required": [
+        "headline"
+      ],
       "properties": {
         "headline": {
           "type": "string",
@@ -90,9 +108,14 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["claim", "source_path"],
+        "required": [
+          "claim",
+          "source_path"
+        ],
         "properties": {
-          "proof_id": { "type": "string" },
+          "proof_id": {
+            "type": "string"
+          },
           "claim": {
             "type": "string",
             "minLength": 2,
@@ -108,14 +131,27 @@
           },
           "display_as": {
             "type": "string",
-            "enum": ["stat", "label", "source", "quote"],
+            "enum": [
+              "stat",
+              "label",
+              "source",
+              "quote"
+            ],
             "default": "stat"
           },
-          "verified_by": { "type": "string" },
-          "verified_at": { "type": "string" },
+          "verified_by": {
+            "type": "string"
+          },
+          "verified_at": {
+            "type": "string"
+          },
           "risk": {
             "type": "string",
-            "enum": ["low", "medium", "high"],
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
             "default": "low"
           }
         }
@@ -125,13 +161,23 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "template_family": { "type": "string" },
-        "mascot_role": { "type": "string" },
-        "preferred_pose": { "type": "string" },
-        "mood": { "type": "string" },
+        "template_family": {
+          "type": "string"
+        },
+        "mascot_role": {
+          "type": "string"
+        },
+        "preferred_pose": {
+          "type": "string"
+        },
+        "mood": {
+          "type": "string"
+        },
         "avoid": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -139,15 +185,25 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "pii_allowed": { "type": "boolean", "default": false },
-        "ai_disclosure_needed": { "type": "string" },
-        "claims_verified": { "type": "boolean" }
+        "pii_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "ai_disclosure_needed": {
+          "type": "string"
+        },
+        "claims_verified": {
+          "type": "boolean"
+        }
       }
     },
     "output": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["alt_text", "destination_dir"],
+      "required": [
+        "alt_text",
+        "destination_dir"
+      ],
       "properties": {
         "alt_text": {
           "type": "string",
@@ -163,6 +219,12 @@
           "pattern": "^[A-Za-z0-9._-]+$"
         }
       }
+    },
+    "template_data": {
+      "type": "object",
+      "description": "Optional, non-sensitive, template-specific display data. Existing message and proof fields remain the source of approved core copy.",
+      "additionalProperties": true,
+      "default": {}
     }
   }
 }

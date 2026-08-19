@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_portrait %}{% set d = template_data %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+    .canvas { background:#f6e58d; color:#2d2a20; padding:{{ (74*s)|round|int }}px {{ (68*s)|round|int }}px; }
+    .canvas::before,.canvas::after { display:none; }
+    .note { height:100%; border-radius:{{ (36*s)|round|int }}px; padding:{{ (48*s)|round|int }}px; background:#fffced; box-shadow:0 {{ (24*s)|round|int }}px {{ (60*s)|round|int }}px rgba(76,61,20,.18); }
+    .note-brand { display:flex; align-items:center; gap:{{ (12*s)|round|int }}px; color:#59513b; font:700 {{ (19*s)|round|int }}px var(--kai-font-body); }
+    .note-brand img { width:{{ (30*s)|round|int }}px; height:{{ (30*s)|round|int }}px; object-fit:contain; }
+    .note-title { margin:{{ (45*s)|round|int }}px 0 {{ (10*s)|round|int }}px; color:#231f17; font:900 {{ (59*s)|round|int }}px/.98 var(--kai-font-display); max-height:{{ (270*s)|round|int }}px; }
+    .note-date { color:#9c9276; font:700 {{ (17*s)|round|int }}px var(--kai-font-mono); }
+    .note-body { margin-top:{{ (34*s)|round|int }}px; color:#383328; font:500 {{ (27*s)|round|int }}px/1.42 var(--kai-font-body); }
+    .highlight { display:inline; padding:{{ (2*s)|round|int }}px {{ (6*s)|round|int }}px; background:linear-gradient(transparent 20%,#f6d64a 20% 88%,transparent 88%); font-weight:700; }
+    .note-rule { margin:{{ (36*s)|round|int }}px 0; border:0; border-top:{{ (2*s)|round|int }}px solid #eee4c6; }
+    .proof { color:#625617; font:700 {{ (22*s)|round|int }}px/1.25 var(--kai-font-mono); }
+    .note-footer { position:absolute; left:{{ (116*s)|round|int }}px; bottom:{{ (118*s)|round|int }}px; color:#807556; font:700 {{ (16*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; }
+
+  </style>
+</head>
+<body>
+
+  <main class="canvas" role="img" aria-label="{{ alt_text }}">
+    <article class="note">
+      <div class="note-brand"><img src="{{ brand_icon_uri }}" alt=""><span>{{ d.get('note_title', brand_name ~ ' field notes') }}</span></div>
+      <h1 class="note-title" data-fit="interface-headline" data-min-font-size="{{ (34*s)|round|int }}">{{ headline }}</h1>
+      <div class="note-date">{{ d.get('note_date', 'Today · operator note') }}</div>
+      <p class="note-body" data-fit="interface-body" data-min-font-size="{{ (17*s)|round|int }}">{{ subhead or 'A short, useful observation worth keeping close.' }}</p>
+      <hr class="note-rule">
+      <p class="note-body"><span class="highlight">{{ d.get('highlight', proof_label or 'Keep the next step easy to see.') }}</span></p>
+      <div class="proof" data-fit="interface-proof" data-min-font-size="{{ (14*s)|round|int }}">{{ proof_label }}</div>
+    </article>
+    <div class="note-footer">{{ cta or 'Save this note' }}</div>
+  </main>
+
+</body>
+</html>

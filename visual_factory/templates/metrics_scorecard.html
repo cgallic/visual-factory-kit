@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ headline }}</title>
+  <style>
+    {{ font_css | safe }}
+    {{ tokens_css | safe }}
+    {{ shared_css | safe }}
+
+    {% set s = scale_square %}{% set d = template_data %}{% set metrics = d.get('metrics',[{'value':'64%','label':'after hours'},{'value':'3 min','label':'to next step'},{'value':'1 view','label':'of the context'}]) %}
+    :root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }.canvas { padding:{{ (62*s)|round|int }}px; background:radial-gradient(circle at 82% 12%,#5b70d8,transparent 30%),#101827; }.canvas::before,.canvas::after { display:none; }.panel { height:100%; padding:{{ (46*s)|round|int }}px; border:1px solid rgba(255,255,255,.18); border-radius:{{ (32*s)|round|int }}px; background:rgba(19,31,51,.82); color:white; }.mini-brand { display:flex; align-items:center; gap:{{ (11*s)|round|int }}px; color:#dfe8ff; font:800 {{ (19*s)|round|int }}px var(--kai-font-body); }.mini-brand img { width:{{ (32*s)|round|int }}px; height:{{ (32*s)|round|int }}px; object-fit:contain; }.score-title { margin:{{ (42*s)|round|int }}px 0 {{ (34*s)|round|int }}px; font:900 {{ (48*s)|round|int }}/1 var(--kai-font-display); max-height:{{ (230*s)|round|int }}px; }.metric { margin:{{ (16*s)|round|int }}px 0; padding:{{ (21*s)|round|int }}px; border-radius:{{ (20*s)|round|int }}px; background:rgba(255,255,255,.09); }.value { color:#8cf1cf; font:900 {{ (43*s)|round|int }}/.95 var(--kai-font-display); }.label { margin-top:{{ (6*s)|round|int }}px; color:#c9d3e7; font:700 {{ (18*s)|round|int }}px var(--kai-font-body); }.score-proof { margin-top:{{ (26*s)|round|int }}px; color:#fbdf80; font:800 {{ (18*s)|round|int }}/1.2 var(--kai-font-mono); }
+
+  </style>
+</head>
+<body>
+<main class="canvas" role="img" aria-label="{{ alt_text }}"><section class="panel"><div class="mini-brand"><img src="{{ brand_icon_uri }}" alt=""><span>{{ brand_name }}</span></div><h1 class="score-title" data-fit="interface-headline" data-min-font-size="{{ (27*s)|round|int }}">{{ headline }}</h1>{% for metric in metrics %}<div class="metric"><div class="value">{{ metric.get('value','—') }}</div><div class="label">{{ metric.get('label','Metric') }}</div></div>{% endfor %}<div class="score-proof" data-fit="interface-proof" data-min-font-size="{{ (13*s)|round|int }}">{{ proof_label }}</div></section></main>
+</body>
+</html>

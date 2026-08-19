@@ -279,6 +279,35 @@ Use this for:
 - carousel production
 - proof-backed campaign assets
 
+
+## Social-Native Template Library
+
+The factory now includes twelve differentiated, deterministic social-native layouts alongside its campaign-card formats. They are designed for thought leadership, proof, process education, event promotion, and customer stories without relying on generic generated imagery.
+
+| Format key | Family | Primary use |
+| --- | --- | --- |
+| `apple_notes_portrait` | Notes sheet | Concise insight |
+| `message_thread_square` | Message thread | Objection handling |
+| `tweet_card_square` | Public post card | Strong point of view |
+| `search_autocomplete_portrait` | Search prompt | Search-led education |
+| `receipt_audit_portrait` | Receipt audit | Cost of inaction |
+| `notion_checklist_portrait` | Operating checklist | Process proof |
+| `whiteboard_diagram_landscape` | Whiteboard model | Framework explainer |
+| `metrics_scorecard_square` | Metrics scorecard | Benchmarks and proof |
+| `launch_calendar_portrait` | Launch calendar | Dates and events |
+| `testimonial_quote_square` | Testimonial quote | Approved customer voice |
+| `inbox_alert_portrait` | Inbox alert | Response urgency |
+| `workflow_timeline_landscape` | Workflow timeline | Step-by-step explanation |
+
+Start with `examples/social-native-request.json` to render the complete library. Use fictional or approved display data for all interface-inspired formats; do not represent a real person’s private messages, inbox, receipts, reviews, or account activity.
+
+
+## Expanded Template Catalog
+
+The kit now contains **36 distinct template families**. In addition to its platform-oriented campaign cards, it includes social-native notes, threads, search, checklists, whiteboards, scorecards, pull quotes, and an extended library of browser, pipeline, calendar, team-update, excerpt, redline, feedback, review, map, terminal, Kanban, newspaper, pricing, chart, funnel, product-release, case-study, contrast, offer, countdown, rules, and carousel-cover formats.
+
+Read `TEMPLATE_CATALOG.md` for the complete catalog and render `examples/template-catalog-request.json` for the 24 extended categories.
+
 ## Customize It
 
 Add a platform:
