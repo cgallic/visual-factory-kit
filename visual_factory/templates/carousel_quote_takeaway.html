@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:linear-gradient(145deg,#342650,#78578d);color:#faf5ff}.card{height:100%;padding:{{(46*s)|round|int}}px;border-radius:{{(30*s)|round|int}}px;background:rgba(24,14,44,.48);border:1px solid rgba(255,255,255,.2)}.top{display:flex;justify-content:space-between;color:#eadff7}.quote{margin-top:{{(115*s)|round|int}}px;color:#f4cf7c;font:900 {{(130*s)|round|int}}px/.55 var(--kai-font-display)}.words{margin-top:{{(48*s)|round|int}}px;color:white;font:900 {{(57*s)|round|int}}px/.97 var(--kai-font-display);max-height:{{(350*s)|round|int}}px}.attr{margin-top:{{(45*s)|round|int}}px;color:#e3d5f2;font:800 {{(18*s)|round|int}}px var(--kai-font-body)}.tag{margin-top:{{(20*s)|round|int}}px;color:#9bd9cf;font:800 {{(14*s)|round|int}}px var(--kai-font-mono)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><div class="quote">“</div><div class="words" data-fit="interface-headline" data-min-font-size="{{(27*s)|round|int}}">{{item.get('quote',headline)}}</div><div class="attr">{{item.get('attribution','Founder takeaway · KaiCalls')}}</div><div class="tag" data-fit="interface-proof" data-min-font-size="{{(10*s)|round|int}}">{{item.get('proof',proof_label)}}</div></section></main></body></html>

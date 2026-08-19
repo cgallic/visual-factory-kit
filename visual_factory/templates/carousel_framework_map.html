@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#e7f1ee;color:#20392f}.card{height:100%;padding:{{(45*s)|round|int}}px;border-radius:{{(30*s)|round|int}}px;background:#fafffc;box-shadow:0 {{(18*s)|round|int}}px {{(40*s)|round|int}}px rgba(32,79,61,.14)}.top{display:flex;justify-content:space-between;color:#4f796a}.title{margin:{{(57*s)|round|int}}px 0 {{(64*s)|round|int}}px;color:#1d3f34;font:900 {{(62*s)|round|int}}px/.95 var(--kai-font-display);max-height:{{(270*s)|round|int}}px}.map{position:relative;height:{{(470*s)|round|int}}px}.node{position:absolute;display:grid;place-items:center;width:{{(260*s)|round|int}}px;height:{{(160*s)|round|int}}px;padding:{{(18*s)|round|int}}px;border-radius:{{(23*s)|round|int}}px;background:#d2efe4;color:#205b45;text-align:center;font:900 {{(28*s)|round|int}}px/1.02 var(--kai-font-body)}.node:nth-child(1){left:0;top:{{(124*s)|round|int}}px}.node:nth-child(2){left:{{(345*s)|round|int}}px;top:0;background:#a8d9c5}.node:nth-child(3){right:0;top:{{(124*s)|round|int}}px;background:#579d83;color:#fff}.arrow{position:absolute;color:#d96443;font:900 {{(44*s)|round|int}}px var(--kai-font-body)}.a1{left:{{(270*s)|round|int}}px;top:{{(168*s)|round|int}}px}.a2{right:{{(270*s)|round|int}}px;top:{{(168*s)|round|int}}px}.proof{margin-top:{{(22*s)|round|int}}px;color:#547a6d;font:800 {{(16*s)|round|int}}px var(--kai-font-mono)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(27*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="map">{% for label in item.get('nodes',['Capture','Clarify','Act']) %}<div class="node">{{label}}</div>{% endfor %}<span class="arrow a1">→</span><span class="arrow a2">→</span></div><div class="proof" data-fit="interface-proof" data-min-font-size="{{(11*s)|round|int}}">{{item.get('proof',proof_label)}}</div></section></main></body></html>

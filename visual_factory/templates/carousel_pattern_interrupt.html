@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#f7f0dd;color:#282c35}.card{height:100%;padding:{{(46*s)|round|int}}px;border-radius:{{(30*s)|round|int}}px;background:#fffdf7;box-shadow:0 {{(19*s)|round|int}}px {{(40*s)|round|int}}px rgba(86,65,25,.16)}.top{display:flex;justify-content:space-between;color:#776945}.interrupt{margin-top:{{(125*s)|round|int}}px;color:#253b57;font:900 {{(105*s)|round|int}}px/.8 var(--kai-font-display);letter-spacing:-.08em}.word{display:block}.word:nth-child(2){margin-left:{{(108*s)|round|int}}px;color:#d5533e}.line{width:{{(430*s)|round|int}}px;height:{{(15*s)|round|int}}px;margin:{{(39*s)|round|int}}px 0;background:#f5d24d;transform:rotate(-3deg)}.body{max-width:{{(760*s)|round|int}}px;color:#3d4d63;font:800 {{(31*s)|round|int}}px/1.16 var(--kai-font-body);max-height:{{(220*s)|round|int}}px}.footer{position:absolute;right:{{(92*s)|round|int}}px;bottom:{{(94*s)|round|int}}px;color:#857455;font:800 {{(15*s)|round|int}}px var(--kai-font-mono)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><div class="interrupt"><span class="word">{{item.get('word_one','NOT')}}</span><span class="word">{{item.get('word_two','VOLUME')}}</span></div><div class="line"></div><p class="body" data-fit="interface-headline" data-min-font-size="{{(19*s)|round|int}}">{{item.get('headline',headline)}}</p><div class="footer">{{item.get('footer','THE REFRAME')}}</div></section></main></body></html>

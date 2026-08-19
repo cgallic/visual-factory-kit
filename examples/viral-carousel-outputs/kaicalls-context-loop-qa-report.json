@@ -1,0 +1,809 @@
+{
+  "request_id": "kai-context-loop-carousel-001",
+  "content_id": "context-loop-carousel",
+  "rendered_at": "2026-08-19T22:14:37+00:00",
+  "renderer": "visual_factory_renderer@0.1.0",
+  "assets": [
+    {
+      "template": "carousel_viral_cover",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_viral_cover.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_viral_cover.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_pattern_interrupt",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_pattern_interrupt.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_pattern_interrupt.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_problem_card",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_problem_card.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_problem_card.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_mistake_card",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_mistake_card.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_mistake_card.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_framework_map",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_framework_map.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_framework_map.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_step_card",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_step_card.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_step_card.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_saveable_checklist",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_saveable_checklist.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_saveable_checklist.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_proof_snapshot",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_proof_snapshot.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_proof_snapshot.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_before_after",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_before_after.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_before_after.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_myth_truth",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_myth_truth.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_myth_truth.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_quote_takeaway",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_quote_takeaway.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_quote_takeaway.provenance.json",
+      "passed_qa": true
+    },
+    {
+      "template": "carousel_close_cta",
+      "png": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_close_cta.png",
+      "provenance": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_close_cta.provenance.json",
+      "passed_qa": true
+    }
+  ],
+  "qa": [
+    {
+      "template": "carousel_viral_cover",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_viral_cover.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Why good calls still die after you answer.",
+          "fontSize": 79,
+          "finalFontSize": 79,
+          "width": 820,
+          "height": 143.75
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 79,
+            "mobile_preview_font_size": 26.33,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_pattern_interrupt",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_pattern_interrupt.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "It isn't a call-volume problem.",
+          "fontSize": 31,
+          "finalFontSize": 31,
+          "width": 760,
+          "height": 35.953125
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 31,
+            "mobile_preview_font_size": 10.33,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_problem_card",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_problem_card.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "The call ends, but the useful context disappears.",
+          "fontSize": 70,
+          "finalFontSize": 70,
+          "width": 890,
+          "height": 195.28125
+        },
+        {
+          "label": "interface-proof",
+          "text": "64% of calls came after hours",
+          "fontSize": 16.02338129496403,
+          "finalFontSize": 16.02338129496403,
+          "width": 278.40625,
+          "height": 20
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 70,
+            "mobile_preview_font_size": 23.33,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 16.02,
+            "mobile_preview_font_size": 5.34,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_mistake_card",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_mistake_card.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Logging the call after the fact.",
+          "fontSize": 55,
+          "finalFontSize": 55,
+          "width": 892,
+          "height": 52.796875
+        },
+        {
+          "label": "interface-proof",
+          "text": "\u2713 Capture what changed while the signal is still fresh.",
+          "fontSize": 22,
+          "finalFontSize": 22,
+          "width": 892,
+          "height": 64.828125
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 55,
+            "mobile_preview_font_size": 18.33,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 22,
+            "mobile_preview_font_size": 7.33,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_framework_map",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_framework_map.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "The Context Loop",
+          "fontSize": 62,
+          "finalFontSize": 62,
+          "width": 894,
+          "height": 58.890625
+        },
+        {
+          "label": "interface-proof",
+          "text": "One useful loop beats a long activity log.",
+          "fontSize": 16,
+          "finalFontSize": 16,
+          "width": 894,
+          "height": 20
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 62,
+            "mobile_preview_font_size": 20.67,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 16,
+            "mobile_preview_font_size": 5.33,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_step_card",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_step_card.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Capture the change, not just the call.",
+          "fontSize": 66,
+          "finalFontSize": 66,
+          "width": 890,
+          "height": 124.0625
+        },
+        {
+          "label": "interface-proof",
+          "text": "What matters now? Who owns the next step? What has to happen next?",
+          "fontSize": 22,
+          "finalFontSize": 22,
+          "width": 890,
+          "height": 63.046875
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 66,
+            "mobile_preview_font_size": 22.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 22,
+            "mobile_preview_font_size": 7.33,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_saveable_checklist",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_saveable_checklist.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "The three-line follow-up checklist",
+          "fontSize": 59,
+          "finalFontSize": 59,
+          "width": 894,
+          "height": 113.25
+        },
+        {
+          "label": "interface-proof",
+          "text": "SAVE THIS CHECKLIST",
+          "fontSize": 15,
+          "finalFontSize": 15,
+          "width": 894,
+          "height": 51
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 59,
+            "mobile_preview_font_size": 19.67,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 15,
+            "mobile_preview_font_size": 5.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_proof_snapshot",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_proof_snapshot.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Most useful work happens after hours.",
+          "fontSize": 55,
+          "finalFontSize": 55,
+          "width": 894,
+          "height": 105.59375
+        },
+        {
+          "label": "interface-proof",
+          "text": "SOURCE: APPROVED INTERNAL ANALYSIS",
+          "fontSize": 14,
+          "finalFontSize": 14,
+          "width": 894,
+          "height": 18
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 55,
+            "mobile_preview_font_size": 18.33,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 14,
+            "mobile_preview_font_size": 4.67,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_before_after",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_before_after.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "A clear handoff changes the outcome.",
+          "fontSize": 54,
+          "finalFontSize": 54,
+          "width": 896,
+          "height": 103.65625
+        },
+        {
+          "label": "interface-proof",
+          "text": "Context travels farther than memory.",
+          "fontSize": 15,
+          "finalFontSize": 15,
+          "width": 984,
+          "height": 63
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 54,
+            "mobile_preview_font_size": 18.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 15,
+            "mobile_preview_font_size": 5.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_myth_truth",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_myth_truth.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Speed helps. Context closes the loop.",
+          "fontSize": 55,
+          "finalFontSize": 55,
+          "width": 896,
+          "height": 105.59375
+        },
+        {
+          "label": "interface-proof",
+          "text": "Useful context creates useful follow-up.",
+          "fontSize": 16,
+          "finalFontSize": 16,
+          "width": 896,
+          "height": 19.1875
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 55,
+            "mobile_preview_font_size": 18.33,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 16,
+            "mobile_preview_font_size": 5.33,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_quote_takeaway",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_quote_takeaway.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Speed without context creates repeat work.",
+          "fontSize": 57,
+          "finalFontSize": 57,
+          "width": 890,
+          "height": 110.5625
+        },
+        {
+          "label": "interface-proof",
+          "text": "BUILD THE BRIEF, NOT JUST THE LOG",
+          "fontSize": 14,
+          "finalFontSize": 14,
+          "width": 890,
+          "height": 18
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 57,
+            "mobile_preview_font_size": 19.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 14,
+            "mobile_preview_font_size": 4.67,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    },
+    {
+      "template": "carousel_close_cta",
+      "output_path": "examples/viral-carousel-outputs/kaicalls-context-loop-carousel_close_cta.png",
+      "expected_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "actual_dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "checks": {
+        "dimensions_match": true,
+        "text_overflow": true,
+        "mobile_readability": true,
+        "alt_text_present": true,
+        "proof_source_present": true,
+        "provenance_sidecar_present": true,
+        "banned_public_terms_absent": true
+      },
+      "overflow": [],
+      "text_metrics": [
+        {
+          "label": "interface-headline",
+          "text": "Build the Context Loop into every important call.",
+          "fontSize": 72,
+          "finalFontSize": 72,
+          "width": 890,
+          "height": 133.90625
+        },
+        {
+          "label": "interface-proof",
+          "text": "Capture the change. Clarify the next action. Share the useful brief.",
+          "fontSize": 24,
+          "finalFontSize": 24,
+          "width": 890,
+          "height": 69.75
+        }
+      ],
+      "mobile_preview": {
+        "preview_width": 360,
+        "scale": 0.3333,
+        "readability": [
+          {
+            "label": "interface-headline",
+            "font_size": 72,
+            "mobile_preview_font_size": 24.0,
+            "minimum_mobile_font_size": 5,
+            "passed": true
+          },
+          {
+            "label": "interface-proof",
+            "font_size": 24,
+            "mobile_preview_font_size": 8.0,
+            "minimum_mobile_font_size": 4,
+            "passed": true
+          }
+        ]
+      },
+      "missing_proof_sources": [],
+      "banned_public_terms": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

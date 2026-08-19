@@ -718,5 +718,125 @@
     "aspect_ratio": "4:5",
     "template_file": "carousel_cover",
     "notes": "Swipeable teaching series and long-form social narratives"
+  },
+  "carousel_viral_cover": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel cover hook",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_viral_cover",
+    "slide_index": 1,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_pattern_interrupt": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel pattern interrupt",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_pattern_interrupt",
+    "slide_index": 2,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_problem_card": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel problem card",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_problem_card",
+    "slide_index": 3,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_mistake_card": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel mistake card",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_mistake_card",
+    "slide_index": 4,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_framework_map": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel framework map",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_framework_map",
+    "slide_index": 5,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_step_card": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel step card",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_step_card",
+    "slide_index": 6,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_saveable_checklist": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel saveable checklist",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_saveable_checklist",
+    "slide_index": 7,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_proof_snapshot": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel proof snapshot",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_proof_snapshot",
+    "slide_index": 8,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_before_after": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel before and after",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_before_after",
+    "slide_index": 9,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_myth_truth": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel myth and truth",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_myth_truth",
+    "slide_index": 10,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_quote_takeaway": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel quote takeaway",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_quote_takeaway",
+    "slide_index": 11,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
+  },
+  "carousel_close_cta": {
+    "network": "Instagram / LinkedIn",
+    "use": "Carousel closing CTA",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "template_file": "carousel_close_cta",
+    "slide_index": 12,
+    "notes": "Original performance-oriented carousel slide. Pair with VIRAL_CAROUSEL_PLAYBOOK.md; use only the slide roles needed for a specific story."
   }
 }

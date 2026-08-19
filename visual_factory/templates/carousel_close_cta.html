@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:radial-gradient(circle at 75% 14%,#a3d6f0,transparent 26%),#102b43;color:#fdf8ed}.card{height:100%;padding:{{(46*s)|round|int}}px;border-radius:{{(30*s)|round|int}}px;background:linear-gradient(150deg,rgba(255,255,255,.14),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.22)}.top{display:flex;justify-content:space-between;color:#d9ecf6}.save{margin-top:{{(135*s)|round|int}}px;color:#7ee2c1;font:900 {{(29*s)|round|int}}px var(--kai-font-mono);text-transform:uppercase}.title{margin:{{(31*s)|round|int}}px 0;color:#fffdf7;font:900 {{(72*s)|round|int}}px/.93 var(--kai-font-display);max-height:{{(385*s)|round|int}}px}.recap{margin-top:{{(38*s)|round|int}}px;padding:{{(20*s)|round|int}}px;border-radius:{{(16*s)|round|int}}px;background:rgba(255,255,255,.10);color:#d6e9f1;font:800 {{(24*s)|round|int}}px/1.24 var(--kai-font-body)}.arrow{position:absolute;right:{{(95*s)|round|int}}px;bottom:{{(94*s)|round|int}}px;color:#f4cf7c;font:900 {{(45*s)|round|int}}px var(--kai-font-body)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><div class="save">{{item.get('action','SAVE THIS')}}</div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(31*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="recap" data-fit="interface-proof" data-min-font-size="{{(14*s)|round|int}}">{{item.get('support',subhead)}}</div><div class="arrow">→</div></section></main></body></html>

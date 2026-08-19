@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#213657;color:#f8f4ec}.card{height:100%;padding:{{(46*s)|round|int}}px;border-radius:{{(30*s)|round|int}}px;background:linear-gradient(145deg,#223a5d,#172b47);border:1px solid rgba(255,255,255,.18)}.top{display:flex;justify-content:space-between;color:#d7e7fb}.step{margin-top:{{(95*s)|round|int}}px;color:#88d6c1;font:900 {{(173*s)|round|int}}px/.76 var(--kai-font-display);letter-spacing:-.08em}.label{margin-top:{{(24*s)|round|int}}px;color:#88d6c1;font:900 {{(17*s)|round|int}}px var(--kai-font-mono);text-transform:uppercase}.title{margin:{{(28*s)|round|int}}px 0;color:#fffdf7;font:900 {{(66*s)|round|int}}px/.94 var(--kai-font-display);max-height:{{(320*s)|round|int}}px}.outcome{margin-top:{{(30*s)|round|int}}px;padding:{{(18*s)|round|int}}px;border-radius:{{(15*s)|round|int}}px;color:#cae2ef;background:rgba(255,255,255,.09);font:700 {{(22*s)|round|int}}px/1.23 var(--kai-font-body)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><div class="step">{{item.get('number','01')}}</div><div class="label">The next action</div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(29*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="outcome" data-fit="interface-proof" data-min-font-size="{{(13*s)|round|int}}">{{item.get('support',subhead)}}</div></section></main></body></html>

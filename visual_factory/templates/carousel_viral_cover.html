@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:radial-gradient(circle at 82% 11%,#ffcc75,transparent 24%),linear-gradient(155deg,#102a43,#1c3d5a);color:#fef9eb}.cover{height:100%;padding:{{(46*s)|round|int}}px;border:1px solid rgba(255,255,255,.2);border-radius:{{(31*s)|round|int}}px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.015));position:relative;overflow:hidden}.cover:after{content:'';position:absolute;width:{{(360*s)|round|int}}px;height:{{(360*s)|round|int}}px;right:-{{(110*s)|round|int}}px;bottom:-{{(110*s)|round|int}}px;border:{{(35*s)|round|int}}px solid rgba(126,226,193,.40);border-radius:50%}.top{display:flex;justify-content:space-between;align-items:center;color:#e6f1f9}.tag{display:inline-block;margin-top:{{(120*s)|round|int}}px;padding:{{(10*s)|round|int}}px {{(15*s)|round|int}}px;border-radius:999px;background:#7ee2c1;color:#164a43;font:900 {{(14*s)|round|int}}px var(--kai-font-mono)}.title{position:relative;z-index:1;margin:{{(32*s)|round|int}}px 0 0;max-width:{{(820*s)|round|int}}px;color:#fffaf0;font:900 {{(79*s)|round|int}}px/.91 var(--kai-font-display);letter-spacing:-.04em;max-height:{{(455*s)|round|int}}px}.swipe{position:absolute;z-index:1;right:{{(46*s)|round|int}}px;bottom:{{(46*s)|round|int}}px;color:#cfe7f2;font:800 {{(18*s)|round|int}}px var(--kai-font-body)}.arrow{color:#7ee2c1;font-size:{{(27*s)|round|int}}px}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="cover"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">01 / {{deck|length or 7}}</span></div><div class="tag">{{item.get('kicker','THE CONTEXT LOOP')}}</div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(36*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="swipe">Swipe to see why <span class="arrow">→</span></div></section></main></body></html>

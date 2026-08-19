@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#173548;color:#fffaf0}.card{height:100%;padding:{{(46*s)|round|int}}px;border-radius:{{(30*s)|round|int}}px;background:linear-gradient(150deg,#16384b,#102737);border:1px solid rgba(255,255,255,.15)}.top{display:flex;justify-content:space-between;color:#d5e8f3}.problem{margin-top:{{(92*s)|round|int}}px;display:inline-block;padding:{{(11*s)|round|int}}px {{(16*s)|round|int}}px;border-radius:999px;background:#e96859;color:#fff7f3;font:900 {{(14*s)|round|int}}px var(--kai-font-mono)}.title{margin:{{(31*s)|round|int}}px 0;color:#fffdf8;font:900 {{(70*s)|round|int}}px/.93 var(--kai-font-display);max-height:{{(390*s)|round|int}}px}.friction{margin-top:{{(35*s)|round|int}}px;padding:{{(23*s)|round|int}}px;border-left:{{(7*s)|round|int}}px solid #f0b572;background:rgba(255,255,255,.08);color:#dcecf3;font:700 {{(26*s)|round|int}}px/1.25 var(--kai-font-body)}.proof{position:absolute;left:{{(93*s)|round|int}}px;bottom:{{(91*s)|round|int}}px;color:#f0cf89;font:800 {{(16*s)|round|int}}px var(--kai-font-mono)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><div class="problem">{{item.get('kicker','THE PROBLEM')}}</div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(30*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="friction">{{item.get('support',subhead)}}</div><div class="proof" data-fit="interface-proof" data-min-font-size="{{(11*s)|round|int}}">{{item.get('proof',proof_label)}}</div></section></main></body></html>

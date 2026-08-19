@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#f3ede5;color:#30271f}.card{height:100%;overflow:hidden;border-radius:{{(30*s)|round|int}}px;background:#fff;box-shadow:0 {{(18*s)|round|int}}px {{(40*s)|round|int}}px rgba(72,48,23,.14)}.top{display:flex;justify-content:space-between;padding:{{(42*s)|round|int}}px {{(44*s)|round|int}}px;color:#806b58}.title{margin:0 {{(44*s)|round|int}}px {{(42*s)|round|int}}px;color:#342c25;font:900 {{(55*s)|round|int}}px/.96 var(--kai-font-display);max-height:{{(230*s)|round|int}}px}.halves{display:grid;grid-template-columns:1fr 1fr;height:{{(570*s)|round|int}}px}.half{padding:{{(34*s)|round|int}}px}.myth{background:#f8dedb;color:#863f3a}.truth{background:#dcefe4;color:#226249}.mark{font:900 {{(65*s)|round|int}}px/.7 var(--kai-font-display)}.label{margin-top:{{(22*s)|round|int}}px;font:900 {{(15*s)|round|int}}px var(--kai-font-mono);text-transform:uppercase}.copy{margin-top:{{(18*s)|round|int}}px;font:800 {{(28*s)|round|int}}px/1.08 var(--kai-font-body)}.proof{margin:{{(35*s)|round|int}}px {{(44*s)|round|int}}px;color:#556b5c;font:800 {{(16*s)|round|int}}px/1.2 var(--kai-font-body)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(23*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="halves"><section class="half myth"><div class="mark">×</div><div class="label">Myth</div><div class="copy">{{item.get('myth','Fast response is enough.') }}</div></section><section class="half truth"><div class="mark">✓</div><div class="label">Truth</div><div class="copy">{{item.get('truth',subhead)}}</div></section></div><div class="proof" data-fit="interface-proof" data-min-font-size="{{(11*s)|round|int}}">{{item.get('proof',proof_label)}}</div></section></main></body></html>

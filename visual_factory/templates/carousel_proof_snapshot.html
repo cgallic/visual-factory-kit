@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#eff1fb;color:#24324b}.card{height:100%;padding:{{(45*s)|round|int}}px;border-radius:{{(29*s)|round|int}}px;background:#fff;box-shadow:0 {{(18*s)|round|int}}px {{(40*s)|round|int}}px rgba(33,53,93,.14)}.top{display:flex;justify-content:space-between;color:#5e7295}.title{margin:{{(48*s)|round|int}}px 0;color:#1f3454;font:900 {{(55*s)|round|int}}px/.96 var(--kai-font-display);max-height:{{(238*s)|round|int}}px}.metric{margin-top:{{(20*s)|round|int}}px;color:#4d63d8;font:900 {{(131*s)|round|int}}px/.82 var(--kai-font-display);letter-spacing:-.07em}.metric-label{margin-top:{{(15*s)|round|int}}px;color:#4a5c79;font:800 {{(22*s)|round|int}}px/1.2 var(--kai-font-body)}.bars{display:flex;align-items:flex-end;gap:{{(17*s)|round|int}}px;height:{{(220*s)|round|int}}px;margin-top:{{(43*s)|round|int}}px;padding:{{(10*s)|round|int}}px 0;border-bottom:{{(3*s)|round|int}}px solid #d7dfec}.bar{flex:1;border-radius:{{(13*s)|round|int}}px {{(13*s)|round|int}}px 0 0;background:#9eb7e8}.bar:nth-child(2){background:#7999df}.bar:nth-child(3){background:#5276cb}.bar:nth-child(4){background:#344aa8}.source{margin-top:{{(23*s)|round|int}}px;color:#687a9c;font:800 {{(14*s)|round|int}}px var(--kai-font-mono)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(24*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="metric">{{item.get('metric',proof_label)}}</div><div class="metric-label">{{item.get('support',subhead)}}</div><div class="bars">{% for bar in item.get('bars',[35,51,68,91]) %}<div class="bar" style="height:{{bar}}%"></div>{% endfor %}</div><div class="source" data-fit="interface-proof" data-min-font-size="{{(10*s)|round|int}}">{{item.get('source','SOURCE: APPROVED INTERNAL ANALYSIS')}}</div></section></main></body></html>

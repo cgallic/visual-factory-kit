@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ headline }}</title><style>
+{{ font_css | safe }}
+{{ tokens_css | safe }}
+{{ shared_css | safe }}
+
+{% set s = scale_portrait %}
+{% set d = template_data %}
+{% set deck = d.get('slides', []) %}
+{% set index = format_spec.get('slide_index', 1)|int - 1 %}
+{% set item = deck[index] if deck|length > index else {} %}
+:root { --canvas-width: {{ width }}px; --canvas-height: {{ height }}px; }
+.canvas::before, .canvas::after { display:none; }
+.brand { display:flex; align-items:center; gap:{{ (10*s)|round|int }}px; font:800 {{ (16*s)|round|int }}px var(--kai-font-body); }
+.brand img { width:{{ (28*s)|round|int }}px; height:{{ (28*s)|round|int }}px; object-fit:contain; }
+.slide-no { font:800 {{ (16*s)|round|int }}px var(--kai-font-mono); letter-spacing:.05em; }
+.micro { font:800 {{ (14*s)|round|int }}px var(--kai-font-mono); text-transform:uppercase; letter-spacing:.06em; }
+
+.canvas{padding:{{(48*s)|round|int}}px;background:#ede7dd;color:#302c27}.card{height:100%;overflow:hidden;border-radius:{{(30*s)|round|int}}px;background:#fff;box-shadow:0 {{(18*s)|round|int}}px {{(40*s)|round|int}}px rgba(68,52,32,.15)}.top{display:flex;justify-content:space-between;padding:{{(42*s)|round|int}}px {{(44*s)|round|int}}px;color:#796c5a}.title{margin:0 {{(44*s)|round|int}}px {{(38*s)|round|int}}px;color:#2d342e;font:900 {{(54*s)|round|int}}px/.96 var(--kai-font-display);max-height:{{(220*s)|round|int}}px}.split{display:grid;grid-template-rows:1fr 1fr;height:{{(680*s)|round|int}}px}.half{padding:{{(36*s)|round|int}}px {{(44*s)|round|int}}px}.before{background:#f8e3e0;color:#7e3d39}.after{background:#dff2e8;color:#1f694d}.label{font:900 {{(15*s)|round|int}}px var(--kai-font-mono);text-transform:uppercase}.copy{margin-top:{{(18*s)|round|int}}px;font:900 {{(37*s)|round|int}}px/.98 var(--kai-font-display);max-height:{{(160*s)|round|int}}px}.footer{padding:{{(22*s)|round|int}}px {{(44*s)|round|int}}px;color:#687365;font:800 {{(15*s)|round|int}}px var(--kai-font-mono)}
+</style></head><body><main class="canvas" role="img" aria-label="{{alt_text}}"><section class="card"><div class="top"><div class="brand"><img src="{{brand_icon_uri}}" alt=""><span>{{brand_name}}</span></div><span class="slide-no">{{'%02d'|format(index+1)}} / {{deck|length or 7}}</span></div><h1 class="title" data-fit="interface-headline" data-min-font-size="{{(23*s)|round|int}}">{{item.get('headline',headline)}}</h1><div class="split"><section class="half before"><div class="label">Before</div><div class="copy">{{item.get('before','One person remembers the call.') }}</div></section><section class="half after"><div class="label">After</div><div class="copy">{{item.get('after',subhead)}}</div></section></div><div class="footer" data-fit="interface-proof" data-min-font-size="{{(10*s)|round|int}}">{{item.get('proof',proof_label)}}</div></section></main></body></html>

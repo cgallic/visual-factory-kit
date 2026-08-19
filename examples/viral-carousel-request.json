@@ -1,0 +1,132 @@
+{
+  "request_id": "kai-context-loop-carousel-001",
+  "client": "KaiCalls",
+  "content_id": "context-loop-carousel",
+  "formats": [
+    "carousel_viral_cover",
+    "carousel_pattern_interrupt",
+    "carousel_problem_card",
+    "carousel_mistake_card",
+    "carousel_framework_map",
+    "carousel_step_card",
+    "carousel_saveable_checklist",
+    "carousel_proof_snapshot",
+    "carousel_before_after",
+    "carousel_myth_truth",
+    "carousel_quote_takeaway",
+    "carousel_close_cta"
+  ],
+  "message": {
+    "headline": "Why good calls still die after you answer.",
+    "subhead": "A useful response needs more than speed. It needs shared context and a clear next action.",
+    "proof_label": "64% of calls came after hours",
+    "cta": "Save this system",
+    "phone_number": "(417) 555-0198"
+  },
+  "proof": [
+    {
+      "proof_id": "after-hours-demo",
+      "claim": "64% of calls came after hours",
+      "source_type": "internal analysis",
+      "source_path": "examples/proof/kaicalls-after-hours.md",
+      "display_as": "stat",
+      "risk": "low"
+    }
+  ],
+  "visual_direction": {
+    "template_family": "performance_carousel",
+    "preferred_pose": "at desk",
+    "mood": "direct, useful, and save-worthy"
+  },
+  "compliance": {
+    "pii_allowed": false,
+    "claims_verified": true
+  },
+  "template_data": {
+    "slides": [
+      {
+        "kicker": "THE CONTEXT LOOP",
+        "headline": "Why good calls still die after you answer."
+      },
+      {
+        "word_one": "NOT",
+        "word_two": "VOLUME",
+        "headline": "It isn't a call-volume problem.",
+        "footer": "THE REFRAME"
+      },
+      {
+        "kicker": "THE PROBLEM",
+        "headline": "The call ends, but the useful context disappears.",
+        "support": "When the next person lacks context, follow-up becomes guesswork.",
+        "proof": "64% of calls came after hours"
+      },
+      {
+        "number": "01",
+        "headline": "Logging the call after the fact.",
+        "support": "Capture what changed while the signal is still fresh."
+      },
+      {
+        "headline": "The Context Loop",
+        "nodes": [
+          "Capture",
+          "Clarify",
+          "Act"
+        ],
+        "proof": "One useful loop beats a long activity log."
+      },
+      {
+        "number": "02",
+        "headline": "Capture the change, not just the call.",
+        "support": "What matters now? Who owns the next step? What has to happen next?"
+      },
+      {
+        "headline": "The three-line follow-up checklist",
+        "checks": [
+          "Name what changed",
+          "Choose the next action",
+          "Share the useful brief"
+        ],
+        "proof": "SAVE THIS CHECKLIST"
+      },
+      {
+        "headline": "Most useful work happens after hours.",
+        "metric": "64%",
+        "support": "of calls in this example arrived outside office hours",
+        "bars": [
+          31,
+          47,
+          68,
+          92
+        ],
+        "source": "SOURCE: APPROVED INTERNAL ANALYSIS"
+      },
+      {
+        "headline": "A clear handoff changes the outcome.",
+        "before": "One person remembers the call.",
+        "after": "The team receives a useful brief.",
+        "proof": "Context travels farther than memory."
+      },
+      {
+        "headline": "Speed helps. Context closes the loop.",
+        "myth": "Fast response is enough.",
+        "truth": "The next action needs useful context.",
+        "proof": "Useful context creates useful follow-up."
+      },
+      {
+        "quote": "Speed without context creates repeat work.",
+        "attribution": "Founder takeaway \u00b7 KaiCalls",
+        "proof": "BUILD THE BRIEF, NOT JUST THE LOG"
+      },
+      {
+        "action": "SAVE THIS",
+        "headline": "Build the Context Loop into every important call.",
+        "support": "Capture the change. Clarify the next action. Share the useful brief."
+      }
+    ]
+  },
+  "output": {
+    "alt_text": "KaiCalls original twelve-slide carousel about turning call context into a clear next action.",
+    "destination_dir": "examples/viral-carousel-outputs",
+    "filename_prefix": "kaicalls-context-loop"
+  }
+}

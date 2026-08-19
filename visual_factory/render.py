@@ -225,6 +225,7 @@ def template_context(
         "font_css": load_font_css(),
         "shared_css": (TEMPLATE_DIR / "shared.css").read_text(encoding="utf-8"),
         "template_data": request.get("template_data", {}),
+        "format_spec": PLATFORM_SPECS.get(template_name, {}),
     }
 
 

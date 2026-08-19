@@ -308,6 +308,11 @@ The kit now contains **36 distinct template families**. In addition to its platf
 
 Read `TEMPLATE_CATALOG.md` for the complete catalog and render `examples/template-catalog-request.json` for the 24 extended categories.
 
+
+## Performance-Oriented Carousel Decks
+
+The kit now includes an original twelve-role carousel system designed around strong hooks, simple teaching slides, visible progress, proof, contrast, and a clear closing action. The roles are cover hook, pattern interrupt, problem, mistake, framework, step, checklist, proof, before/after, myth/truth, quote, and CTA. See `VIRAL_CAROUSEL_PLAYBOOK.md` for the design logic and `examples/viral-carousel-request.json` for a complete twelve-slide example deck.
+
 ## Customize It
 
 Add a platform:
