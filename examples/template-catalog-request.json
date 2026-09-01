@@ -1,6 +1,7 @@
 {
   "request_id": "template-catalog-demo-001",
   "client": "KaiCalls",
+  "brand_variant_key": "kaicalls",
   "content_id": "template-catalog-demo",
   "formats": [
     "browser_tab_card_square",

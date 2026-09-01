@@ -1,6 +1,7 @@
 {
   "request_id": "visual-factory-example-001",
   "client": "ExampleCo",
+  "brand_variant_key": "example",
   "content_id": "after-hours-service-brief",
   "content_type": "article",
   "distribution": ["linkedin", "instagram", "facebook", "x", "pinterest", "google_business_profile"],

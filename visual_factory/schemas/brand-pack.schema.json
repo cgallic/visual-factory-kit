@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://visual-factory.local/schemas/brand-pack.schema.json",
+  "title": "Visual Factory Brand Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "brand_variant_key",
+    "brand_name",
+    "site",
+    "palette",
+    "tokens",
+    "typography",
+    "logos",
+    "imagery",
+    "templates",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "brand_variant_key": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "brand_name": { "type": "string", "minLength": 1 },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "key"],
+      "properties": {
+        "kind": {
+          "enum": ["attorney_site", "podcast_site", "ebook_site", "firm_site", "company_site", "campaign", "other"]
+        },
+        "key": { "type": "string", "minLength": 1 },
+        "client_key": { "type": "string" },
+        "canonical_url": { "type": "string", "format": "uri" }
+      }
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "secondary"],
+      "properties": {
+        "primary": { "$ref": "#/$defs/color" },
+        "secondary": { "$ref": "#/$defs/color" },
+        "accent": { "type": "array", "items": { "$ref": "#/$defs/color" } },
+        "neutral": { "type": "array", "items": { "$ref": "#/$defs/color" } },
+        "semantic": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/color" }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["css_file"],
+      "properties": {
+        "css_file": { "$ref": "#/$defs/localPath" },
+        "values": {
+          "type": "object",
+          "additionalProperties": { "type": ["string", "number", "boolean"] }
+        }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["families"],
+      "properties": {
+        "families": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/fontFamily" }
+        }
+      }
+    },
+    "logos": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/logo" }
+    },
+    "imagery": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/imagery" }
+    },
+    "templates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed"],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+        },
+        "defaults": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "phone_number": { "type": "string" },
+    "phone_label": { "type": "string" }
+  },
+  "$defs": {
+    "localPath": {
+      "type": "string",
+      "minLength": 1,
+      "not": { "pattern": "^(?:https?:)?//" }
+    },
+    "color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "value"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "value": {
+          "type": "string",
+          "pattern": "^(#[0-9A-Fa-f]{3,8}|(?:rgb|hsl)a?\\([^\\r\\n]+\\)|[A-Za-z]+)$"
+        },
+        "usage": { "type": "string" }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "spdx": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "notes": { "type": "string" }
+      }
+    },
+    "fontAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "weight", "style", "format", "license"],
+      "properties": {
+        "path": { "$ref": "#/$defs/localPath" },
+        "weight": { "type": "integer", "minimum": 1, "maximum": 1000 },
+        "style": { "enum": ["normal", "italic", "oblique"] },
+        "format": { "enum": ["truetype", "opentype", "woff", "woff2"] },
+        "license": { "$ref": "#/$defs/license" }
+      }
+    },
+    "fontFamily": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "family", "role", "asset_files"],
+      "properties": {
+        "key": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "family": { "type": "string", "minLength": 1 },
+        "role": { "enum": ["display", "body", "mono", "accent"] },
+        "fallbacks": { "type": "array", "items": { "type": "string" } },
+        "asset_files": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/fontAsset" }
+        }
+      }
+    },
+    "logo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "role", "mode", "orientation"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": { "$ref": "#/$defs/localPath" },
+        "role": { "enum": ["primary", "secondary", "wordmark", "logomark", "icon", "sponsor"] },
+        "mode": { "enum": ["full_color", "light", "dark", "mono", "reversed"] },
+        "orientation": { "enum": ["horizontal", "vertical", "square", "mark_only"] },
+        "approved": { "type": "boolean", "default": true },
+        "usage": { "type": "array", "items": { "type": "string" } },
+        "source_id": { "type": "string" }
+      }
+    },
+    "imagery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "type", "role"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": { "$ref": "#/$defs/localPath" },
+        "type": {
+          "enum": ["mascot_pose", "attorney_portrait", "headshot", "podcast_artwork", "ebook_cover", "photography", "illustration", "background", "texture", "icon", "other"]
+        },
+        "role": { "type": "string", "minLength": 1 },
+        "pose": { "type": "string" },
+        "emotion": { "type": "string" },
+        "approved": { "type": "boolean", "default": true },
+        "usage": { "type": "array", "items": { "type": "string" } },
+        "alt_text": { "type": "string" },
+        "source_id": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "provider", "retrieved_at"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "provider": { "type": "string", "minLength": 1 },
+        "source_url": { "type": "string", "format": "uri" },
+        "source_file": { "type": "string" },
+        "source_id": { "type": "string" },
+        "retrieved_at": { "type": "string", "format": "date-time" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "license": { "$ref": "#/$defs/license" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

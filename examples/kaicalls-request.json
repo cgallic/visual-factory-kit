@@ -1,6 +1,7 @@
 {
   "request_id": "kaicalls-showcase-001",
   "client": "KaiCalls",
+  "brand_variant_key": "kaicalls",
   "content_id": "after-hours-call-briefing",
   "content_type": "article",
   "distribution": ["linkedin", "instagram", "facebook", "x", "pinterest", "google_business_profile"],
