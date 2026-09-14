@@ -1,6 +1,7 @@
 {
   "request_id": "kai-context-loop-carousel-001",
   "client": "KaiCalls",
+  "brand_variant_key": "kaicalls",
   "content_id": "context-loop-carousel",
   "formats": [
     "carousel_viral_cover",

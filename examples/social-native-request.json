@@ -1,6 +1,7 @@
 {
   "request_id": "social-native-template-demo-001",
   "client": "KaiCalls",
+  "brand_variant_key": "kaicalls",
   "content_id": "social-native-demo",
   "formats": [
     "apple_notes_portrait",

@@ -7,6 +7,7 @@
   "required": [
     "request_id",
     "client",
+    "brand_variant_key",
     "content_id",
     "formats",
     "message",
@@ -21,6 +22,12 @@
     "client": {
       "type": "string",
       "minLength": 2
+    },
+    "brand_variant_key": {
+      "type": "string",
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$",
+      "description": "Exact site/surface-specific brand pack key. The renderer never substitutes another variant."
     },
     "content_id": {
       "type": "string",
@@ -169,6 +176,27 @@
         },
         "preferred_pose": {
           "type": "string"
+        },
+        "asset_type": {
+          "type": "string",
+          "description": "Exact typed imagery class requested from the selected brand pack (for example attorney_portrait, podcast_artwork, or ebook_cover)."
+        },
+        "asset_role": {
+          "type": "string",
+          "description": "Exact role within the selected brand pack. No role from another variant is substituted."
+        },
+        "logo_id": {
+          "type": "string",
+          "description": "Exact approved logo ID from the selected variant. A missing match fails the render."
+        },
+        "logo_role": {
+          "enum": ["primary", "secondary", "wordmark", "logomark", "icon", "sponsor"]
+        },
+        "logo_mode": {
+          "enum": ["full_color", "light", "dark", "mono", "reversed"]
+        },
+        "logo_orientation": {
+          "enum": ["horizontal", "vertical", "square", "mark_only"]
         },
         "mood": {
           "type": "string"

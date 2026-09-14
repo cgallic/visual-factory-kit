@@ -1,5 +1,20 @@
 # Visual Factory Kit
 
+## Site-specific brand variants
+
+Every render request must provide `brand_variant_key`. The key must exactly match the selected pack's `brand_variant_key`; the renderer rejects cross-surface fallback. This lets one client maintain independent attorney-site, podcast-site, ebook-site, and campaign identities without colors, fonts, or logos leaking between them.
+
+New `brand.json` files validate against `visual_factory/schemas/brand-pack.schema.json`. A complete pack declares:
+
+- `site.kind` and `site.key` for the exact surface;
+- named palette colors plus the CSS token file;
+- each font family and local font file, weight, style, format, and license;
+- typed logos with role, color mode, and orientation;
+- typed imagery such as `attorney_portrait`, `podcast_artwork`, `ebook_cover`, `photography`, or `mascot_pose`;
+- allowed templates and source provenance, including Figma or other canonical URLs.
+
+Rendered provenance records the exact variant key, brand catalog SHA-256, every loaded font SHA-256, and the hashes of the selected visual, logo, and token file. Older packs can still render only when the request explicitly names `legacy` or the pack directory name; they are never selected as an implicit fallback.
+
 Create once. Ship everywhere.
 
 Visual Factory Kit is a deterministic image factory for marketing teams that need branded creative across every major platform without redesigning the same asset twenty different ways.

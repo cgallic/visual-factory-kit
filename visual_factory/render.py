@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -14,10 +15,10 @@ from jsonschema import Draft202012Validator
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
-from asset_index import DEFAULT_BRAND_DIR, REPO_DIR, choose_mascot, load_brand
+from asset_index import DEFAULT_BRAND_DIR, REPO_DIR, choose_visual_asset, load_brand
 
 
-RENDERER_VERSION = "visual_factory_renderer@0.1.0"
+RENDERER_VERSION = "visual_factory_renderer@0.2.0"
 VISUALS_DIR = Path(__file__).resolve().parent
 SCHEMA_DIR = VISUALS_DIR / "schemas"
 TEMPLATE_DIR = VISUALS_DIR / "templates"
@@ -28,6 +29,11 @@ PLATFORM_SPECS = json.loads(PLATFORM_SIZE_MATRIX.read_text(encoding="utf-8"))
 TEMPLATE_SIZES = {
     name: (spec["width"], spec["height"])
     for name, spec in PLATFORM_SPECS.items()
+}
+
+REQUIRED_TEMPLATE_ASSETS = {
+    "attorney_profile_landscape": {"attorney_portrait"},
+    "attorney_ebook_landscape": {"attorney_portrait", "ebook_cover"},
 }
 
 BANNED_PUBLIC_TERMS = [
@@ -121,26 +127,81 @@ def resolve_path(path_text: str) -> Path:
     return repo_root() / path
 
 
-def load_font_css() -> str:
-    blocks = []
-    for family, files in FONT_FILES.items():
-        for weight, filename in files:
-            path = FONT_DIR / filename
-            if not path.exists():
-                raise FileNotFoundError(f"Required Kai visual font is missing: {path}")
-            blocks.append(
-                "\n".join(
-                    [
-                        "@font-face {",
-                        f"  font-family: '{family}';",
-                        "  font-style: normal;",
-                        f"  font-weight: {weight};",
-                        "  font-display: block;",
-                        f"  src: url('{as_file_uri(path)}') format('truetype');",
-                        "}",
-                    ]
-                )
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def load_brand_variant(brand_dir: Path, requested_key: str) -> tuple[dict[str, Any], bool]:
+    brand = load_brand(brand_dir)
+    declared_key = brand.get("brand_variant_key")
+    if declared_key:
+        validate("brand-pack.schema.json", brand)
+        if requested_key != declared_key:
+            raise ValueError(
+                f"Requested brand variant {requested_key!r} does not match pack {declared_key!r}; "
+                "cross-surface fallback is forbidden"
             )
+        return brand, False
+    safe_legacy_keys = {"legacy", brand_dir.name.lower()}
+    if requested_key not in safe_legacy_keys:
+        raise ValueError(
+            f"Legacy brand pack {brand_dir.name!r} has no brand_variant_key. "
+            f"Use one of {sorted(safe_legacy_keys)!r} explicitly or migrate the pack."
+        )
+    return brand, True
+
+
+def brand_file(brand_dir: Path, path_text: str) -> Path:
+    path = Path(path_text)
+    return path if path.is_absolute() else brand_dir / path
+
+
+def declared_font_assets(brand_dir: Path, brand: dict[str, Any]) -> list[dict[str, Any]]:
+    declared = []
+    for family in brand.get("typography", {}).get("families", []):
+        for asset in family.get("asset_files", []):
+            declared.append({"family": family["family"], **asset, "resolved_path": brand_file(brand_dir, asset["path"])})
+    if declared:
+        return declared
+    # Compatibility is explicit at the variant-selection gate; these are the historical bundled fonts.
+    return [
+        {
+            "family": family,
+            "weight": weight,
+            "style": "normal",
+            "format": "truetype",
+            "license": {"name": "See visual_factory/fonts/NOTICE.md"},
+            "path": f"visual_factory/fonts/{filename}",
+            "resolved_path": FONT_DIR / filename,
+        }
+        for family, files in FONT_FILES.items()
+        for weight, filename in files
+    ]
+
+
+def load_font_css(brand_dir: Path, brand: dict[str, Any]) -> str:
+    blocks = []
+    for asset in declared_font_assets(brand_dir, brand):
+        path = asset["resolved_path"]
+        if not path.exists():
+            raise FileNotFoundError(f"Declared brand font is missing: {path}")
+        blocks.append(
+            "\n".join(
+                [
+                    "@font-face {",
+                    f"  font-family: '{asset['family']}';",
+                    f"  font-style: {asset['style']};",
+                    f"  font-weight: {asset['weight']};",
+                    "  font-display: block;",
+                    f"  src: url('{as_file_uri(path)}') format('{asset['format']}');",
+                    "}",
+                ]
+            )
+        )
     return "\n\n".join(blocks)
 
 
@@ -179,6 +240,52 @@ def brand_path(brand_dir: Path, path_text: str) -> Path:
     return path if path.is_absolute() else brand_dir / path
 
 
+def selected_logo(brand: dict[str, Any], direction: dict[str, Any] | None = None) -> dict[str, Any] | None:
+    logos = [logo for logo in brand.get("logos", []) if logo.get("approved", True)]
+    direction = direction or {}
+    selectors = {"id": direction.get("logo_id"), "role": direction.get("logo_role"),
+                 "mode": direction.get("logo_mode"), "orientation": direction.get("logo_orientation")}
+    requested = {key: value for key, value in selectors.items() if value}
+    if requested:
+        match = next((logo for logo in logos if all(logo.get(key) == value for key, value in requested.items())), None)
+        if not match:
+            raise ValueError(f"No approved logo matches exact selection {requested!r} in the selected brand variant")
+        return match
+    for role in ("icon", "logomark", "primary", "wordmark"):
+        match = next((logo for logo in logos if logo.get("role") == role), None)
+        if match:
+            return match
+    return logos[0] if logos else None
+
+
+def tokens_file(brand_dir: Path, brand: dict[str, Any]) -> Path:
+    path_text = brand.get("tokens", {}).get("css_file") or brand.get("tokens_css", "tokens.css")
+    return brand_path(brand_dir, path_text)
+
+
+def resolve_template_asset_uris(template_name: str, template_data: dict[str, Any], brand_dir: Path) -> dict[str, str]:
+    assets = template_data.get("assets", {})
+    if not isinstance(assets, dict):
+        raise ValueError("template_data.assets must be an object of named brand-pack paths")
+    missing = sorted(name for name in REQUIRED_TEMPLATE_ASSETS.get(template_name, set()) if not assets.get(name))
+    if missing:
+        raise ValueError(f"{template_name} requires template_data.assets: {', '.join(missing)}")
+    brand_root = brand_dir.resolve()
+    resolved = {}
+    for name, path_text in assets.items():
+        if not isinstance(name, str) or not isinstance(path_text, str) or not path_text.strip():
+            raise ValueError("template_data.assets keys and values must be non-empty strings")
+        asset_path = brand_path(brand_dir, path_text).resolve()
+        try:
+            asset_path.relative_to(brand_root)
+        except ValueError as exc:
+            raise ValueError(f"template asset must stay inside the brand pack: {name}") from exc
+        if not asset_path.is_file():
+            raise FileNotFoundError(f"template asset not found: {name} -> {asset_path}")
+        resolved[name] = as_file_uri(asset_path)
+    return resolved
+
+
 def template_context(
     request: dict[str, Any],
     template_name: str,
@@ -188,14 +295,18 @@ def template_context(
 ) -> dict[str, Any]:
     width, height = TEMPLATE_SIZES[template_name]
     message = request["message"]
+    template_data = request.get("template_data", {})
+    if not isinstance(template_data, dict):
+        raise ValueError("template_data must be an object")
     proof = proof_display(request)
     mascot_path = resolve_path(mascot_asset["path"])
     subhead = message.get("subhead") or message.get("supporting_copy") or ""
     cta = message.get("cta") or "Just call Kai."
     phone_number = message.get("phone_number") or brand.get("phone_number", "")
     phone_label = message.get("phone_label") or brand.get("phone_label", "")
-    icon_path = brand_path(brand_dir, brand.get("icon", "assets/icon.png"))
-    tokens_path = brand_path(brand_dir, brand.get("tokens_css", "tokens.css"))
+    logo = selected_logo(brand, request.get("visual_direction", {}))
+    icon_path = brand_path(brand_dir, logo["path"] if logo else brand.get("icon", "assets/icon.png"))
+    tokens_path = tokens_file(brand_dir, brand)
     return {
         "width": width,
         "height": height,
@@ -217,14 +328,18 @@ def template_context(
         "phone_number": phone_number,
         "phone_label": phone_label,
         "alt_text": request["output"]["alt_text"],
-        "mascot_pose": mascot_asset["pose"],
+        "mascot_pose": mascot_asset.get("pose", ""),
+        "visual_asset_type": mascot_asset.get("type", "other"),
+        "visual_asset_role": mascot_asset.get("role", ""),
         "mascot_path": mascot_asset["path"],
         "mascot_uri": as_file_uri(mascot_path),
         "brand_icon_uri": as_file_uri(icon_path),
+        "brand_lockup_uri": as_file_uri(icon_path),
         "tokens_css": tokens_path.read_text(encoding="utf-8"),
-        "font_css": load_font_css(),
+        "font_css": load_font_css(brand_dir, brand),
         "shared_css": (TEMPLATE_DIR / "shared.css").read_text(encoding="utf-8"),
-        "template_data": request.get("template_data", {}),
+        "template_data": template_data,
+        "template_asset_uris": resolve_template_asset_uris(template_name, template_data, brand_dir),
         "format_spec": PLATFORM_SPECS.get(template_name, {}),
     }
 
@@ -360,6 +475,7 @@ def build_provenance(
     mascot_asset: dict[str, Any],
     brand_dir: Path,
     brand: dict[str, Any],
+    legacy_compatibility: bool,
 ) -> dict[str, Any]:
     width, height = TEMPLATE_SIZES[template_name]
     proof_items = request.get("proof", [])
@@ -376,16 +492,19 @@ def build_provenance(
         },
         {
             "kind": "brand_tokens",
-            "path": repo_relative(brand_path(brand_dir, brand.get("tokens_css", "tokens.css"))),
+            "path": repo_relative(tokens_file(brand_dir, brand)),
             "source": "brand design tokens",
         },
         {
             "kind": "typography",
             "path": repo_relative(FONT_DIR),
             "source": "Bundled open-source visual font stack",
-            "families": ["Libre Franklin", "Atkinson Hyperlegible", "IBM Plex Mono"],
+            "families": sorted({asset["family"] for asset in declared_font_assets(brand_dir, brand)}),
         },
     ]
+    for source in brand.get("sources", []):
+        ingredients.append({"kind": "brand_source", "source": source.get("provider", ""), "source_id": source.get("id", ""),
+                            "source_path": source.get("source_url") or source.get("source_file", "")})
     for proof in proof_items:
         ingredients.append(
             {
@@ -396,6 +515,33 @@ def build_provenance(
             }
         )
 
+    catalog_path = brand_dir / "brand.json"
+    font_assets = [
+        {
+            "family": asset["family"], "weight": asset["weight"], "style": asset["style"],
+            "license": asset["license"]["name"], "path": repo_relative(asset["resolved_path"]),
+            "sha256": sha256_file(asset["resolved_path"]),
+        }
+        for asset in declared_font_assets(brand_dir, brand)
+    ]
+    hash_candidates = [("brand_visual_asset", mascot_asset.get("asset_id", ""), resolve_path(mascot_asset["path"])),
+                       ("brand_tokens", "tokens", tokens_file(brand_dir, brand))]
+    logo = selected_logo(brand, request.get("visual_direction", {}))
+    if logo:
+        hash_candidates.append(("logo", logo["id"], brand_path(brand_dir, logo["path"])))
+    else:
+        hash_candidates.append(("logo", "legacy-icon", brand_path(brand_dir, brand.get("icon", "assets/icon.png"))))
+    asset_hashes = []
+    seen_paths = set()
+    for kind, asset_id, path in hash_candidates:
+        resolved = path.resolve()
+        if resolved in seen_paths:
+            continue
+        if not resolved.exists():
+            raise FileNotFoundError(f"Declared provenance asset is missing: {resolved}")
+        seen_paths.add(resolved)
+        asset_hashes.append({"kind": kind, "asset_id": asset_id, "path": repo_relative(resolved), "sha256": sha256_file(resolved)})
+
     return {
         "asset_id": output_path.stem,
         "request_id": request["request_id"],
@@ -403,6 +549,16 @@ def build_provenance(
         "rendered_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "renderer": RENDERER_VERSION,
         "template": f"{template_name}@1.0.0",
+        "brand_variant": {
+            "key": request["brand_variant_key"],
+            "site_kind": brand.get("site", {}).get("kind", "legacy"),
+            "site_key": brand.get("site", {}).get("key", brand_dir.name),
+            "catalog_path": repo_relative(catalog_path),
+            "catalog_sha256": sha256_file(catalog_path),
+            "legacy_compatibility": legacy_compatibility,
+        },
+        "font_assets": font_assets,
+        "asset_hashes": asset_hashes,
         "dimensions": {"width": width, "height": height},
         "alt_text": request["output"]["alt_text"],
         "ingredients": ingredients,
@@ -482,7 +638,12 @@ def render_request(request_path: Path, brand_dir: Path = DEFAULT_BRAND_DIR) -> d
     request = load_json(request_path)
     validate("visual-request.schema.json", request)
     brand_dir = brand_dir.resolve()
-    brand = load_brand(brand_dir)
+    brand, legacy_compatibility = load_brand_variant(brand_dir, request["brand_variant_key"])
+    allowed_templates = set(brand.get("templates", {}).get("allowed", []))
+    if allowed_templates:
+        disallowed = sorted(set(request["formats"]) - allowed_templates)
+        if disallowed:
+            raise ValueError(f"Templates not approved for brand variant {request['brand_variant_key']!r}: {disallowed}")
 
     destination_dir = resolve_path(request["output"]["destination_dir"])
     destination_dir.mkdir(parents=True, exist_ok=True)
@@ -491,9 +652,11 @@ def render_request(request_path: Path, brand_dir: Path = DEFAULT_BRAND_DIR) -> d
     qa_results = []
     rendered_assets = []
     preferred_pose = request.get("visual_direction", {}).get("preferred_pose")
+    preferred_asset_type = request.get("visual_direction", {}).get("asset_type")
+    preferred_asset_role = request.get("visual_direction", {}).get("asset_role")
 
     for template_name in request["formats"]:
-        mascot_asset = choose_mascot(preferred_pose, template_name, brand_dir)
+        mascot_asset = choose_visual_asset(preferred_pose, template_name, brand_dir, preferred_asset_type, preferred_asset_role)
         context = template_context(request, template_name, mascot_asset, brand_dir, brand)
         html = render_html(context, template_name)
 
@@ -501,7 +664,7 @@ def render_request(request_path: Path, brand_dir: Path = DEFAULT_BRAND_DIR) -> d
         width, height = TEMPLATE_SIZES[template_name]
         overflow, text_metrics = render_png(html, png_path, width, height)
 
-        provenance = build_provenance(request, template_name, png_path, mascot_asset, brand_dir, brand)
+        provenance = build_provenance(request, template_name, png_path, mascot_asset, brand_dir, brand, legacy_compatibility)
         validate("provenance.schema.json", provenance)
         provenance_path = png_path.with_suffix(".provenance.json")
         write_json(provenance_path, provenance)
@@ -522,6 +685,7 @@ def render_request(request_path: Path, brand_dir: Path = DEFAULT_BRAND_DIR) -> d
         "content_id": request.get("content_id", ""),
         "rendered_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "renderer": RENDERER_VERSION,
+        "brand_variant_key": request["brand_variant_key"],
         "assets": rendered_assets,
         "qa": qa_results,
         "passed": all(item["passed"] for item in qa_results),

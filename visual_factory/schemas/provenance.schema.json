@@ -10,6 +10,9 @@
     "rendered_at",
     "renderer",
     "template",
+    "brand_variant",
+    "font_assets",
+    "asset_hashes",
     "dimensions",
     "ingredients",
     "ai_assistance",
@@ -25,6 +28,51 @@
     },
     "renderer": { "type": "string" },
     "template": { "type": "string" },
+    "brand_variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "catalog_path", "catalog_sha256"],
+      "properties": {
+        "key": { "type": "string" },
+        "site_kind": { "type": "string" },
+        "site_key": { "type": "string" },
+        "catalog_path": { "type": "string" },
+        "catalog_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "legacy_compatibility": { "type": "boolean" }
+      }
+    },
+    "font_assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["family", "path", "sha256"],
+        "properties": {
+          "family": { "type": "string" },
+          "weight": { "type": "integer" },
+          "style": { "type": "string" },
+          "license": { "type": "string" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "asset_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "path", "sha256"],
+        "properties": {
+          "kind": { "type": "string" },
+          "asset_id": { "type": "string" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
     "dimensions": {
       "type": "object",
       "additionalProperties": false,
